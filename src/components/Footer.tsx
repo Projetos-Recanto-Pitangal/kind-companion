@@ -36,7 +36,7 @@ const Footer = () => {
             <h4 className="font-display text-sm font-semibold text-gold uppercase tracking-wider mb-4">Contato</h4>
             <div className="flex flex-col gap-2">
               <a
-                href="https://wa.me/5500000000000"
+                href="https://wa.me/5535984011430"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-body text-sm text-primary-foreground/60 hover:text-gold transition-colors"
