@@ -1,43 +1,25 @@
 import { motion } from "framer-motion";
-import { Calendar, Heart, Sun, Sparkles } from "lucide-react";
+import { Heart, Sparkles } from "lucide-react";
 
 const WHATSAPP_NUMBER = "5535984011430";
 
 const packages = [
   {
-    icon: Sun,
-    title: "Final de Semana",
-    period: "Fev a Mai/2026",
-    price: "R$ 1.280",
-    details: "2 diárias · Sexta após 15h a Domingo 12h",
-    installment: "até 3x sem juros no cartão",
-    highlight: false,
-  },
-  {
-    icon: Calendar,
-    title: "Dias Úteis",
-    period: "Seg a Qui · Fev a Mai/2026",
-    price: "A partir de R$ 700",
-    details: "1 diária R$ 700 · 2 diárias R$ 1.000 · 3 diárias R$ 1.240",
-    installment: "até 3x sem juros no cartão",
-    highlight: false,
-  },
-  {
     icon: Sparkles,
     title: "Pacotes de Feriado",
-    period: "Páscoa · Tiradentes · Trabalho · Corpus Christi",
+    period: "Tiradentes 18–21/04 · Trabalho 30/04–03/05 · Corpus Christi 04–07/06",
     price: "R$ 2.580",
-    details: "3 diárias com check-in na sexta",
-    installment: "até 5x sem juros no cartão",
-    highlight: true,
+    details: "3 diárias para 1 casal · Café da manhã incluso",
+    installment: "até 5x sem juros no cartão de crédito",
+    highlight: false,
   },
   {
     icon: Heart,
     title: "Dia dos Namorados",
     period: "12 a 14 de Junho/2026",
     price: "R$ 2.000",
-    details: "2 diárias · Experiência romântica especial",
-    installment: "até 5x sem juros no cartão",
+    details: "2 diárias para 1 casal · Café da manhã incluso",
+    installment: "até 5x sem juros no cartão de crédito",
     highlight: true,
   },
 ];
