@@ -138,6 +138,16 @@ const ComoParticipar = () => {
               É uma forma de vivenciar o ambiente e iniciar um processo de reconexão com a saúde.
             </p>
           </motion.div>
+          <motion.div {...fadeUp} className="text-center mt-8">
+            <a
+              href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20quero%20participar%20do%20day%20use%2C%20como%20funciona%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
+            >
+              Quero Participar
+            </a>
+          </motion.div>
         </div>
       </section>
 
