@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { RefreshCw, Leaf, Scale, TreePine, Home, Mountain, Volume2, BedDouble, CloudSun, MessageCircle } from "lucide-react";
+import { RefreshCw, Leaf, Scale, TreePine, Home, Mountain, Volume2, BedDouble, CloudSun, MessageCircle, HeartPulse, Sun } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -76,6 +76,11 @@ const ComoParticipar = () => {
       <section className="py-20 md:py-28 bg-card">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div {...fadeUp} className="text-center mb-12">
+            <div className="flex justify-center mb-4">
+              <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center">
+                <HeartPulse className="w-7 h-7 text-gold" />
+              </div>
+            </div>
             <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">Períodos de Acompanhamento</p>
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
               Dias dedicados ao cuidado com a saúde
@@ -123,6 +128,11 @@ const ComoParticipar = () => {
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-3xl mx-auto px-4">
           <motion.div {...fadeUp} className="text-center mb-12">
+            <div className="flex justify-center mb-4">
+              <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center">
+                <Sun className="w-7 h-7 text-gold" />
+              </div>
+            </div>
             <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">Day Use Terapêutico</p>
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
               Uma experiência de cuidado em um único dia
@@ -205,8 +215,9 @@ const ComoParticipar = () => {
               href="https://wa.me/5565996018233?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20Recanto%20Pitangal."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
+              className="inline-flex items-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
             >
+              <MessageCircle className="w-5 h-5" />
               Falar conosco
             </a>
           </motion.div>
