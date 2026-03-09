@@ -33,8 +33,9 @@ const StorySection = () => {
             <p className="font-body text-muted-foreground text-base md:text-lg leading-relaxed">
               O Recanto Pitangal nasceu como uma pousada, um refúgio de tranquilidade e contemplação. Com o tempo, também passou a acolher pessoas que buscam um período de cuidado com o corpo, a mente e o espírito por meio de práticas naturais e acompanhamento baseado em princípios de saúde integrativa.
             </p>
-            <p className="font-body text-muted-foreground text-base md:text-lg leading-relaxed">
-              Algumas dessas experiências foram registradas pelo youtuber Chico Abelha durante uma visita ao local, onde ele entrevistou Célia Rabelo e conheceu um pouco do trabalho desenvolvido ali.
+            <p className="font-body text-base md:text-lg leading-relaxed">
+              <span className="text-foreground font-semibold">Algumas dessas experiências foram registradas pelo youtuber Chico Abelha</span>{" "}
+              <span className="text-muted-foreground">durante uma visita ao local, onde ele entrevistou Célia Rabelo e conheceu um pouco do trabalho desenvolvido ali.</span>
             </p>
             <p className="font-body text-foreground text-base md:text-lg leading-relaxed font-medium italic">
               Mais do que um espaço de hospedagem, o Recanto Pitangal se tornou, para muitos visitantes, um lugar de pausa, recuperação e transformação.
