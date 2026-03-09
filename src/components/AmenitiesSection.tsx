@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import {
-  Droplets, Flame, Coffee, Wifi, Wind, Tv, Dog,
-  UtensilsCrossed, BedDouble, Sparkles, Leaf, ShoppingBag,
-  Armchair, Beef, Bath
+  Droplets, Flame, Coffee, Wifi, Dog, Car,
+  UtensilsCrossed, BedDouble, Leaf, ShoppingBag,
+  Armchair, Beef, Bath, WashingMachine
 } from "lucide-react";
 
 const amenities = [
@@ -18,6 +18,8 @@ const amenities = [
   { icon: Bath, label: "Amenities Completos", desc: "Roupões, toalhas, shampoo, sais e espuma de banho" },
   { icon: Wifi, label: "Wi-Fi de Qualidade", desc: "Internet de alta velocidade" },
   { icon: Coffee, label: "Café da Manhã Incluso", desc: "Artesanal e farto" },
+  { icon: Car, label: "Estacionamento Coberto", desc: "Garagem inclusa" },
+  { icon: WashingMachine, label: "Área de Lavanderia", desc: "Disponível para os hóspedes" },
 ];
 
 const AmenitiesSection = () => {
