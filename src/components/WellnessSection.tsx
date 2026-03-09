@@ -23,7 +23,7 @@ const WellnessSection = () => {
             <div className="text-center sm:text-left">
               <Globe className="w-6 h-6 text-gold mb-2 mx-auto sm:mx-0" />
               <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                <span className="text-foreground font-semibold">Célia Rabelo</span> desenvolve um trabalho baseado em princípios naturais de saúde e já orientou pessoas de diversas regiões do Brasil e também de outros países, como Austrália, Canadá, Japão e Estados Unidos, que buscam melhorar sua qualidade de vida por meio de mudanças de hábitos e práticas naturais.
+                <span className="text-foreground font-semibold">Célia Rabelo</span> desenvolve um trabalho baseado em princípios naturais de saúde e já orientou pessoas de diversas regiões do <span className="font-semibold text-foreground">Brasil</span> e também de outros países, como <span className="font-semibold text-foreground">Austrália</span>, <span className="font-semibold text-foreground">Canadá</span>, <span className="font-semibold text-foreground">Japão</span> e <span className="font-semibold text-foreground">Estados Unidos</span>, que buscam melhorar sua qualidade de vida por meio de mudanças de hábitos e práticas naturais.
               </p>
             </div>
           </div>
