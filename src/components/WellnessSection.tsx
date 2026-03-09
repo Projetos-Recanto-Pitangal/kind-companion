@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { RefreshCw, Leaf, Scale, TreePine } from "lucide-react";
 import celiaImage from "@/assets/celia.png";
 
 const WellnessSection = () => {
@@ -44,12 +45,21 @@ const WellnessSection = () => {
           <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-3 max-w-xl">
             Durante esse tempo no Recanto Pitangal, os participantes têm a oportunidade de:
           </p>
-          <ul className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-4 max-w-xl list-disc list-inside space-y-1">
-            <li>reorganizar hábitos de vida</li>
-            <li>aprender práticas naturais de cuidado com o corpo</li>
-            <li>experimentar rotinas mais equilibradas</li>
-            <li>descansar em meio à natureza</li>
-          </ul>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 max-w-xl">
+            {[
+              { icon: RefreshCw, text: "reorganizar hábitos de vida" },
+              { icon: Leaf, text: "aprender práticas naturais de cuidado com o corpo" },
+              { icon: Scale, text: "experimentar rotinas mais equilibradas" },
+              { icon: TreePine, text: "descansar em meio à natureza" },
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center">
+                  <item.icon className="w-5 h-5 text-gold" />
+                </div>
+                <span className="font-body text-base text-muted-foreground leading-snug pt-2">{item.text}</span>
+              </div>
+            ))}
+          </div>
 
           <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl italic">
             Cada experiência é conduzida com atenção e respeito ao momento de cada pessoa, valorizando o processo individual de cuidado, descanso e reconexão com a própria saúde.
