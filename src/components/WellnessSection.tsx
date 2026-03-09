@@ -25,6 +25,15 @@ const WellnessSection = () => {
               <p className="font-body text-sm text-muted-foreground leading-relaxed">
                 <span className="text-foreground font-semibold">Célia Rabelo</span> desenvolve um trabalho baseado em princípios naturais de saúde e já orientou pessoas de diversas regiões do <span className="font-semibold text-foreground">Brasil</span> e também de outros países, como <span className="font-semibold text-foreground">Austrália</span>, <span className="font-semibold text-foreground">Canadá</span>, <span className="font-semibold text-foreground">Japão</span> e <span className="font-semibold text-foreground">Estados Unidos</span>, que buscam melhorar sua qualidade de vida por meio de mudanças de hábitos e práticas naturais.
               </p>
+              <a
+                href="https://www.instagram.com/celiarabello7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 font-body text-xs text-gold hover:text-gold-light transition-colors mt-2"
+              >
+                <Instagram className="w-4 h-4" />
+                @celiarabello7
+              </a>
             </div>
           </div>
         </motion.div>
