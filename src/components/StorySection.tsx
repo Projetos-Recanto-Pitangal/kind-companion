@@ -82,7 +82,7 @@ const StorySection = () => {
           >
             <div className="rounded-lg overflow-hidden shadow-lg aspect-video">
               <iframe
-                src="https://www.youtube.com/embed/VIDEO_ID"
+                src="https://www.youtube.com/embed/"
                 title="Chico Abelha - Um Centro de Cura em Sapucaí-Mirim"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
