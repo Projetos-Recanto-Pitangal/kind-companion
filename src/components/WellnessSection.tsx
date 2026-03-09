@@ -65,7 +65,7 @@ const WellnessSection = () => {
             Cada experiência é conduzida com atenção e respeito ao momento de cada pessoa, valorizando o processo individual de cuidado, descanso e reconexão com a própria saúde.
           </p>
           <a
-            href="#gallery"
+            href="/como-participar"
             className="inline-block font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-8 py-3.5 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
           >
             Entenda como participar
