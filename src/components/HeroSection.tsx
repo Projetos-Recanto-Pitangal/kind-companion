@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Star, ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-chalet.jpg";
+import logoSelo from "@/assets/logo-selo-recanto-pitangal.png";
 
 const HeroSection = () => {
   return (
@@ -22,6 +23,15 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
+          className="flex justify-center mb-6"
+        >
+          <img src={logoSelo} alt="Recanto Pitangal selo" className="w-20 h-20 md:w-28 md:h-28" />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.4 }}
         >
           <p className="font-body text-gold text-sm md:text-base uppercase tracking-[0.3em] mb-4">
             Sapucaí-Mirim · Serra da Mantiqueira
