@@ -1,22 +1,23 @@
 import { motion } from "framer-motion";
 import {
-  Droplets, Flame, Coffee, Car, Wifi, Wind, Tv, Dog,
-  UtensilsCrossed, Shirt, BedDouble, Sparkles
+  Droplets, Flame, Coffee, Wifi, Wind, Tv, Dog,
+  UtensilsCrossed, BedDouble, Sparkles, Leaf, ShoppingBag,
+  Armchair, Beef, Bath
 } from "lucide-react";
 
 const amenities = [
-  { icon: Droplets, label: "Hidromassagem Climatizada", desc: "Com cromoterapia" },
-  { icon: Flame, label: "Lareira na Sala", desc: "Aconchego garantido" },
-  { icon: Flame, label: "Fogueira Externa", desc: "Sob as estrelas" },
-  { icon: Coffee, label: "Café da Manhã Incluso", desc: "Artesanal e farto" },
-  { icon: UtensilsCrossed, label: "Cozinha Equipada", desc: "Completa para uso" },
-  { icon: BedDouble, label: "Cama Queen-Size", desc: "Roupas de cama premium" },
-  { icon: Wind, label: "Ar-Condicionado", desc: "Split em todos os ambientes" },
-  { icon: Tv, label: "TV 50\" com Streaming", desc: "Netflix e mais" },
-  { icon: Wifi, label: "Wi-Fi", desc: "Internet de alta velocidade" },
-  { icon: Car, label: "Garagem Coberta", desc: "Estacionamento incluso" },
+  { icon: BedDouble, label: "Quarto Aconchegante", desc: "Estruturado e com ar-condicionado" },
+  { icon: UtensilsCrossed, label: "Cozinha Equipada", desc: "Geladeira, fogão, micro-ondas, cafeteira e utensílios" },
+  { icon: Flame, label: "Sala com Lareira", desc: "Charmosa, com TV 50\" e Netflix" },
+  { icon: Droplets, label: "Hidromassagem Dupla", desc: "Com vista panorâmica" },
+  { icon: Leaf, label: "Horta Fresquinha", desc: "Disponível para os hóspedes" },
+  { icon: ShoppingBag, label: "Mini Mercearia", desc: "Itens práticos com preços justos" },
   { icon: Dog, label: "Pet Friendly", desc: "Seu pet é bem-vindo" },
-  { icon: Sparkles, label: "Iluminação Romântica", desc: "Ambiente perfeito" },
+  { icon: Armchair, label: "Área Externa", desc: "Redes, cadeiras de balanço e fogueira (lenha inclusa)" },
+  { icon: Beef, label: "Churrasqueira", desc: "À disposição dos hóspedes" },
+  { icon: Bath, label: "Amenities Completos", desc: "Roupões, toalhas, shampoo, sais e espuma de banho" },
+  { icon: Wifi, label: "Wi-Fi de Qualidade", desc: "Internet de alta velocidade" },
+  { icon: Coffee, label: "Café da Manhã Incluso", desc: "Artesanal e farto" },
 ];
 
 const AmenitiesSection = () => {
