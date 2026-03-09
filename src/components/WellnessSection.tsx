@@ -68,7 +68,7 @@ const WellnessSection = () => {
             href="#gallery"
             className="inline-block font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-8 py-3.5 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
           >
-            Quero conhecer o Recanto Pitangal
+            Entenda como participar
           </a>
         </motion.div>
       </div>
