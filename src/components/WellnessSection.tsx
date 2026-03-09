@@ -35,6 +35,25 @@ const WellnessSection = () => {
           <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl">
             No Recanto Pitangal, natureza, descanso e princípios naturais de saúde se unem para oferecer períodos de cuidado, reflexão e equilíbrio para o corpo, mente e espírito.
           </p>
+
+          <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-4 max-w-xl">
+            Em determinados períodos, o Recanto Pitangal recebe pessoas que desejam passar alguns dias em um ambiente tranquilo, com orientação sobre práticas naturais de saúde. Esses momentos de cuidado são conduzidos por{" "}
+            <span className="text-foreground font-semibold">Célia Rabelo</span>, que atua na área de saúde natural e integrativa, com formação em Gastronomia pelo SENAC e especialização em Medicina Funcional Integrativa, além de anos de estudo e experiência prática no acompanhamento de pessoas que buscam melhorar sua qualidade de vida por meio de mudanças de hábitos e princípios naturais de saúde.
+          </p>
+
+          <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-3 max-w-xl">
+            Durante esse tempo no Recanto Pitangal, os participantes têm a oportunidade de:
+          </p>
+          <ul className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-4 max-w-xl list-disc list-inside space-y-1">
+            <li>reorganizar hábitos de vida</li>
+            <li>aprender práticas naturais de cuidado com o corpo</li>
+            <li>experimentar rotinas mais equilibradas</li>
+            <li>descansar em meio à natureza</li>
+          </ul>
+
+          <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl italic">
+            Cada experiência é conduzida com atenção e respeito ao momento de cada pessoa, valorizando o processo individual de cuidado, descanso e reconexão com a própria saúde.
+          </p>
           <a
             href="#gallery"
             className="inline-block font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-8 py-3.5 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
