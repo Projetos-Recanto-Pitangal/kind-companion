@@ -128,6 +128,11 @@ const ComoParticipar = () => {
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-3xl mx-auto px-4">
           <motion.div {...fadeUp} className="text-center mb-12">
+            <div className="flex justify-center mb-4">
+              <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center">
+                <Sun className="w-7 h-7 text-gold" />
+              </div>
+            </div>
             <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">Day Use Terapêutico</p>
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
               Uma experiência de cuidado em um único dia
