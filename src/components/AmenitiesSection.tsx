@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import {
-  Droplets, Flame, Coffee, Wifi, Wind, Tv, Dog,
-  UtensilsCrossed, BedDouble, Sparkles, Leaf, ShoppingBag,
-  Armchair, Beef, Bath
+  Droplets, Flame, Coffee, Wifi, Dog, Car,
+  UtensilsCrossed, BedDouble, Leaf, ShoppingBag,
+  Armchair, Beef, Bath, WashingMachine
 } from "lucide-react";
 
 const amenities = [
