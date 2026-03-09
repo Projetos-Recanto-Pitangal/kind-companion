@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { RefreshCw, Leaf, Scale, TreePine, Home, Mountain, Volume2, BedDouble, CloudSun } from "lucide-react";
+import { RefreshCw, Leaf, Scale, TreePine, Home, Mountain, Volume2, BedDouble, CloudSun, MessageCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -107,11 +107,12 @@ const ComoParticipar = () => {
           </motion.p>
           <motion.div {...fadeUp} className="text-center mt-8">
             <a
-              href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20quero%20participar%20dos%20dias%20de%20cuidados%20com%20a%20sa%C3%BAde."
+              href="https://wa.me/5565996018233?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20quero%20participar%20dos%20dias%20de%20cuidados%20com%20a%20sa%C3%BAde."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
+              className="inline-flex items-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
             >
+              <MessageCircle className="w-5 h-5" />
               Quero Participar
             </a>
           </motion.div>
@@ -140,11 +141,12 @@ const ComoParticipar = () => {
           </motion.div>
           <motion.div {...fadeUp} className="text-center mt-8">
             <a
-              href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20quero%20participar%20do%20day%20use%2C%20como%20funciona%3F"
+              href="https://wa.me/5565996018233?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20quero%20participar%20do%20day%20use%2C%20como%20funciona%3F"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
+              className="inline-flex items-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
             >
+              <MessageCircle className="w-5 h-5" />
               Quero Participar
             </a>
           </motion.div>
