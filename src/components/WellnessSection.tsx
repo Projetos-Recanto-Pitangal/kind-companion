@@ -12,13 +12,16 @@ const WellnessSection = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="w-64 h-64 md:w-80 md:h-80 flex-shrink-0"
+          className="flex-shrink-0 flex flex-col items-center gap-4 max-w-xs"
         >
           <img
             src={celiaImage}
-            alt="Celia - Recanto Pitangal"
-            className="w-full h-full object-cover rounded-2xl shadow-lg"
+            alt="Célia Rabelo - Recanto Pitangal"
+            className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-2xl shadow-lg"
           />
+          <p className="font-body text-sm text-muted-foreground leading-relaxed text-center">
+            <span className="text-foreground font-semibold">Célia Rabelo</span> desenvolve um trabalho baseado em princípios naturais de saúde e já orientou pessoas de diversas regiões do Brasil e também de outros países, como Austrália, Canadá, Japão e Estados Unidos, que buscam melhorar sua qualidade de vida por meio de mudanças de hábitos e práticas naturais.
+          </p>
         </motion.div>
 
         {/* Text */}
