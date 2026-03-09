@@ -42,7 +42,8 @@ const StorySection = () => {
             </p>
 
             {/* Social links */}
-            <div className="flex flex-wrap gap-4 pt-4">
+            <p className="font-body text-sm text-gold uppercase tracking-wider pt-2 mb-2">Não deixem de seguir estes canais, conteúdos de qualidade!</p>
+            <div className="flex flex-wrap gap-4">
               <a
                 href="https://www.instagram.com/celiarabello7"
                 target="_blank"
