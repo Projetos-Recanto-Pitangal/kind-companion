@@ -33,15 +33,17 @@ const StorySection = () => {
             <p className="font-body text-muted-foreground text-base md:text-lg leading-relaxed">
               O Recanto Pitangal nasceu como uma pousada, um refúgio de tranquilidade e contemplação. Com o tempo, também passou a acolher pessoas que buscam um período de cuidado com o corpo, a mente e o espírito por meio de práticas naturais e acompanhamento baseado em princípios de saúde integrativa.
             </p>
-            <p className="font-body text-muted-foreground text-base md:text-lg leading-relaxed">
-              Algumas dessas experiências foram registradas pelo youtuber Chico Abelha durante uma visita ao local, onde ele entrevistou Célia Rabelo e conheceu um pouco do trabalho desenvolvido ali.
+            <p className="font-body text-base md:text-lg leading-relaxed">
+              <span className="text-foreground font-semibold">Algumas dessas experiências foram registradas pelo youtuber Chico Abelha</span>{" "}
+              <span className="text-muted-foreground">durante uma visita ao local, onde ele entrevistou Célia Rabelo e conheceu um pouco do trabalho desenvolvido ali.</span>
             </p>
             <p className="font-body text-foreground text-base md:text-lg leading-relaxed font-medium italic">
               Mais do que um espaço de hospedagem, o Recanto Pitangal se tornou, para muitos visitantes, um lugar de pausa, recuperação e transformação.
             </p>
 
             {/* Social links */}
-            <div className="flex flex-wrap gap-4 pt-4">
+            <p className="font-body text-sm text-gold uppercase tracking-wider pt-2 mb-2">Não deixem de seguir estes canais, conteúdos de qualidade!</p>
+            <div className="flex flex-wrap gap-4">
               <a
                 href="https://www.instagram.com/celiarabello7"
                 target="_blank"
