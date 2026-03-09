@@ -1,13 +1,31 @@
 import { motion } from "framer-motion";
-import { Heart, Sparkles } from "lucide-react";
+import { Calendar, Heart, Sun, Sparkles } from "lucide-react";
 
 const WHATSAPP_NUMBER = "5535984011430";
 
 const packages = [
   {
     icon: Sparkles,
-    title: "Pacotes de Feriado",
-    period: "Tiradentes 18–21/04 · Trabalho 30/04–03/05 · Corpus Christi 04–07/06",
+    title: "Tiradentes",
+    period: "18 a 21 de Abril/2026",
+    price: "R$ 2.580",
+    details: "3 diárias para 1 casal · Café da manhã incluso",
+    installment: "até 5x sem juros no cartão de crédito",
+    highlight: false,
+  },
+  {
+    icon: Calendar,
+    title: "Dia do Trabalho",
+    period: "30/04 a 03/05/2026",
+    price: "R$ 2.580",
+    details: "3 diárias para 1 casal · Café da manhã incluso",
+    installment: "até 5x sem juros no cartão de crédito",
+    highlight: false,
+  },
+  {
+    icon: Sun,
+    title: "Corpus Christi",
+    period: "04 a 07 de Junho/2026",
     price: "R$ 2.580",
     details: "3 diárias para 1 casal · Café da manhã incluso",
     installment: "até 5x sem juros no cartão de crédito",
