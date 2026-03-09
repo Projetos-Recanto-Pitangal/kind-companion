@@ -3,20 +3,20 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Carolina & Rafael",
-    text: "O lugar mais incrível que já ficamos! A banheira com cromoterapia, a lareira, a fogueira... Cada detalhe é pensado com muito carinho. Voltaremos com certeza!",
-    source: "Airbnb",
-    rating: 5,
-  },
-  {
-    name: "Juliana & Marcos",
-    text: "Superou todas as expectativas. O chalé é exatamente como nas fotos — até melhor! A limpeza impecável e o café da manhã delicioso. Experiência 10/10.",
+    name: "Luciana Cristina",
+    text: "Um pedacinho do céu... tudo maravilhoso: o atendimento e acolhimento do Herbert, o chalé, o café da manhã, limpeza, todos os detalhes e a delicadeza... perceptível a preocupação e dedicação para que os hóspedes desfrutem de dias cheios de tranquilidade e muitas memórias boas. Ah... e a vista... maravilhosa.",
     source: "Google",
     rating: 5,
   },
   {
-    name: "Amanda & Lucas",
-    text: "Nosso refúgio perfeito na serra. A anfitriã é muito atenciosa e o chalé tem tudo que precisamos. A fogueira sob as estrelas foi o ponto alto. Amamos!",
+    name: "Elizabete Colin Monteiro",
+    text: "A hospedagem foi incrível e melhor do que o descrito! Recepção fora do comum, maravilhosa! Café da manhã completo. Utensílios novinhos e completos! Cafeteira dolce gusto, chaleira elétrica, fonduezeira, banheira impecável. Levamos nossa cachorra e ela amou! Os anfitriões são maravilhosos e realmente diferenciados! Com certeza voltaremos!",
+    source: "Airbnb",
+    rating: 5,
+  },
+  {
+    name: "Camila",
+    text: "Nossa estadia foi simplesmente incrível! Casa muito legal e completa, tudo muito novinho, moderno, bonito e limpo. A vista é linda, muita natureza, paz e tranquilidade. O café da manhã é delicioso e super farto! O anfitrião Herbert é extremamente solícito, simpático e deu dicas excelentes. Recomendo muito!",
     source: "Airbnb",
     rating: 5,
   },
