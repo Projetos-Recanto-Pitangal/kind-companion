@@ -12,16 +12,21 @@ const WellnessSection = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex-shrink-0 flex flex-col items-center gap-4 max-w-xs"
+          className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-4 md:p-6 max-w-md"
         >
-          <img
-            src={celiaImage}
-            alt="Célia Rabelo - Recanto Pitangal"
-            className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-2xl shadow-lg"
-          />
-          <p className="font-body text-sm text-muted-foreground leading-relaxed text-center">
-            <span className="text-foreground font-semibold">Célia Rabelo</span> desenvolve um trabalho baseado em princípios naturais de saúde e já orientou pessoas de diversas regiões do Brasil e também de outros países, como Austrália, Canadá, Japão e Estados Unidos, que buscam melhorar sua qualidade de vida por meio de mudanças de hábitos e práticas naturais.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+            <img
+              src={celiaImage}
+              alt="Célia Rabelo - Recanto Pitangal"
+              className="w-40 h-40 md:w-48 md:h-48 object-cover rounded-xl flex-shrink-0"
+            />
+            <div className="text-center sm:text-left">
+              <Globe className="w-6 h-6 text-gold mb-2 mx-auto sm:mx-0" />
+              <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                <span className="text-foreground font-semibold">Célia Rabelo</span> desenvolve um trabalho baseado em princípios naturais de saúde e já orientou pessoas de diversas regiões do Brasil e também de outros países, como Austrália, Canadá, Japão e Estados Unidos, que buscam melhorar sua qualidade de vida por meio de mudanças de hábitos e práticas naturais.
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Text */}
