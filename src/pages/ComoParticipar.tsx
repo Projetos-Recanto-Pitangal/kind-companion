@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { RefreshCw, Leaf, Scale, TreePine, Home, Mountain, Volume2, BedDouble, CloudSun, MessageCircle, HeartPulse, Sun } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TestimonialBar from "@/components/TestimonialBar";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -9,6 +10,41 @@ const fadeUp = {
   viewport: { once: true },
   transition: { duration: 0.7 },
 };
+
+const barMessages1 = [
+  "Todas as pessoas que passam por esta experiência saem daqui renovadas.",
+  "Muitos dos nossos visitantes mudaram completamente suas vidas após a estadia.",
+  "Quem vem uma vez, volta sempre — e volta diferente.",
+  "A transformação começa quando você decide parar e ouvir seu corpo.",
+];
+
+const barMessages2 = [
+  "Cada participante descobre seu próprio caminho de cura e equilíbrio.",
+  "Pessoas chegam cansadas e partem com uma nova perspectiva de vida.",
+  "A reconexão com a natureza desperta algo que estava adormecido.",
+  "Aqui, o tempo desacelera e a saúde encontra espaço para florescer.",
+];
+
+const barMessages3 = [
+  "Um único dia pode ser o início de uma grande transformação.",
+  "Muitos visitantes dizem que o Day Use foi o ponto de virada nas suas vidas.",
+  "Basta um dia para sentir a diferença que o silêncio e a natureza fazem.",
+  "A experiência de um dia planta sementes que duram a vida inteira.",
+];
+
+const barMessages4 = [
+  "O ambiente acolhedor é parte essencial da transformação.",
+  "A Serra da Mantiqueira guarda uma energia que renova corpo e alma.",
+  "Muitos chegam para descansar e encontram algo muito maior.",
+  "A natureza ao redor cura de formas que a medicina nem sempre alcança.",
+];
+
+const barMessages5 = [
+  "Sua jornada de recomeço pode começar hoje.",
+  "Centenas de pessoas já transformaram suas vidas passando por aqui.",
+  "O primeiro passo é sempre o mais corajoso — e o mais importante.",
+  "Permita-se essa pausa. Você merece esse cuidado.",
+];
 
 const ComoParticipar = () => {
   return (
@@ -39,6 +75,7 @@ const ComoParticipar = () => {
           </motion.div>
         </div>
       </section>
+      <TestimonialBar messages={barMessages1} />
 
       {/* Story */}
       <section className="py-20 md:py-28 bg-background">
@@ -71,6 +108,7 @@ const ComoParticipar = () => {
           </motion.p>
         </div>
       </section>
+      <TestimonialBar messages={barMessages2} interval={5000} />
 
       {/* Períodos de Acompanhamento */}
       <section className="py-20 md:py-28 bg-card">
@@ -123,6 +161,7 @@ const ComoParticipar = () => {
           </motion.div>
         </div>
       </section>
+      <TestimonialBar messages={barMessages3} interval={4500} />
 
       {/* Day Use */}
       <section className="py-20 md:py-28 bg-background">
@@ -162,6 +201,7 @@ const ComoParticipar = () => {
           </motion.div>
         </div>
       </section>
+      <TestimonialBar messages={barMessages4} interval={5500} />
 
       {/* O Ambiente */}
       <section className="py-20 md:py-28 bg-card">
@@ -196,6 +236,7 @@ const ComoParticipar = () => {
           </motion.p>
         </div>
       </section>
+      <TestimonialBar messages={barMessages5} interval={4000} />
 
       {/* CTA Final */}
       <section className="py-20 md:py-28 bg-background">
