@@ -7,6 +7,7 @@ import gallery5 from "@/assets/gallery-5.png";
 import gallery6 from "@/assets/gallery-6.png";
 import gallery7 from "@/assets/gallery-7.png";
 import gallery8 from "@/assets/gallery-8.png";
+import gallery9 from "@/assets/gallery-9.jpg";
 
 const images = [
   { src: gallery1, alt: "Foto do chalé 1" },
@@ -17,6 +18,7 @@ const images = [
   { src: gallery6, alt: "Foto do chalé 6" },
   { src: gallery7, alt: "Foto do chalé 7" },
   { src: gallery8, alt: "Foto do chalé 8" },
+  { src: gallery9, alt: "Foto do chalé 9" },
 ];
 
 const GallerySection = () => {
@@ -39,7 +41,7 @@ const GallerySection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-5">
           {images.map((img, i) => (
             <motion.div
               key={i}
