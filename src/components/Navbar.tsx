@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Depoimentos", href: "#testimonials" },
   { label: "Tarifas", href: "#pricing" },
   { label: "Localização", href: "#location" },
+  { label: "Dúvidas", href: "#faq" },
 ];
 
 const Navbar = () => {
