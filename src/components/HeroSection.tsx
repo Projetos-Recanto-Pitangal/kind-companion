@@ -79,14 +79,29 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 1.4 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a
+          <motion.a
             href="https://wa.me/5535984011430?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Recanto%20Pitangal."
             target="_blank"
             rel="noopener noreferrer"
             className="font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-8 py-3.5 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
+            animate={{
+              scale: [1, 1.05, 1],
+              boxShadow: [
+                "0 0 0 0 rgba(191, 155, 48, 0)",
+                "0 0 0 8px rgba(191, 155, 48, 0.3)",
+                "0 0 0 0 rgba(191, 155, 48, 0)",
+              ],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.97 }}
           >
             Reserve Agora
-          </a>
+          </motion.a>
           <a
             href="#gallery"
             className="font-body font-medium border border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 px-8 py-3.5 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
