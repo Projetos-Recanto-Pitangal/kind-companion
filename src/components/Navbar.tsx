@@ -58,22 +58,23 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu - full screen overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-primary/98 backdrop-blur-md border-t border-moss-light/20"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden fixed inset-0 top-16 z-40 bg-primary/98 backdrop-blur-md"
           >
-            <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
+            <div className="flex flex-col items-center justify-center h-full gap-6 pb-20">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="font-body text-sm text-primary-foreground/80 hover:text-gold py-2 uppercase tracking-wide"
+                  className="font-body text-base text-primary-foreground/80 hover:text-gold py-2 uppercase tracking-widest transition-colors"
                 >
                   {link.label}
                 </a>
@@ -83,7 +84,7 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
-                className="font-body text-sm font-medium bg-gold text-accent-foreground px-5 py-2.5 rounded-md text-center uppercase tracking-wider mt-2"
+                className="font-body text-sm font-medium bg-gold text-accent-foreground px-8 py-3 rounded-md text-center uppercase tracking-wider mt-4"
               >
                 Reservar
               </a>
