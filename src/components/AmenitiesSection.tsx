@@ -24,7 +24,7 @@ const amenities = [
 
 const AmenitiesSection = () => {
   return (
-    <section id="amenities" className="py-20 md:py-28 bg-secondary">
+    <section id="amenities" className="py-16 md:py-28 bg-secondary">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
