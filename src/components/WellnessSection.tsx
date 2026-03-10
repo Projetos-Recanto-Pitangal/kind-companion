@@ -82,12 +82,15 @@ const WellnessSection = () => {
           <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl italic">
             Cada experiência é conduzida com atenção e respeito ao momento de cada pessoa, valorizando o processo individual de cuidado, descanso e reconexão com a própria saúde.
           </p>
-          <Link
-            to="/como-participar"
-            className="inline-block font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-8 py-3.5 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
-          >
-            Entenda como participar
-          </Link>
+          <div className="flex justify-center lg:justify-start">
+            <Link
+              to="/como-participar"
+              className="inline-flex items-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-8 py-3.5 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
+            >
+              <Leaf className="w-5 h-5" />
+              Entenda como participar
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>
