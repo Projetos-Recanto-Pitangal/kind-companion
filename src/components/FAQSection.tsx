@@ -90,7 +90,7 @@ Check-out: até 12h`,
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="py-20 md:py-28 bg-secondary">
+    <section id="faq" className="py-16 md:py-28 bg-secondary">
       <div className="container mx-auto px-4 md:px-8 max-w-3xl">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 mb-4">

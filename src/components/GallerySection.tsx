@@ -23,7 +23,7 @@ const images = [
 
 const GallerySection = () => {
   return (
-    <section id="gallery" className="py-20 md:py-28 bg-background">
+    <section id="gallery" className="py-16 md:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -41,7 +41,7 @@ const GallerySection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
           {images.map((img, i) => (
             <motion.div
               key={i}
