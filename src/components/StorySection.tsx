@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
-import { Instagram, Youtube } from "lucide-react";
+import { Instagram, Youtube, Play } from "lucide-react";
+import { useState } from "react";
 
 const StorySection = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-8">
@@ -82,14 +85,29 @@ const StorySection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:w-1/2 w-full"
           >
-            <div className="rounded-lg overflow-hidden shadow-lg aspect-video">
-              <iframe
-                src="https://www.youtube.com/embed/nVmd4SLxwqQ?modestbranding=1&showinfo=0&rel=0"
-                title="Chico Abelha - Um Centro de Cura em Sapucaí-Mirim"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
+            <div className="rounded-lg overflow-hidden shadow-lg aspect-video relative cursor-pointer" onClick={() => setIsPlaying(true)}>
+              {isPlaying ? (
+                <iframe
+                  src="https://www.youtube.com/embed/nVmd4SLxwqQ?autoplay=1&modestbranding=1&showinfo=0&rel=0&controls=1"
+                  title="Chico Abelha - Um Centro de Cura em Sapucaí-Mirim"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full absolute inset-0"
+                />
+              ) : (
+                <>
+                  <img
+                    src="https://img.youtube.com/vi/nVmd4SLxwqQ/maxresdefault.jpg"
+                    alt="Vídeo sobre o Recanto Pitangal"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/30 flex items-center justify-center hover:bg-black/40 transition-colors">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/90 flex items-center justify-center">
+                      <Play className="w-8 h-8 md:w-10 md:h-10 text-foreground ml-1" fill="currentColor" />
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           </motion.div>
         </div>
