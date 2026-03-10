@@ -4,24 +4,24 @@ import celiaImage from "@/assets/celia.png";
 
 const WellnessSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-card">
-      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12 md:gap-16">
+    <section className="py-16 md:py-28 bg-card">
+      <div className="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-8 md:gap-16">
         {/* Image */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-4 md:p-6 max-w-md"
+          className="flex-shrink-0 bg-white rounded-2xl shadow-lg p-4 md:p-6 w-full max-w-sm mx-auto lg:mx-0"
         >
-          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+          <div className="flex flex-col items-center gap-4">
             <img
               src={celiaImage}
               alt="Célia Rabelo - Recanto Pitangal"
-              className="w-40 h-40 md:w-48 md:h-48 object-cover rounded-xl flex-shrink-0"
+              className="w-36 h-36 md:w-48 md:h-48 object-cover rounded-xl flex-shrink-0"
             />
-            <div className="text-center sm:text-left">
-              <Globe className="w-6 h-6 text-gold mb-2 mx-auto sm:mx-0" />
+            <div className="text-center">
+              <Globe className="w-6 h-6 text-gold mb-2 mx-auto" />
               <p className="font-body text-sm text-muted-foreground leading-relaxed">
                 <span className="text-foreground font-semibold">Célia Rabelo</span> desenvolve um trabalho baseado em princípios naturais de saúde e já orientou pessoas de diversas regiões do <span className="font-semibold text-foreground">Brasil</span> e também de outros países, como <span className="font-semibold text-foreground">Austrália</span>, <span className="font-semibold text-foreground">Canadá</span>, <span className="font-semibold text-foreground">Japão</span> e <span className="font-semibold text-foreground">Estados Unidos</span>, que buscam melhorar sua qualidade de vida por meio de mudanças de hábitos e práticas naturais.
               </p>
