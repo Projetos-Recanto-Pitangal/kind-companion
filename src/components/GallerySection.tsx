@@ -5,14 +5,18 @@ import gallery3 from "@/assets/gallery-3.png";
 import gallery4 from "@/assets/gallery-4.png";
 import gallery5 from "@/assets/gallery-5.png";
 import gallery6 from "@/assets/gallery-6.png";
+import gallery7 from "@/assets/gallery-7.png";
+import gallery8 from "@/assets/gallery-8.png";
 
 const images = [
-  { src: gallery3, alt: "Suíte romântica com cama queen-size e pétalas", label: "Suíte" },
-  { src: gallery5, alt: "Área externa do chalé", label: "Área Externa" },
-  { src: gallery1, alt: "Vista do chalé na natureza", label: "O Chalé" },
-  { src: gallery4, alt: "Café da manhã artesanal completo", label: "Café da manhã" },
-  { src: gallery2, alt: "Ambiente acolhedor do chalé", label: "Ambiente" },
-  { src: gallery6, alt: "Detalhes do espaço", label: "Detalhes" },
+  { src: gallery1, alt: "Foto do chalé 1" },
+  { src: gallery2, alt: "Foto do chalé 2" },
+  { src: gallery3, alt: "Foto do chalé 3" },
+  { src: gallery4, alt: "Foto do chalé 4" },
+  { src: gallery5, alt: "Foto do chalé 5" },
+  { src: gallery6, alt: "Foto do chalé 6" },
+  { src: gallery7, alt: "Foto do chalé 7" },
+  { src: gallery8, alt: "Foto do chalé 8" },
 ];
 
 const GallerySection = () => {
@@ -35,7 +39,7 @@ const GallerySection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {images.map((img, i) => (
             <motion.div
               key={i}
