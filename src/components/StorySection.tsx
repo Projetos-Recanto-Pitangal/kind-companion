@@ -102,15 +102,21 @@ const StorySection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:w-1/2 w-full"
           >
-            <div className="rounded-lg overflow-hidden shadow-lg aspect-video relative cursor-pointer" onClick={() => !isPlaying && setIsPlaying(true)}>
+            <div className="rounded-lg overflow-hidden shadow-lg aspect-video relative cursor-pointer" onClick={togglePlayPause}>
               {isPlaying ? (
-                <iframe
-                  src="https://www.youtube.com/embed/nVmd4SLxwqQ?autoplay=1&controls=0&modestbranding=1&showinfo=0&rel=0&disablekb=1&iv_load_policy=3&fs=0&playsinline=1"
-                  title="Chico Abelha - Um Centro de Cura em Sapucaí-Mirim"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full absolute inset-0 pointer-events-none"
-                />
+                <>
+                  <iframe
+                    ref={iframeRef}
+                    src="https://www.youtube.com/embed/nVmd4SLxwqQ?autoplay=1&controls=0&modestbranding=1&showinfo=0&rel=0&disablekb=1&iv_load_policy=3&fs=0&playsinline=1&enablejsapi=1&origin=*"
+                    title="Chico Abelha - Um Centro de Cura em Sapucaí-Mirim"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full absolute inset-0 pointer-events-none"
+                  />
+                  {/* Clickable overlay for pause/play */}
+                  <div className="absolute inset-0 z-10" />
+                </>
+              
               ) : (
                 <>
                   <img
