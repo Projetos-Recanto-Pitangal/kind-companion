@@ -121,7 +121,7 @@ const StorySection = () => {
               ) : (
                 <>
                   <img
-                    src="https://img.youtube.com/vi/nVmd4SLxwqQ/maxresdefault.jpg"
+                    src={videoCover}
                     alt="Vídeo sobre o Recanto Pitangal"
                     className="w-full h-full object-cover"
                   />
