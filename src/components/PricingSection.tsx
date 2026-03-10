@@ -121,16 +121,29 @@ const PricingSection = () => {
           ))}
         </div>
 
-        {/* External platforms */}
+        {/* Social proof badges */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-10 text-center"
+          className="mt-12 flex flex-col items-center gap-6"
         >
-          <p className="font-body text-muted-foreground text-sm mb-4">Também disponível em:</p>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex items-center gap-2 bg-card border border-gold/30 rounded-full px-5 py-2.5 shadow-sm">
+              <span className="text-gold text-lg font-bold">★</span>
+              <span className="font-body text-sm font-semibold text-foreground">Nota 5,0</span>
+              <span className="font-body text-xs text-muted-foreground">no Google</span>
+            </div>
+            <div className="flex items-center gap-2 bg-card border border-gold/30 rounded-full px-5 py-2.5 shadow-sm">
+              <span className="text-gold text-lg font-bold">♥</span>
+              <span className="font-body text-sm font-semibold text-foreground">Preferido dos Hóspedes</span>
+              <span className="font-body text-xs text-muted-foreground">no Airbnb</span>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center gap-2">
+            <p className="font-body text-muted-foreground text-sm">Também disponível em:</p>
             <a
               href="https://www.airbnb.com.br/rooms/1348774902789161936"
               target="_blank"
@@ -139,11 +152,6 @@ const PricingSection = () => {
             >
               Airbnb
             </a>
-            <span
-              className="font-body text-sm font-medium text-muted-foreground border border-border rounded-md px-6 py-2.5 cursor-default opacity-60"
-            >
-              Booking.com (em breve)
-            </span>
           </div>
         </motion.div>
       </div>
