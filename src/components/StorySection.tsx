@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Instagram, Youtube, Play } from "lucide-react";
 import { useState, useRef, useCallback } from "react";
+import videoCover from "@/assets/video-cover.png";
 
 const StorySection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -120,7 +121,7 @@ const StorySection = () => {
               ) : (
                 <>
                   <img
-                    src="https://img.youtube.com/vi/nVmd4SLxwqQ/maxresdefault.jpg"
+                    src={videoCover}
                     alt="Vídeo sobre o Recanto Pitangal"
                     className="w-full h-full object-cover"
                   />
