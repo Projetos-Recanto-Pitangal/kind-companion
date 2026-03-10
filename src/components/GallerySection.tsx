@@ -35,7 +35,7 @@ const GallerySection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {images.map((img, i) => (
             <motion.div
               key={i}
@@ -43,22 +43,14 @@ const GallerySection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`relative group overflow-hidden rounded-lg ${
-                i === 0 ? "md:col-span-2 md:row-span-2" : ""
-              }`}
+              className="relative group overflow-hidden rounded-lg aspect-[4/3]"
             >
               <img
                 src={img.src}
                 alt={img.alt}
-                className={`w-full object-cover transition-transform duration-700 group-hover:scale-105 ${
-                  i === 0 ? "h-64 md:h-full" : "h-64 md:h-72"
-                }`}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <span className="absolute bottom-4 left-4 font-body text-sm text-primary-foreground uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                {img.label}
-              </span>
             </motion.div>
           ))}
         </div>
