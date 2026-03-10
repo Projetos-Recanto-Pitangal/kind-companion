@@ -5,7 +5,7 @@ import celiaImage from "@/assets/celia.png";
 const WellnessSection = () => {
   return (
     <section className="py-16 md:py-28 bg-card">
-      <div className="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-8 md:gap-16">
+      <div className="max-w-6xl mx-auto px-[10px] md:px-4 flex flex-col lg:flex-row items-center gap-8 md:gap-16">
         {/* Image */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
