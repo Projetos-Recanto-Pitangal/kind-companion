@@ -24,7 +24,7 @@ const Navbar = () => {
           <div className="container mx-auto px-4 md:px-8">
             <div className="flex items-center justify-between h-16 md:h-20">
               <a href="#hero" className="flex items-center gap-2">
-                <img src={logo} alt="Recanto Pitangal" className="h-12 md:h-14 w-auto" />
+                <img src={logo} alt="Recanto Pitangal" className="h-8 md:h-10 w-auto" />
               </a>
 
               {/* Desktop nav */}
