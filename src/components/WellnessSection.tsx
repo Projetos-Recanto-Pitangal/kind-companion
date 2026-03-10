@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { RefreshCw, Leaf, Scale, TreePine, Globe, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 import celiaImage from "@/assets/celia.png";
 
 const WellnessSection = () => {
