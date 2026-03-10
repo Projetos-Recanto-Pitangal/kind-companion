@@ -1,9 +1,26 @@
 import { motion } from "framer-motion";
 import { Instagram, Youtube, Play } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 
 const StorySection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  const togglePlayPause = useCallback(() => {
+    if (!isPlaying) {
+      setIsPlaying(true);
+      return;
+    }
+    const iframe = iframeRef.current;
+    if (!iframe?.contentWindow) return;
+    if (isPaused) {
+      iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+    } else {
+      iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+    }
+    setIsPaused(!isPaused);
+  }, [isPlaying, isPaused]);
 
   return (
     <section className="py-20 md:py-28 bg-background">
