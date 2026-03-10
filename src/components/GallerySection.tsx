@@ -1,16 +1,18 @@
 import { motion } from "framer-motion";
-import galleryJacuzzi from "@/assets/gallery-jacuzzi.jpg";
-import galleryFireplace from "@/assets/gallery-fireplace.jpg";
-import galleryFirepit from "@/assets/gallery-firepit.jpg";
-import galleryBreakfast from "@/assets/gallery-breakfast.jpg";
-import galleryBedroom from "@/assets/gallery-bedroom.jpg";
+import gallery1 from "@/assets/gallery-1.png";
+import gallery2 from "@/assets/gallery-2.png";
+import gallery3 from "@/assets/gallery-3.png";
+import gallery4 from "@/assets/gallery-4.png";
+import gallery5 from "@/assets/gallery-5.png";
+import gallery6 from "@/assets/gallery-6.png";
 
 const images = [
-  { src: galleryBedroom, alt: "Quarto com cama queen-size e iluminação romântica", label: "Suíte" },
-  { src: galleryJacuzzi, alt: "Banheira de hidromassagem com cromoterapia", label: "Hidromassagem" },
-  { src: galleryFireplace, alt: "Sala com lareira e ambiente acolhedor", label: "Lareira" },
-  { src: galleryFirepit, alt: "Fogueira externa sob as estrelas", label: "Fogueira" },
-  { src: galleryBreakfast, alt: "Café da manhã artesanal na varanda", label: "Café da manhã" },
+  { src: gallery3, alt: "Suíte romântica com cama queen-size e pétalas", label: "Suíte" },
+  { src: gallery5, alt: "Área externa do chalé", label: "Área Externa" },
+  { src: gallery1, alt: "Vista do chalé na natureza", label: "O Chalé" },
+  { src: gallery4, alt: "Café da manhã artesanal completo", label: "Café da manhã" },
+  { src: gallery2, alt: "Ambiente acolhedor do chalé", label: "Ambiente" },
+  { src: gallery6, alt: "Detalhes do espaço", label: "Detalhes" },
 ];
 
 const GallerySection = () => {
@@ -33,7 +35,6 @@ const GallerySection = () => {
           </p>
         </motion.div>
 
-        {/* Masonry-style grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {images.map((img, i) => (
             <motion.div
