@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { RefreshCw, Leaf, Scale, TreePine, Globe, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 import celiaImage from "@/assets/celia.png";
 
 const WellnessSection = () => {
@@ -81,12 +82,12 @@ const WellnessSection = () => {
           <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl italic">
             Cada experiência é conduzida com atenção e respeito ao momento de cada pessoa, valorizando o processo individual de cuidado, descanso e reconexão com a própria saúde.
           </p>
-          <a
-            href="/como-participar"
+          <Link
+            to="/como-participar"
             className="inline-block font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-8 py-3.5 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
           >
             Entenda como participar
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
