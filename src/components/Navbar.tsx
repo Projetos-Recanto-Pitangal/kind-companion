@@ -37,7 +37,9 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="#pricing"
+              href="https://wa.me/5535984011430?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Recanto%20Pitangal."
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-body text-sm font-medium bg-gold text-accent-foreground px-5 py-2.5 rounded-md hover:bg-gold-light transition-colors duration-300 uppercase tracking-wider"
             >
               Reservar
@@ -76,7 +78,9 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="#pricing"
+                href="https://wa.me/5535984011430?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Recanto%20Pitangal."
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="font-body text-sm font-medium bg-gold text-accent-foreground px-5 py-2.5 rounded-md text-center uppercase tracking-wider mt-2"
               >
