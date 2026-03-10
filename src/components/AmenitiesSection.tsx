@@ -19,7 +19,7 @@ const amenities = [
   { icon: Wifi, label: "Wi-Fi de Qualidade", desc: "Internet de alta velocidade" },
   { icon: Coffee, label: "Café da Manhã Incluso", desc: "Artesanal e farto" },
   { icon: Car, label: "Estacionamento Coberto", desc: "Garagem inclusa" },
-  { icon: Droplet, label: "Tanque de Lavanderia", desc: "Disponível para os hóspedes" },
+  { icon: Droplet, label: "Espaço Lavanderia", desc: "Tanque e varal" },
 ];
 
 const AmenitiesSection = () => {
