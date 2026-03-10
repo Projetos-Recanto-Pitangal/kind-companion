@@ -44,7 +44,7 @@ const WellnessSection = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center lg:text-left"
+          className="text-left"
         >
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight mb-6">
             Um espaço de cuidado e reconexão com a saúde
