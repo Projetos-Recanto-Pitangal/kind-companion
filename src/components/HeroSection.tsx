@@ -80,7 +80,9 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
-            href="#pricing"
+            href="https://wa.me/5535984011430?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Recanto%20Pitangal."
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-8 py-3.5 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
           >
             Reserve Agora
