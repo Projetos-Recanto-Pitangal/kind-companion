@@ -57,7 +57,7 @@ const WellnessSection = () => {
 
           <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-4 max-w-xl">
             Em determinados períodos, o Recanto Pitangal recebe pessoas que desejam passar alguns dias em um ambiente tranquilo, com orientação sobre práticas naturais de saúde. Esses momentos de cuidado são conduzidos por{" "}
-            <span className="text-foreground font-semibold">Célia Rabelo</span>, que atua na área de saúde natural e integrativa, com formação em Gastronomia pelo SENAC e especialização em Medicina Funcional Integrativa, além de anos de estudo e experiência prática no acompanhamento de pessoas que buscam melhorar sua qualidade de vida por meio de mudanças de hábitos e princípios naturais de saúde.
+            <span className="text-foreground font-semibold">Célia Rabello</span>, que atua na área de saúde natural e integrativa, com formação em Gastronomia pelo SENAC e especialização em Medicina Funcional Integrativa, além de anos de estudo e experiência prática no acompanhamento de pessoas que buscam melhorar sua qualidade de vida por meio de mudanças de hábitos e princípios naturais de saúde.
           </p>
 
           <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-3 max-w-xl">
