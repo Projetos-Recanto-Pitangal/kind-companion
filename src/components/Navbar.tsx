@@ -23,7 +23,7 @@ const Navbar = () => {
         <nav className="bg-primary/95 backdrop-blur-md border-b border-moss-light/20">
           <div className="container mx-auto px-4 md:px-8">
             <div className="flex items-center justify-between h-16 md:h-20">
-              <a href="#hero" className="flex items-center gap-2">
+              <a href="/" className="flex items-center gap-2">
                 <img src={logo} alt="Recanto Pitangal" className="h-8 md:h-10 w-auto" />
               </a>
 
