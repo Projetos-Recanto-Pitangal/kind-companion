@@ -112,52 +112,60 @@ const ComoParticipar = () => {
 
       {/* Períodos de Acompanhamento */}
       <section className="py-20 md:py-28 bg-card">
-        <div className="max-w-4xl mx-auto px-4">
-          <motion.div {...fadeUp} className="text-center mb-12">
-            <div className="flex justify-center mb-4">
-              <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center">
-                <HeartPulse className="w-7 h-7 text-gold" />
-              </div>
-            </div>
-            <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">Períodos de Acompanhamento</p>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
-              Dias dedicados ao cuidado com a saúde
-            </h2>
-          </motion.div>
-          <motion.p {...fadeUp} className="font-body text-base md:text-lg text-muted-foreground leading-relaxed text-center max-w-2xl mx-auto mb-10">
-            Em determinados períodos, o Recanto Pitangal recebe pessoas que desejam passar alguns dias em um ambiente tranquilo, com orientação sobre práticas naturais de saúde.
-          </motion.p>
-          <motion.p {...fadeUp} className="font-body text-base md:text-lg text-muted-foreground leading-relaxed text-center mb-8">
-            Durante esse tempo, os participantes podem:
-          </motion.p>
-          <motion.div {...fadeUp} className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-10">
-            {[
-              { icon: RefreshCw, text: "reorganizar hábitos de vida" },
-              { icon: Leaf, text: "aprender práticas naturais de cuidado com o corpo" },
-              { icon: Scale, text: "experimentar rotinas mais equilibradas" },
-              { icon: TreePine, text: "descansar em meio à natureza" },
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center">
-                  <item.icon className="w-5 h-5 text-gold" />
+        <div className="max-w-4xl mx-auto px-[20px] md:px-4">
+          <motion.div
+            {...fadeUp}
+            className="relative bg-background border-2 border-gold/30 rounded-2xl shadow-[0_8px_40px_-12px_rgba(191,155,48,0.15)] p-8 md:p-12 overflow-hidden"
+          >
+            {/* Decorative accent */}
+            <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-gold/60 via-gold to-gold/60" />
+
+            <div className="text-center mb-10">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 rounded-full bg-gold/15 flex items-center justify-center ring-4 ring-gold/10">
+                  <HeartPulse className="w-8 h-8 text-gold" />
                 </div>
-                <span className="font-body text-base text-muted-foreground leading-snug pt-2">{item.text}</span>
               </div>
-            ))}
-          </motion.div>
-          <motion.p {...fadeUp} className="font-body text-base md:text-lg text-muted-foreground leading-relaxed text-center italic">
-            Cada experiência é única e respeita o momento de cada pessoa.
-          </motion.p>
-          <motion.div {...fadeUp} className="text-center mt-8">
-            <a
-              href="https://wa.me/5535984011430?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20quero%20participar%20dos%20dias%20de%20cuidados%20com%20a%20sa%C3%BAde."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
-            >
-              <MessageCircle className="w-5 h-5" />
-              Quero Participar
-            </a>
+              <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">Períodos de Acompanhamento</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
+                Dias dedicados ao cuidado com a saúde
+              </h2>
+            </div>
+            <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed text-center max-w-2xl mx-auto mb-10">
+              Em determinados períodos, o Recanto Pitangal recebe pessoas que desejam passar alguns dias em um ambiente tranquilo, com orientação sobre práticas naturais de saúde.
+            </p>
+            <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed text-center mb-8">
+              Durante esse tempo, os participantes podem:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-10">
+              {[
+                { icon: RefreshCw, text: "reorganizar hábitos de vida" },
+                { icon: Leaf, text: "aprender práticas naturais de cuidado com o corpo" },
+                { icon: Scale, text: "experimentar rotinas mais equilibradas" },
+                { icon: TreePine, text: "descansar em meio à natureza" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center">
+                    <item.icon className="w-5 h-5 text-gold" />
+                  </div>
+                  <span className="font-body text-base text-muted-foreground leading-snug pt-2">{item.text}</span>
+                </div>
+              ))}
+            </div>
+            <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed text-center italic mb-8">
+              Cada experiência é única e respeita o momento de cada pessoa.
+            </p>
+            <div className="text-center">
+              <a
+                href="https://wa.me/5535984011430?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20quero%20participar%20dos%20dias%20de%20cuidados%20com%20a%20sa%C3%BAde."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Quero Participar
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -165,39 +173,47 @@ const ComoParticipar = () => {
 
       {/* Day Use */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="max-w-3xl mx-auto px-4">
-          <motion.div {...fadeUp} className="text-center mb-12">
-            <div className="flex justify-center mb-4">
-              <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center">
-                <Sun className="w-7 h-7 text-gold" />
+        <div className="max-w-3xl mx-auto px-[20px] md:px-4">
+          <motion.div
+            {...fadeUp}
+            className="relative bg-card border-2 border-gold/30 rounded-2xl shadow-[0_8px_40px_-12px_rgba(191,155,48,0.15)] p-8 md:p-12 overflow-hidden"
+          >
+            {/* Decorative accent */}
+            <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-gold/60 via-gold to-gold/60" />
+
+            <div className="text-center mb-10">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 rounded-full bg-gold/15 flex items-center justify-center ring-4 ring-gold/10">
+                  <Sun className="w-8 h-8 text-gold" />
+                </div>
               </div>
+              <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">Day Use Terapêutico</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
+                Uma experiência de cuidado em um único dia
+              </h2>
             </div>
-            <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">Day Use Terapêutico</p>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
-              Uma experiência de cuidado em um único dia
-            </h2>
-          </motion.div>
-          <motion.div {...fadeUp} className="space-y-5 font-body text-base md:text-lg text-muted-foreground leading-relaxed text-center">
-            <p>
-              Para quem deseja conhecer o espaço ou iniciar esse processo de forma mais breve, também existe a opção de Day Use.
-            </p>
-            <p>
-              Nesta modalidade, a pessoa passa o dia no Recanto Pitangal, utilizando o chalé e participando de algumas práticas naturais de cuidado e relaxamento.
-            </p>
-            <p className="italic">
-              É uma forma de vivenciar o ambiente e iniciar um processo de reconexão com a saúde.
-            </p>
-          </motion.div>
-          <motion.div {...fadeUp} className="text-center mt-8">
-            <a
-              href="https://wa.me/5535984011430?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20quero%20participar%20do%20day%20use%2C%20como%20funciona%3F"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
-            >
-              <MessageCircle className="w-5 h-5" />
-              Quero Participar
-            </a>
+            <div className="space-y-5 font-body text-base md:text-lg text-muted-foreground leading-relaxed text-center">
+              <p>
+                Para quem deseja conhecer o espaço ou iniciar esse processo de forma mais breve, também existe a opção de Day Use.
+              </p>
+              <p>
+                Nesta modalidade, a pessoa passa o dia no Recanto Pitangal, utilizando o chalé e participando de algumas práticas naturais de cuidado e relaxamento.
+              </p>
+              <p className="italic">
+                É uma forma de vivenciar o ambiente e iniciar um processo de reconexão com a saúde.
+              </p>
+            </div>
+            <div className="text-center mt-8">
+              <a
+                href="https://wa.me/5535984011430?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20quero%20participar%20do%20day%20use%2C%20como%20funciona%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Quero Participar
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
