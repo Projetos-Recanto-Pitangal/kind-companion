@@ -18,7 +18,7 @@ const WellnessSection = () => {
           <div className="flex flex-col items-center gap-4">
             <img
               src={celiaImage}
-              alt="Célia Rabelo - Recanto Pitangal"
+              alt="Célia Rabello - Recanto Pitangal"
               className="w-36 h-36 md:w-48 md:h-48 object-cover rounded-xl flex-shrink-0"
             />
             <div className="text-center">
