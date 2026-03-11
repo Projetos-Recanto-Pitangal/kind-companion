@@ -1,5 +1,5 @@
 import { Heart } from "lucide-react";
-import logo from "@/assets/logo-recanto-pitangal.png";
+import logo from "@/assets/logo-recanto-pitangal-footer.png";
 
 const Footer = () => {
   return (
