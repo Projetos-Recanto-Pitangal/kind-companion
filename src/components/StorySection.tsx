@@ -56,7 +56,7 @@ const StorySection = () => {
             </p>
             <p className="font-body text-base md:text-lg leading-relaxed">
               <span className="text-foreground font-semibold">Algumas dessas experiências foram registradas pelo youtuber Chico Abelha</span>{" "}
-              <span className="text-muted-foreground">durante uma visita ao local, onde ele entrevistou Célia Rabelo e conheceu um pouco do trabalho desenvolvido ali.</span>
+              <span className="text-muted-foreground">durante uma visita ao local, onde ele entrevistou Célia Rabello e conheceu um pouco do trabalho desenvolvido ali.</span>
             </p>
             <p className="font-body text-foreground text-base md:text-lg leading-relaxed font-medium italic">
               Mais do que um espaço de hospedagem, o Recanto Pitangal se tornou, para muitos visitantes, um lugar de pausa, recuperação e transformação.

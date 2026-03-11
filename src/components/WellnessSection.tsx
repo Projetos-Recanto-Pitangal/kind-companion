@@ -18,13 +18,13 @@ const WellnessSection = () => {
           <div className="flex flex-col items-center gap-4">
             <img
               src={celiaImage}
-              alt="Célia Rabelo - Recanto Pitangal"
+              alt="Célia Rabello - Recanto Pitangal"
               className="w-36 h-36 md:w-48 md:h-48 object-cover rounded-xl flex-shrink-0"
             />
             <div className="text-center">
               <Globe className="w-6 h-6 text-gold mb-2 mx-auto" />
               <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                <span className="text-foreground font-semibold">Célia Rabelo</span> desenvolve um trabalho baseado em princípios naturais de saúde e já orientou pessoas de diversas regiões do <span className="font-semibold text-foreground">Brasil</span> e também de outros países, como <span className="font-semibold text-foreground">Austrália</span>, <span className="font-semibold text-foreground">Canadá</span>, <span className="font-semibold text-foreground">Japão</span> e <span className="font-semibold text-foreground">Estados Unidos</span>, que buscam melhorar sua qualidade de vida por meio de mudanças de hábitos e práticas naturais.
+                <span className="text-foreground font-semibold">Célia Rabello</span> desenvolve um trabalho baseado em princípios naturais de saúde e já orientou pessoas de diversas regiões do <span className="font-semibold text-foreground">Brasil</span> e também de outros países, como <span className="font-semibold text-foreground">Austrália</span>, <span className="font-semibold text-foreground">Canadá</span>, <span className="font-semibold text-foreground">Japão</span> e <span className="font-semibold text-foreground">Estados Unidos</span>, que buscam melhorar sua qualidade de vida por meio de mudanças de hábitos e práticas naturais.
               </p>
               <a
                 href="https://www.instagram.com/celiarabello7"
@@ -57,7 +57,7 @@ const WellnessSection = () => {
 
           <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-4 max-w-xl">
             Em determinados períodos, o Recanto Pitangal recebe pessoas que desejam passar alguns dias em um ambiente tranquilo, com orientação sobre práticas naturais de saúde. Esses momentos de cuidado são conduzidos por{" "}
-            <span className="text-foreground font-semibold">Célia Rabelo</span>, que atua na área de saúde natural e integrativa, com formação em Gastronomia pelo SENAC e especialização em Medicina Funcional Integrativa, além de anos de estudo e experiência prática no acompanhamento de pessoas que buscam melhorar sua qualidade de vida por meio de mudanças de hábitos e princípios naturais de saúde.
+            <span className="text-foreground font-semibold">Célia Rabello</span>, que atua na área de saúde natural e integrativa, com formação em Gastronomia pelo SENAC e especialização em Medicina Funcional Integrativa, além de anos de estudo e experiência prática no acompanhamento de pessoas que buscam melhorar sua qualidade de vida por meio de mudanças de hábitos e princípios naturais de saúde.
           </p>
 
           <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-3 max-w-xl">

@@ -88,7 +88,7 @@ const ComoParticipar = () => {
             Algumas pessoas passaram a buscar o local não apenas para descansar, mas para cuidar da própria saúde de forma mais profunda.
           </motion.p>
           <motion.p {...fadeUp}>
-            Foi nesse contexto que o trabalho de <span className="text-foreground font-semibold">Célia Rabelo</span> encontrou seu lugar no Recanto Pitangal.
+            Foi nesse contexto que o trabalho de <span className="text-foreground font-semibold">Célia Rabello</span> encontrou seu lugar no Recanto Pitangal.
           </motion.p>
           <motion.p {...fadeUp}>
             Depois de anos trabalhando na área de publicidade e enfrentando problemas de saúde, ela decidiu transformar sua própria vida. Ao estudar e aplicar princípios naturais de cuidado com o corpo e mudança de hábitos, experimentou uma grande transformação pessoal.
