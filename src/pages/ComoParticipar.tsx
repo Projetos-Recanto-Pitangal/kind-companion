@@ -173,39 +173,47 @@ const ComoParticipar = () => {
 
       {/* Day Use */}
       <section className="py-20 md:py-28 bg-background">
-        <div className="max-w-3xl mx-auto px-4">
-          <motion.div {...fadeUp} className="text-center mb-12">
-            <div className="flex justify-center mb-4">
-              <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center">
-                <Sun className="w-7 h-7 text-gold" />
+        <div className="max-w-3xl mx-auto px-[20px] md:px-4">
+          <motion.div
+            {...fadeUp}
+            className="relative bg-card border-2 border-gold/30 rounded-2xl shadow-[0_8px_40px_-12px_rgba(191,155,48,0.15)] p-8 md:p-12 overflow-hidden"
+          >
+            {/* Decorative accent */}
+            <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-gold/60 via-gold to-gold/60" />
+
+            <div className="text-center mb-10">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 rounded-full bg-gold/15 flex items-center justify-center ring-4 ring-gold/10">
+                  <Sun className="w-8 h-8 text-gold" />
+                </div>
               </div>
+              <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">Day Use Terapêutico</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
+                Uma experiência de cuidado em um único dia
+              </h2>
             </div>
-            <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">Day Use Terapêutico</p>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
-              Uma experiência de cuidado em um único dia
-            </h2>
-          </motion.div>
-          <motion.div {...fadeUp} className="space-y-5 font-body text-base md:text-lg text-muted-foreground leading-relaxed text-center">
-            <p>
-              Para quem deseja conhecer o espaço ou iniciar esse processo de forma mais breve, também existe a opção de Day Use.
-            </p>
-            <p>
-              Nesta modalidade, a pessoa passa o dia no Recanto Pitangal, utilizando o chalé e participando de algumas práticas naturais de cuidado e relaxamento.
-            </p>
-            <p className="italic">
-              É uma forma de vivenciar o ambiente e iniciar um processo de reconexão com a saúde.
-            </p>
-          </motion.div>
-          <motion.div {...fadeUp} className="text-center mt-8">
-            <a
-              href="https://wa.me/5535984011430?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20quero%20participar%20do%20day%20use%2C%20como%20funciona%3F"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
-            >
-              <MessageCircle className="w-5 h-5" />
-              Quero Participar
-            </a>
+            <div className="space-y-5 font-body text-base md:text-lg text-muted-foreground leading-relaxed text-center">
+              <p>
+                Para quem deseja conhecer o espaço ou iniciar esse processo de forma mais breve, também existe a opção de Day Use.
+              </p>
+              <p>
+                Nesta modalidade, a pessoa passa o dia no Recanto Pitangal, utilizando o chalé e participando de algumas práticas naturais de cuidado e relaxamento.
+              </p>
+              <p className="italic">
+                É uma forma de vivenciar o ambiente e iniciar um processo de reconexão com a saúde.
+              </p>
+            </div>
+            <div className="text-center mt-8">
+              <a
+                href="https://wa.me/5535984011430?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20quero%20participar%20do%20day%20use%2C%20como%20funciona%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Quero Participar
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
