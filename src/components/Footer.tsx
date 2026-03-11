@@ -18,13 +18,19 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-sm font-semibold text-gold uppercase tracking-wider mb-4">Navegação</h4>
             <div className="flex flex-col gap-2">
-              {["O Chalé", "Diferenciais", "Depoimentos", "Tarifas", "Localização"].map((item) => (
+              {[
+                { label: "O Chalé", href: "#gallery" },
+                { label: "Diferenciais", href: "#amenities" },
+                { label: "Depoimentos", href: "#testimonials" },
+                { label: "Tarifas", href: "#pricing" },
+                { label: "Localização", href: "#location" },
+              ].map((item) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(/\s/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`}
+                  key={item.label}
+                  href={item.href}
                   className="font-body text-sm text-primary-foreground/60 hover:text-gold transition-colors"
                 >
-                  {item}
+                  {item.label}
                 </a>
               ))}
             </div>
