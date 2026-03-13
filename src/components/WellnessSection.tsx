@@ -24,9 +24,21 @@ const WellnessSection = () => {
               decoding="async"
             />
             <div className="text-center">
-              <Globe className="w-6 h-6 text-gold mb-2 mx-auto" />
-              <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                <span className="text-foreground font-semibold">Célia Rabello</span> desenvolve um trabalho baseado em princípios naturais de saúde e já orientou pessoas de diversas regiões do <span className="font-semibold text-foreground">Brasil</span> e também de outros países, como <span className="font-semibold text-foreground">Austrália</span>, <span className="font-semibold text-foreground">Canadá</span>, <span className="font-semibold text-foreground">Japão</span> e <span className="font-semibold text-foreground">Estados Unidos</span>, que buscam melhorar sua qualidade de vida por meio de mudanças de hábitos e práticas naturais.
+              <h3 className="font-display text-lg font-semibold text-foreground">Célia Rabello</h3>
+              <p className="font-body text-xs text-gold tracking-wide mt-1">
+                Naturologista • Chef Vegetariana • Professora • Palestrante
+              </p>
+              <div className="mt-3 space-y-1">
+                <p className="font-body text-xs text-muted-foreground">Cientista da <span className="font-semibold text-foreground">ABRASCI</span></p>
+                <p className="font-body text-xs text-muted-foreground">Especialista em <span className="font-semibold text-foreground">Medicina do Estilo de Vida (MEV)</span></p>
+              </div>
+              <div className="mt-4 py-3 px-4 bg-gold/10 rounded-lg">
+                <span className="font-display text-3xl font-bold text-gold">+20.000</span>
+                <p className="font-body text-xs text-muted-foreground mt-1">alunos impactados</p>
+              </div>
+              <Globe className="w-5 h-5 text-gold mt-3 mx-auto" />
+              <p className="font-body text-xs text-muted-foreground leading-relaxed mt-1">
+                Alcance internacional: <span className="font-semibold text-foreground">Brasil</span>, <span className="font-semibold text-foreground">Austrália</span>, <span className="font-semibold text-foreground">Canadá</span>, <span className="font-semibold text-foreground">Japão</span> e <span className="font-semibold text-foreground">EUA</span>.
               </p>
               <a
                 href="https://www.instagram.com/celiarabello7"
