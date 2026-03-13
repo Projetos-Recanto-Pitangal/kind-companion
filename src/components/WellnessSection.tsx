@@ -20,6 +20,8 @@ const WellnessSection = () => {
               src={celiaImage}
               alt="Célia Rabello - Recanto Pitangal"
               className="w-36 h-36 md:w-48 md:h-48 object-cover rounded-xl flex-shrink-0"
+              loading="lazy"
+              decoding="async"
             />
             <div className="text-center">
               <Globe className="w-6 h-6 text-gold mb-2 mx-auto" />

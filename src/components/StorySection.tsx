@@ -124,6 +124,8 @@ const StorySection = () => {
                     src={videoCover}
                     alt="Vídeo sobre o Recanto Pitangal"
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-black/30 flex items-center justify-center hover:bg-black/40 transition-colors">
                     <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/90 flex items-center justify-center">

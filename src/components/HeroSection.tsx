@@ -13,6 +13,8 @@ const HeroSection = () => {
           alt="Chalé Recanto Pitangal ao entardecer com fogueira e montanhas"
           className="w-full h-full object-cover"
           loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/60 to-primary/30" />
       </div>

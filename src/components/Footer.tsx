@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-10">
           {/* Brand */}
           <div>
-            <img src={logo} alt="Recanto Pitangal" className="h-10 w-auto mb-3" />
+            <img src={logo} alt="Recanto Pitangal" className="h-10 w-auto mb-3" loading="lazy" decoding="async" />
             <p className="font-body text-primary-foreground/60 text-sm leading-relaxed">
               Um chalé exclusivo para casais na Serra da Mantiqueira. Natureza, romance e conforto em Sapucaí-Mirim, MG.
             </p>
