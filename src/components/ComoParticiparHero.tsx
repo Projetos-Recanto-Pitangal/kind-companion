@@ -11,12 +11,14 @@ const fadeUp = {
 
 const WA_NUMBER = "5535984011430";
 
-const hospedagemLink = `https://wa.me/${WA_NUMBER}?text=Oi,%20vim%20pelo%20site%20da%20Pousada%20Recanto%20Pitangal%20e%20tenho%20interesse%20na%20hospedagem.%20Gostaria%20de%20mais%20informações.`;
+const WA_LINK = "https://wa.me/5535984011430?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20quero%20participar%20dos%20dias%20de%20cuidados%20com%20a%20sa%C3%BAde.";
+
+const hospedagemLink = WA_LINK;
 
 const imersaoDates = [
-  { label: "19 a 26 de maio", link: `https://wa.me/${WA_NUMBER}?text=Oi,%20vim%20pelo%20site%20da%20Pousada%20Recanto%20Pitangal%20e%20tenho%20interesse%20no%20período%20de%2019%20a%2026%20de%20maio.%20Gostaria%20de%20mais%20informações.` },
-  { label: "19 a 26 de agosto", link: `https://wa.me/${WA_NUMBER}?text=Oi,%20vim%20pelo%20site%20da%20Pousada%20Recanto%20Pitangal%20e%20tenho%20interesse%20no%20período%20de%2019%20a%2026%20de%20agosto.%20Gostaria%20de%20mais%20informações.` },
-  { label: "23 a 30 de setembro", link: `https://wa.me/${WA_NUMBER}?text=Oi,%20vim%20pelo%20site%20da%20Pousada%20Recanto%20Pitangal%20e%20tenho%20interesse%20no%20período%20de%2023%20a%2030%20de%20setembro.%20Gostaria%20de%20mais%20informações.` },
+  { label: "19 a 26 de maio", link: WA_LINK },
+  { label: "19 a 26 de agosto", link: WA_LINK },
+  { label: "23 a 30 de setembro", link: WA_LINK },
 ];
 
 const included = [
