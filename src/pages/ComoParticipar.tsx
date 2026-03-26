@@ -3,6 +3,7 @@ import { RefreshCw, Leaf, Scale, TreePine, Home, Mountain, Volume2, BedDouble, C
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TestimonialBar from "@/components/TestimonialBar";
+import ComoParticiparHero from "@/components/ComoParticiparHero";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -50,6 +51,9 @@ const ComoParticipar = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
+
+      {/* Seção Como Participar */}
+      <ComoParticiparHero />
 
       {/* Hero / Intro */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-card">
