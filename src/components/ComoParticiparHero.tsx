@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MessageCircle, Home, Leaf, Calendar, Utensils, Droplets, Sun, Mountain, Flame, Dumbbell, TreePine, FlaskConical, Bath } from "lucide-react";
+import ExperienciasGallery from "./ExperienciasGallery";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
