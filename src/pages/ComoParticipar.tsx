@@ -49,6 +49,10 @@ const barMessages5 = [
 ];
 
 const ComoParticipar = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
