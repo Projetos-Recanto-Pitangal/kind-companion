@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MessageCircle, Home, Leaf, Calendar, Utensils, Droplets, Sun, Mountain, Flame, Dumbbell, TreePine, FlaskConical, Bath } from "lucide-react";
+import ExperienciasGallery from "./ExperienciasGallery";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -153,6 +154,9 @@ const ComoParticiparHero = () => {
             As vagas são limitadas para garantir um acompanhamento mais próximo. Se esse espaço faz sentido para você, entre em contato e converse diretamente com a Célia.
           </p>
         </motion.div>
+
+        {/* Galeria de Experiências */}
+        <ExperienciasGallery />
       </div>
     </section>
   );
