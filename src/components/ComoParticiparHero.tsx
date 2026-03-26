@@ -154,6 +154,9 @@ const ComoParticiparHero = () => {
             As vagas são limitadas para garantir um acompanhamento mais próximo. Se esse espaço faz sentido para você, entre em contato e converse diretamente com a Célia.
           </p>
         </motion.div>
+
+        {/* Galeria de Experiências */}
+        <ExperienciasGallery />
       </div>
     </section>
   );
