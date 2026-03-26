@@ -52,6 +52,9 @@ const ComoParticipar = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
+      {/* Seção Como Participar */}
+      <ComoParticiparHero />
+
       {/* Hero / Intro */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-card">
         <div className="max-w-3xl mx-auto px-4 text-center">
