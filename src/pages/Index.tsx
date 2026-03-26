@@ -18,6 +18,7 @@ const Index = () => {
       <AmbientAudioPlayer />
       <Navbar />
       <HeroSection />
+      <ComoParticiparSection />
       <GallerySection />
       <WellnessSection />
       <StorySection />
