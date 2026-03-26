@@ -6,6 +6,11 @@ import exp2 from "@/assets/experiencia-2.jpg";
 import exp3 from "@/assets/experiencia-3.jpg";
 import exp4 from "@/assets/experiencia-4.jpg";
 import exp5 from "@/assets/experiencia-5.jpg";
+import exp6 from "@/assets/experiencia-6.jpg";
+import exp7 from "@/assets/experiencia-7.jpg";
+import exp8 from "@/assets/experiencia-8.jpg";
+import exp9 from "@/assets/experiencia-9.jpg";
+import exp10 from "@/assets/experiencia-10.jpg";
 
 const images = [
   { src: exp1, alt: "Banho de cachoeira no Recanto Pitangal" },
@@ -13,6 +18,11 @@ const images = [
   { src: exp3, alt: "Grupo de participantes na trilha" },
   { src: exp4, alt: "Atividades físicas ao ar livre" },
   { src: exp5, alt: "Aula prática de culinária natural" },
+  { src: exp6, alt: "Entrega de certificado" },
+  { src: exp7, alt: "Participante em momento de relaxamento" },
+  { src: exp8, alt: "Certificação de conclusão" },
+  { src: exp9, alt: "Terapia com água no Recanto" },
+  { src: exp10, alt: "Banho terapêutico ao ar livre" },
 ];
 
 const ExperienciasGallery = () => {
