@@ -1,47 +1,49 @@
 import { motion } from "framer-motion";
-import {
-  MessageCircle,
-  Home,
-  CalendarDays,
-  Users,
-  Leaf,
-  Droplets,
-  Sun,
-  UtensilsCrossed,
-  Cookie,
-  Sparkles,
-  FlameKindling,
-  Footprints,
-  Waves,
-} from "lucide-react";
+import { RefreshCw, Leaf, Scale, TreePine, Home, Mountain, Volume2, BedDouble, CloudSun, MessageCircle, HeartPulse, Sun } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-const WA = "5535984011430";
+import TestimonialBar from "@/components/TestimonialBar";
 
 const fadeUp = {
-  initial: { opacity: 0, y: 24 },
+  initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.6 },
+  transition: { duration: 0.7 },
 };
 
-const imersaoDates = [
-  { label: "19 a 26 de maio", param: "19%20a%2026%20de%20maio" },
-  { label: "19 a 26 de agosto", param: "19%20a%2026%20de%20agosto" },
-  { label: "23 a 30 de setembro", param: "23%20a%2030%20de%20setembro" },
+const barMessages1 = [
+  "Todas as pessoas que passam por esta experiência saem daqui renovadas.",
+  "Muitos dos nossos visitantes mudaram completamente suas vidas após a estadia.",
+  "Quem vem uma vez, volta sempre — e volta diferente.",
+  "A transformação começa quando você decide parar e ouvir seu corpo.",
 ];
 
-const included = [
-  { icon: Leaf, text: "Aulas práticas" },
-  { icon: Droplets, text: "Terapias naturais (água, terra, sol, banho turco)" },
-  { icon: UtensilsCrossed, text: "Alimentação vegetariana completa" },
-  { icon: Cookie, text: "Pães e pizzas de fermentação natural" },
-  { icon: UtensilsCrossed, text: "Massas artesanais do zero" },
-  { icon: Sparkles, text: "Produção de itens naturais (sabão, cremes, extratos)" },
-  { icon: FlameKindling, text: "Sauna natural" },
-  { icon: Footprints, text: "Atividades físicas simples" },
-  { icon: Waves, text: "Caminhadas e banhos de cachoeira" },
+const barMessages2 = [
+  "Cada participante descobre seu próprio caminho de cura e equilíbrio.",
+  "Pessoas chegam cansadas e partem com uma nova perspectiva de vida.",
+  "A reconexão com a natureza desperta algo que estava adormecido.",
+  "Aqui, o tempo desacelera e a saúde encontra espaço para florescer.",
+];
+
+const barMessages3 = [
+  "Um único dia pode ser o início de uma grande transformação.",
+  "Muitos visitantes dizem que o Day Use foi o ponto de virada nas suas vidas.",
+  "Basta um dia para sentir a diferença que o silêncio e a natureza fazem.",
+  "A experiência de um dia planta sementes que duram a vida inteira.",
+];
+
+const barMessages4 = [
+  "O ambiente acolhedor é parte essencial da transformação.",
+  "A Serra da Mantiqueira guarda uma energia que renova corpo e alma.",
+  "Muitos chegam para descansar e encontram algo muito maior.",
+  "A natureza ao redor cura de formas que a medicina nem sempre alcança.",
+];
+
+const barMessages5 = [
+  "Sua jornada de recomeço pode começar hoje.",
+  "Centenas de pessoas já transformaram suas vidas passando por aqui.",
+  "O primeiro passo é sempre o mais corajoso — e o mais importante.",
+  "Permita-se essa pausa. Você merece esse cuidado.",
 ];
 
 const ComoParticipar = () => {
@@ -49,170 +51,233 @@ const ComoParticipar = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Header */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20">
-        <div className="max-w-3xl mx-auto px-5 text-center">
+      {/* Hero / Intro */}
+      <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-card">
+        <div className="max-w-3xl mx-auto px-4 text-center">
           <motion.p {...fadeUp} className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-4">
-            Recanto Pitangal
+            Um convite para desacelerar
           </motion.p>
           <motion.h1
             {...fadeUp}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-6"
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-8"
           >
-            Como participar
+            Às vezes o corpo pede <span className="text-gold">pausa</span>
           </motion.h1>
-          <motion.p
-            {...fadeUp}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-body text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto"
-          >
-            No Recanto Pitangal, você pode viver essa experiência de duas formas:
-            hospedagem no chalé ou participação nas imersões conduzidas pela Célia Rabello.
-            <br className="hidden md:block" />
-            Escolha a opção que mais faz sentido para você e entre em contato para receber todos os detalhes.
+          <motion.div {...fadeUp} transition={{ duration: 0.7, delay: 0.2 }} className="space-y-5 font-body text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p>No meio da correria da vida moderna, muitas pessoas começam a perceber sinais de cansaço profundo.</p>
+            <p className="text-foreground font-medium italic">
+              O corpo pede descanso.<br />
+              A mente pede silêncio.<br />
+              A alma pede reconexão.
+            </p>
+            <p>Foi justamente desse desejo de mudança que nasceu uma nova história no Recanto Pitangal.</p>
+          </motion.div>
+        </div>
+      </section>
+      <TestimonialBar messages={barMessages1} />
+
+      {/* Story */}
+      <section className="py-20 md:py-28 bg-background">
+        <div className="max-w-3xl mx-auto px-4 space-y-6 font-body text-base md:text-lg text-muted-foreground leading-relaxed">
+          <motion.p {...fadeUp}>
+            Localizado em meio às montanhas da Serra da Mantiqueira, o espaço começou como uma pousada tranquila, um lugar para descansar e se afastar do ritmo acelerado das cidades.
+          </motion.p>
+          <motion.p {...fadeUp}>Mas com o tempo, algo especial começou a acontecer ali.</motion.p>
+          <motion.p {...fadeUp}>
+            Algumas pessoas passaram a buscar o local não apenas para descansar, mas para cuidar da própria saúde de forma mais profunda.
+          </motion.p>
+          <motion.p {...fadeUp}>
+            Foi nesse contexto que o trabalho de <span className="text-foreground font-semibold">Célia Rabello</span> encontrou seu lugar no Recanto Pitangal.
+          </motion.p>
+          <motion.p {...fadeUp}>
+            Depois de anos trabalhando na área de publicidade e enfrentando problemas de saúde, ela decidiu transformar sua própria vida. Ao estudar e aplicar princípios naturais de cuidado com o corpo e mudança de hábitos, experimentou uma grande transformação pessoal.
+          </motion.p>
+          <motion.p {...fadeUp}>A partir dessa experiência, começou a orientar outras pessoas que buscavam caminhos semelhantes.</motion.p>
+          <motion.p {...fadeUp}>Hoje, algumas dessas experiências acontecem no ambiente acolhedor da pousada.</motion.p>
+          <motion.p {...fadeUp}>
+            Ali, em meio ao silêncio da natureza, muitas pessoas passam alguns dias desacelerando, reorganizando hábitos e redescobrindo formas mais simples de viver.
+          </motion.p>
+          <motion.p {...fadeUp} className="text-foreground font-medium">Não se trata de promessas ou fórmulas prontas.</motion.p>
+          <motion.p {...fadeUp} className="text-foreground font-medium italic">É apenas um convite para voltar ao essencial.</motion.p>
+          <motion.p {...fadeUp} className="text-foreground italic">
+            Respirar o ar puro das montanhas.<br />
+            Descansar.<br />
+            Cuidar do corpo.<br />
+            E lembrar que, muitas vezes, a natureza ainda guarda respostas que esquecemos de ouvir.
           </motion.p>
         </div>
       </section>
+      <TestimonialBar messages={barMessages2} interval={5000} />
 
-      {/* Card 1 – Hospedagem */}
-      <section className="pb-10 md:pb-14">
-        <div className="max-w-4xl mx-auto px-5">
+      {/* Períodos de Acompanhamento */}
+      <section className="py-20 md:py-28 bg-card">
+        <div className="max-w-4xl mx-auto px-[20px] md:px-4">
           <motion.div
             {...fadeUp}
-            className="bg-card rounded-2xl border border-border p-8 md:p-12 shadow-sm"
+            className="relative bg-background border-2 border-gold/30 rounded-2xl shadow-[0_8px_40px_-12px_rgba(191,155,48,0.15)] p-8 md:p-12 overflow-hidden"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center">
-                <Home className="w-6 h-6 text-gold" />
-              </div>
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
-                Hospedagem no chalé
-              </h2>
-            </div>
-            <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-8">
-              Uma experiência de descanso, conexão com a natureza e possibilidade de vivenciar
-              práticas naturais no seu próprio ritmo.
-            </p>
+            {/* Decorative accent */}
+            <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-gold/60 via-gold to-gold/60" />
 
-            <div className="space-y-3 mb-8">
-              {[
-                { period: "Segunda a quinta (até 3 pessoas)", price: "R$ 3.000,00" },
-                { period: "Segunda a quinta (4 pessoas)", price: "R$ 3.500,00" },
-                { period: "Sexta a domingo (até 4 pessoas)", price: "R$ 3.500,00" },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-center justify-between gap-4 py-3 px-4 rounded-lg bg-secondary/50"
-                >
-                  <span className="font-body text-sm md:text-base text-foreground">{item.period}</span>
-                  <span className="font-display text-lg md:text-xl font-semibold text-gold whitespace-nowrap">
-                    {item.price}
-                  </span>
+            <div className="text-center mb-10">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 rounded-full bg-gold/15 flex items-center justify-center ring-4 ring-gold/10">
+                  <HeartPulse className="w-8 h-8 text-gold" />
                 </div>
-              ))}
-            </div>
-
-            <a
-              href={`https://wa.me/${WA}?text=Oi%2C%20vim%20pelo%20site%20da%20Pousada%20Recanto%20Pitangal%20e%20tenho%20interesse%20na%20hospedagem.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es.`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-8 py-4 rounded-lg transition-colors duration-300 text-base"
-            >
-              <MessageCircle className="w-5 h-5" />
-              Falar sobre hospedagem
-            </a>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Card 2 – Imersão */}
-      <section className="pb-10 md:pb-14">
-        <div className="max-w-4xl mx-auto px-5">
-          <motion.div
-            {...fadeUp}
-            className="bg-card rounded-2xl border border-border p-8 md:p-12 shadow-sm"
-          >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center">
-                <Users className="w-6 h-6 text-gold" />
               </div>
-              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground">
-                Imersões com a Célia Rabello
+              <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">Períodos de Acompanhamento</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
+                Dias dedicados ao cuidado com a saúde
               </h2>
             </div>
-            <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
-              Experiências profundas de 7 dias com práticas naturais, acompanhamento e orientações
-              para equilíbrio do corpo e da mente.
+            <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed text-center max-w-2xl mx-auto mb-10">
+              Em determinados períodos, o Recanto Pitangal recebe pessoas que desejam passar alguns dias em um ambiente tranquilo, com orientação sobre práticas naturais de saúde.
             </p>
-
-            <div className="inline-flex flex-col items-center bg-gold/10 rounded-xl px-8 py-5 mb-8">
-              <span className="font-display text-3xl md:text-4xl font-bold text-gold">R$ 3.900,00</span>
-              <span className="font-body text-sm text-muted-foreground mt-1">por pessoa · 12 vagas</span>
-            </div>
-
-            {/* Date cards */}
-            <p className="font-body text-base text-foreground font-medium mb-4">Escolha o período:</p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {imersaoDates.map((date, i) => (
-                <a
-                  key={i}
-                  href={`https://wa.me/${WA}?text=Oi%2C%20vim%20pelo%20site%20da%20Pousada%20Recanto%20Pitangal%20e%20tenho%20interesse%20no%20per%C3%ADodo%20de%20${date.param}.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex flex-col items-center gap-2 bg-secondary/50 hover:bg-gold/10 border border-border hover:border-gold/40 rounded-xl p-6 transition-all duration-300"
-                >
-                  <CalendarDays className="w-6 h-6 text-gold mb-1" />
-                  <span className="font-display text-lg font-semibold text-foreground text-center">
-                    {date.label}
-                  </span>
-                  <span className="font-body text-sm text-muted-foreground group-hover:text-gold transition-colors">
-                    Selecionar este período →
-                  </span>
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* O que está incluído */}
-      <section className="pb-10 md:pb-14">
-        <div className="max-w-4xl mx-auto px-5">
-          <motion.div
-            {...fadeUp}
-            className="bg-card rounded-2xl border border-border p-8 md:p-12 shadow-sm"
-          >
-            <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-8 text-center">
-              O que está incluído na imersão
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-              {included.map((item, i) => (
+            <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed text-center mb-8">
+              Durante esse tempo, os participantes podem:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto mb-10">
+              {[
+                { icon: RefreshCw, text: "reorganizar hábitos de vida" },
+                { icon: Leaf, text: "aprender práticas naturais de cuidado com o corpo" },
+                { icon: Scale, text: "experimentar rotinas mais equilibradas" },
+                { icon: TreePine, text: "descansar em meio à natureza" },
+              ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center mt-0.5">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center">
                     <item.icon className="w-5 h-5 text-gold" />
                   </div>
-                  <span className="font-body text-sm md:text-base text-muted-foreground leading-snug pt-2">
-                    {item.text}
-                  </span>
+                  <span className="font-body text-base text-muted-foreground leading-snug pt-2">{item.text}</span>
                 </div>
               ))}
+            </div>
+            <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed text-center italic mb-8">
+              Cada experiência é única e respeita o momento de cada pessoa.
+            </p>
+            <div className="text-center">
+              <a
+                href="https://wa.me/5535984011430?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20quero%20participar%20dos%20dias%20de%20cuidados%20com%20a%20sa%C3%BAde."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Quero Participar
+              </a>
             </div>
           </motion.div>
         </div>
       </section>
+      <TestimonialBar messages={barMessages3} interval={4500} />
 
-      {/* Observação final */}
-      <section className="pb-20 md:pb-28">
-        <div className="max-w-2xl mx-auto px-5 text-center">
-          <motion.p
+      {/* Day Use */}
+      <section className="py-20 md:py-28 bg-background">
+        <div className="max-w-3xl mx-auto px-[20px] md:px-4">
+          <motion.div
             {...fadeUp}
-            className="font-body text-base text-muted-foreground leading-relaxed italic"
+            className="relative bg-card border-2 border-gold/30 rounded-2xl shadow-[0_8px_40px_-12px_rgba(191,155,48,0.15)] p-8 md:p-12 overflow-hidden"
           >
-            As vagas são limitadas para garantir um acompanhamento mais próximo.
-            <br />
-            Se esse espaço faz sentido para você, entre em contato e converse diretamente com a Célia.
+            {/* Decorative accent */}
+            <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-gold/60 via-gold to-gold/60" />
+
+            <div className="text-center mb-10">
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 rounded-full bg-gold/15 flex items-center justify-center ring-4 ring-gold/10">
+                  <Sun className="w-8 h-8 text-gold" />
+                </div>
+              </div>
+              <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">Day Use Terapêutico</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
+                Uma experiência de cuidado em um único dia
+              </h2>
+            </div>
+            <div className="space-y-5 font-body text-base md:text-lg text-muted-foreground leading-relaxed text-center">
+              <p>
+                Para quem deseja conhecer o espaço ou iniciar esse processo de forma mais breve, também existe a opção de Day Use.
+              </p>
+              <p>
+                Nesta modalidade, a pessoa passa o dia no Recanto Pitangal, utilizando o chalé e participando de algumas práticas naturais de cuidado e relaxamento.
+              </p>
+              <p className="italic">
+                É uma forma de vivenciar o ambiente e iniciar um processo de reconexão com a saúde.
+              </p>
+            </div>
+            <div className="text-center mt-8">
+              <a
+                href="https://wa.me/5535984011430?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20quero%20participar%20do%20day%20use%2C%20como%20funciona%3F"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
+              >
+                <MessageCircle className="w-5 h-5" />
+                Quero Participar
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+      <TestimonialBar messages={barMessages4} interval={5500} />
+
+      {/* O Ambiente */}
+      <section className="py-20 md:py-28 bg-card">
+        <div className="max-w-4xl mx-auto px-4">
+          <motion.div {...fadeUp} className="text-center mb-12">
+            <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">O Ambiente</p>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
+              Natureza, silêncio e simplicidade
+            </h2>
+          </motion.div>
+          <motion.p {...fadeUp} className="font-body text-base md:text-lg text-muted-foreground leading-relaxed text-center mb-10">
+            O Recanto Pitangal oferece:
           </motion.p>
+          <motion.div {...fadeUp} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto mb-10">
+            {[
+              { icon: Home, text: "chalé confortável em meio à natureza" },
+              { icon: Mountain, text: "vista para as montanhas da Mantiqueira" },
+              { icon: Volume2, text: "ambiente silencioso e acolhedor" },
+              { icon: BedDouble, text: "espaço para descanso e reflexão" },
+              { icon: CloudSun, text: "clima ideal para desacelerar" },
+            ].map((item, i) => (
+              <div key={i} className="flex flex-col items-center text-center gap-3">
+                <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center">
+                  <item.icon className="w-6 h-6 text-gold" />
+                </div>
+                <span className="font-body text-base text-muted-foreground">{item.text}</span>
+              </div>
+            ))}
+          </motion.div>
+          <motion.p {...fadeUp} className="font-body text-base md:text-lg text-muted-foreground leading-relaxed text-center italic max-w-2xl mx-auto">
+            Muitas pessoas chegam apenas para descansar e acabam encontrando algo ainda mais profundo: um momento de reconexão com a própria vida.
+          </motion.p>
+        </div>
+      </section>
+      <TestimonialBar messages={barMessages5} interval={4000} />
+
+      {/* CTA Final */}
+      <section className="py-20 md:py-28 bg-background">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <motion.div {...fadeUp}>
+            <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">Venha nos visitar</p>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-6">
+              Conheça o Recanto Pitangal
+            </h2>
+            <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+              Se você deseja saber mais sobre os períodos de acompanhamento ou sobre a experiência de Day Use, entre em contato conosco.
+            </p>
+            <p className="font-body text-base md:text-lg text-muted-foreground leading-relaxed mb-10">
+              O Recanto Pitangal continua sendo uma pousada acolhedora na Serra da Mantiqueira, mas para muitos visitantes também se tornou um lugar de transformação e recomeço.
+            </p>
+            <a
+              href="https://wa.me/5535984011430?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20Recanto%20Pitangal."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Falar conosco
+            </a>
+          </motion.div>
         </div>
       </section>
 
