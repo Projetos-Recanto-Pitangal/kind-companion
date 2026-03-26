@@ -11,7 +11,7 @@ const fadeUp = {
 
 const WA_NUMBER = "5535984011430";
 
-const WA_LINK = "https://wa.me/5535984011430?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20quero%20participar%20dos%20dias%20de%20cuidados%20com%20a%20sa%C3%BAde.";
+const WA_LINK = `https://wa.me/${WA_NUMBER}`;
 
 const hospedagemLink = WA_LINK;
 
