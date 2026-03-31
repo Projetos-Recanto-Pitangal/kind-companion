@@ -35,7 +35,7 @@ const ComoParticiparHero = () => {
       <div className="max-w-4xl mx-auto px-[20px] md:px-4">
         {/* Title + Intro */}
         <motion.div {...fadeUp} className="text-center mb-16">
-          <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-4">Recanto Pitangal</p>
+          <p className="font-body text-gold text-base uppercase tracking-[0.3em] mb-4">Recanto Pitangal</p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6">
             Como <span className="text-gold">participar</span>
           </h1>
