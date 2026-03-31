@@ -113,7 +113,7 @@ const ComoParticiparHero = () => {
               {imersaoDates.map((date, i) => (
                 <a
                   key={i}
-                  href={date.link}
+                  href={buildWhatsAppUrl(`na Imersão com a Célia Rabello, no período de ${date.label}`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between gap-3 bg-card hover:bg-gold/10 border border-border rounded-lg px-5 py-4 transition-colors duration-300 group"

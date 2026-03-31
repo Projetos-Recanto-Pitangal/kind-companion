@@ -7,7 +7,7 @@ import logoSelo from "@/assets/logo-selo-recanto-pitangal.png";
 
 import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 
-const WHATSAPP_URL = buildWhatsAppUrl("fechar o pacote para lua de mel");
+const WHATSAPP_URL = buildWhatsAppUrl("no pacote de Lua de Mel");
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },

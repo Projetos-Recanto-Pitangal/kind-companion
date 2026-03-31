@@ -83,7 +83,7 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <motion.a
-            href={buildWhatsAppUrl("fazer uma reserva no Recanto Pitangal")}
+            href={buildWhatsAppUrl("em fazer uma reserva")}
             target="_blank"
             rel="noopener noreferrer"
             className="font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-8 py-3.5 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"

@@ -25,7 +25,7 @@ interface WhatsAppButtonProps {
 export function buildWhatsAppUrl(context: string, customMessage?: string): string {
   const text = customMessage
     ? customMessage
-    : `Oi, eu vim pelo site e gostaria de mais informações sobre ${context}.`;
+    : `Oi, vim pelo site da Pousada Recanto Pitangal e tenho interesse ${context}. Gostaria de mais informações.`;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 

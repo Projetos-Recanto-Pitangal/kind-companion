@@ -15,7 +15,7 @@ interface BlockedRange {
 
 import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 
-const WHATSAPP_URL = buildWhatsAppUrl("fazer uma pré-reserva");
+const WHATSAPP_URL = buildWhatsAppUrl("em fazer uma pré-reserva");
 
 export default function Reserva() {
   const [blockedRanges, setBlockedRanges] = useState<BlockedRange[]>([]);

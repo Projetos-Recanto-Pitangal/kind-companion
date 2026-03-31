@@ -6,7 +6,7 @@ import heroImage from "@/assets/lua-de-mel-hero.jpg";
 import logoSelo from "@/assets/logo-selo-recanto-pitangal.png";
 import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 
-const WHATSAPP_URL = buildWhatsAppUrl("fechar o pacote para lua de mel");
+const WHATSAPP_URL = buildWhatsAppUrl("no pacote de Lua de Mel");
 
 const highlights = [
   { icon: Bath, label: "Banheira com vista panorâmica" },

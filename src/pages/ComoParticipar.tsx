@@ -165,7 +165,7 @@ const ComoParticipar = () => {
               O Recanto Pitangal continua sendo uma pousada acolhedora na Serra da Mantiqueira, mas para muitos visitantes também se tornou um lugar de transformação e recomeço.
             </p>
             <a
-              href={buildWhatsAppUrl("o Recanto Pitangal")}
+              href={buildWhatsAppUrl("em conhecer o Recanto Pitangal")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
