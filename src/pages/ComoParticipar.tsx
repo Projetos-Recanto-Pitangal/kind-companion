@@ -72,7 +72,7 @@ const ComoParticipar = () => {
               <img
                 src={celiaImage}
                 alt="Célia Rabello - Recanto Pitangal"
-                className="w-40 h-40 md:w-52 md:h-52 object-cover rounded-2xl shadow-lg"
+                className="w-40 h-52 md:w-52 md:h-64 object-cover object-top rounded-2xl shadow-lg"
                 loading="lazy"
                 decoding="async"
               />
