@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { RefreshCw, Leaf, Scale, TreePine, Home, Mountain, Volume2, BedDouble, CloudSun, MessageCircle, HeartPulse, Sun } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 import TestimonialBar from "@/components/TestimonialBar";
 import ComoParticiparHero from "@/components/ComoParticiparHero";
 
