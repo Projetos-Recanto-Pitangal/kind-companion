@@ -116,7 +116,7 @@ const ComoParticipar = () => {
 
 
       {/* O Ambiente */}
-      <section className="py-20 md:py-28 bg-card">
+      <section className="py-16 md:py-20 bg-card">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div {...fadeUp} className="text-center mb-12">
             <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">O Ambiente</p>
