@@ -83,7 +83,7 @@ const ComoParticipar = () => {
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-2">
                 Célia Rabello
               </h2>
-              <p className="font-body text-sm text-gold tracking-wide mb-4">
+              <p className="font-body text-base text-gold tracking-wide mb-4">
                 Naturologista • Chef Vegetariana • Professora • Palestrante
               </p>
               <p className="font-body text-base text-muted-foreground leading-relaxed mb-4 max-w-lg">
