@@ -42,7 +42,7 @@ const TestimonialsSection = () => {
               <Star key={i} className="w-5 h-5 text-gold fill-gold" />
             ))}
           </div>
-          <p className="font-body text-primary-foreground/70 text-sm">Nota 5.0 · Preferido dos Hóspedes no Airbnb</p>
+          <p className="font-body text-primary-foreground/70 text-base">Nota 5.0 · Preferido dos Hóspedes no Airbnb</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
