@@ -7,6 +7,7 @@ import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 import celiaImage from "@/assets/celia.jpg";
 import TestimonialBar from "@/components/TestimonialBar";
 import ComoParticiparHero from "@/components/ComoParticiparHero";
+import StorySection from "@/components/StorySection";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -109,6 +110,9 @@ const ComoParticipar = () => {
 
       {/* Seção Como Participar */}
       <ComoParticiparHero />
+
+      {/* Nossa História - movido da Home */}
+      <StorySection />
 
       {/* Hero / Intro */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-card">
