@@ -36,7 +36,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
         >
-          <p className="font-body text-primary-foreground/90 text-sm md:text-base uppercase tracking-[0.3em] mb-4">
+          <p className="font-body text-primary-foreground/90 text-base md:text-lg uppercase tracking-[0.3em] mb-4">
             Sapucaí-Mirim · Serra da Mantiqueira
           </p>
         </motion.div>
