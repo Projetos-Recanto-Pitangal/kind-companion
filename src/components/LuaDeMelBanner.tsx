@@ -103,6 +103,13 @@ const LuaDeMelBanner = () => {
           >
             Quero viver essa experiência
           </a>
+          <Link
+            to="/lua-de-mel"
+            className="inline-block font-body font-medium text-sm sm:text-base uppercase tracking-widest rounded-md px-8 py-4 transition-all duration-300 hover:scale-105 ml-4"
+            style={{ border: "2px solid hsl(38 50% 55%)", color: "hsl(38 50% 55%)", background: "transparent" }}
+          >
+            Quero saber mais
+          </Link>
         </motion.div>
       </div>
     </section>
