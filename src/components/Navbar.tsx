@@ -89,6 +89,13 @@ const Navbar = () => {
                 </a>
               ))}
               <a
+                href="/lua-de-mel"
+                onClick={() => setIsOpen(false)}
+                className="font-body text-base text-gold py-2 uppercase tracking-widest font-medium"
+              >
+                Lua de Mel ✨
+              </a>
+              <a
                 href="https://wa.me/5535984011430?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Recanto%20Pitangal."
                 target="_blank"
                 rel="noopener noreferrer"
