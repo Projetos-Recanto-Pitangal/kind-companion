@@ -33,7 +33,7 @@ const AmenitiesSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-14"
         >
-          <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">Tudo pensado para você</p>
+          <p className="font-body text-gold text-base uppercase tracking-[0.3em] mb-3">Tudo pensado para você</p>
           <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground mb-4">
             Comodidades & Diferenciais
           </h2>
