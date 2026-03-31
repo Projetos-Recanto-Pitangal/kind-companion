@@ -47,7 +47,7 @@ const Navbar = () => {
                   Lua de Mel
                 </Link>
                 <a
-                  href={buildWhatsAppUrl("fazer uma reserva no Recanto Pitangal")}
+                  href={buildWhatsAppUrl("em fazer uma reserva")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-body text-sm font-medium bg-gold text-accent-foreground px-5 py-2.5 rounded-md hover:bg-gold-light transition-colors duration-300 uppercase tracking-wider"
@@ -98,7 +98,7 @@ const Navbar = () => {
                 Lua de Mel
               </Link>
               <a
-                href={buildWhatsAppUrl("fazer uma reserva no Recanto Pitangal")}
+                href={buildWhatsAppUrl("em fazer uma reserva")}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}

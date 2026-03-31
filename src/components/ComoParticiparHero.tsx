@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle, Home, Leaf, Calendar, Utensils, Droplets, Sun, Mountain, Flame, Dumbbell, TreePine, FlaskConical, Bath } from "lucide-react";
 import ExperienciasGallery from "./ExperienciasGallery";
+import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -9,17 +10,11 @@ const fadeUp = {
   transition: { duration: 0.7 },
 };
 
-const WA_NUMBER = "5535984011430";
-
-const WA_LINK = `https://wa.me/${WA_NUMBER}`;
-
-const hospedagemLink = WA_LINK;
-
 const imersaoDates = [
-  { label: "19 a 26 de maio", link: WA_LINK },
-  { label: "16 a 23 de junho", link: WA_LINK },
-  { label: "19 a 26 de agosto", link: WA_LINK },
-  { label: "23 a 30 de setembro", link: WA_LINK },
+  { label: "19 a 26 de maio" },
+  { label: "16 a 23 de junho" },
+  { label: "19 a 26 de agosto" },
+  { label: "23 a 30 de setembro" },
 ];
 
 const included = [
@@ -81,7 +76,7 @@ const ComoParticiparHero = () => {
               ))}
             </div>
             <a
-              href={hospedagemLink}
+              href={buildWhatsAppUrl("na hospedagem no chalé")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-8 py-4 rounded-lg transition-colors duration-300 text-base w-full"
@@ -118,7 +113,7 @@ const ComoParticiparHero = () => {
               {imersaoDates.map((date, i) => (
                 <a
                   key={i}
-                  href={date.link}
+                  href={buildWhatsAppUrl(`na Imersão com a Célia Rabello, no período de ${date.label}`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between gap-3 bg-card hover:bg-gold/10 border border-border rounded-lg px-5 py-4 transition-colors duration-300 group"

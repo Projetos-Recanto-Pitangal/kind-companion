@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import herbetMascote from "@/assets/herbet-mascote.png";
 import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 
-const WHATSAPP_URL = buildWhatsAppUrl("fazer uma reserva no Recanto Pitangal");
+const WHATSAPP_URL = buildWhatsAppUrl("em fazer uma reserva");
 
 const pulseAnimation = {
   scale: [1, 1.08, 1],

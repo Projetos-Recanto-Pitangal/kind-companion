@@ -44,7 +44,7 @@ const packages = [
 const PricingSection = () => {
   const handleWhatsApp = (pkg: typeof packages[0]) => {
     const url = buildWhatsAppUrl(
-      `o pacote ${pkg.title}, para o período ${pkg.period}, no valor de ${pkg.price}`
+      `no pacote ${pkg.title}, para o período ${pkg.period}, no valor de ${pkg.price}`
     );
     window.open(url, "_blank");
   };
