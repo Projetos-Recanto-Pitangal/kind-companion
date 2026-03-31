@@ -60,8 +60,8 @@ const ComoParticipar = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Bloco Célia Rabelo - Introdução */}
-      <section className="pt-32 pb-10 md:pt-40 md:pb-16 bg-card">
+      {/* Bloco Célia Rabello - Introdução */}
+      <section className="pt-36 pb-6 md:pt-48 md:pb-8 bg-card">
         <div className="max-w-4xl mx-auto px-[20px] md:px-4">
           <motion.div
             {...fadeUp}
@@ -71,7 +71,7 @@ const ComoParticipar = () => {
             <div className="flex-shrink-0">
               <img
                 src={celiaImage}
-                alt="Célia Rabelo - Recanto Pitangal"
+                alt="Célia Rabello - Recanto Pitangal"
                 className="w-40 h-40 md:w-52 md:h-52 object-cover rounded-2xl shadow-lg"
                 loading="lazy"
                 decoding="async"
@@ -81,7 +81,7 @@ const ComoParticipar = () => {
             {/* Info */}
             <div className="text-center md:text-left">
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-2">
-                Célia Rabelo
+                Célia Rabello
               </h2>
               <p className="font-body text-sm text-gold tracking-wide mb-4">
                 Naturologista • Chef Vegetariana • Professora • Palestrante
