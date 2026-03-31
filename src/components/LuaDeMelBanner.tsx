@@ -39,16 +39,6 @@ const LuaDeMelBanner = () => {
       </div>
 
       <div className="relative z-10 text-center px-5 max-w-3xl mx-auto py-20">
-        <motion.img
-          src={logoSelo}
-          alt="Recanto Pitangal"
-          className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-6"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={0}
-        />
         <motion.h2
           className="font-display text-3xl sm:text-5xl lg:text-6xl font-semibold leading-tight mb-5"
           style={{ color: "#f5f0e8" }}
