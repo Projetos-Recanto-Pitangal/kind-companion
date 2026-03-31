@@ -29,7 +29,7 @@ const Footer = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="font-body text-sm text-primary-foreground/60 hover:text-gold transition-colors"
+                  className="font-body text-base text-primary-foreground/60 hover:text-gold transition-colors"
                 >
                   {item.label}
                 </a>
