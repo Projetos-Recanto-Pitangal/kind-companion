@@ -60,7 +60,7 @@ const LocationSection = () => {
               <MapPin className="w-6 h-6 text-gold" />
               <div>
                 <h3 className="font-display text-xl font-semibold text-foreground">Sapucaí-Mirim, MG</h3>
-                <p className="font-body text-sm text-muted-foreground">Serra da Mantiqueira</p>
+                <p className="font-body text-base text-muted-foreground">Serra da Mantiqueira</p>
               </div>
             </div>
 
