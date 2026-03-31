@@ -1,5 +1,6 @@
 import { Heart } from "lucide-react";
 import logo from "@/assets/logo-recanto-pitangal-footer.png";
+import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 
 const Footer = () => {
   return (
