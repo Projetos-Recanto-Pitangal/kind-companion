@@ -142,7 +142,7 @@ const PricingSection = () => {
           </div>
 
           <div className="flex flex-col items-center gap-2">
-            <p className="font-body text-muted-foreground text-sm">Também disponível em:</p>
+            <p className="font-body text-muted-foreground text-base">Também disponível em:</p>
             <a
               href="https://www.airbnb.com.br/rooms/1348774902789161936"
               target="_blank"
