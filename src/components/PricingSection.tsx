@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Calendar, Heart, Sun, Sparkles } from "lucide-react";
-
-const WHATSAPP_NUMBER = "5535984011430";
+import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 
 const packages = [
   {
