@@ -70,8 +70,8 @@ const ComoParticiparHero = () => {
                 { label: "Sexta a domingo (até 4 pessoas)", price: "R$ 3.500,00" },
               ].map((item, i) => (
                 <div key={i} className="flex justify-between items-center py-2 border-b border-border/50 last:border-0">
-                  <span className="font-body text-sm text-muted-foreground">{item.label}</span>
-                  <span className="font-display text-base font-semibold text-foreground whitespace-nowrap ml-4">{item.price}</span>
+                  <span className="font-body text-base text-muted-foreground">{item.label}</span>
+                  <span className="font-display text-lg font-semibold text-foreground whitespace-nowrap ml-4">{item.price}</span>
                 </div>
               ))}
             </div>
