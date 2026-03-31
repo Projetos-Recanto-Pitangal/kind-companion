@@ -111,6 +111,9 @@ const ComoParticipar = () => {
       {/* Seção Como Participar */}
       <ComoParticiparHero />
 
+      {/* Nossa História - movido da Home */}
+      <StorySection />
+
       {/* Hero / Intro */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-card">
         <div className="max-w-3xl mx-auto px-4 text-center">

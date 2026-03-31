@@ -21,7 +21,6 @@ const Index = () => {
       <LuaDeMelBanner />
       <GallerySection />
       <WellnessSection />
-      <StorySection />
       <AmenitiesSection />
       <TestimonialsSection />
       <PricingSection />
