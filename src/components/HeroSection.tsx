@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Star, ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-chalet.jpg";
 import logoSelo from "@/assets/logo-selo-recanto-pitangal.png";
+import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 
 const HeroSection = () => {
   return (
