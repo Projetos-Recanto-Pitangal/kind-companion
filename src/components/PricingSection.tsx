@@ -136,8 +136,8 @@ const PricingSection = () => {
             </div>
             <div className="flex items-center gap-2 bg-card border border-gold/30 rounded-full px-5 py-2.5 shadow-sm">
               <span className="text-gold text-lg font-bold">♥</span>
-              <span className="font-body text-sm font-semibold text-foreground">Preferido dos Hóspedes</span>
-              <span className="font-body text-xs text-muted-foreground">no Airbnb</span>
+              <span className="font-body text-base font-semibold text-foreground">Preferido dos Hóspedes</span>
+              <span className="font-body text-sm text-muted-foreground">no Airbnb</span>
             </div>
           </div>
 
