@@ -61,7 +61,7 @@ const TestimonialsSection = () => {
                   <Star key={j} className="w-4 h-4 text-gold fill-gold" />
                 ))}
               </div>
-              <p className="font-body text-primary-foreground/90 text-sm md:text-base leading-relaxed mb-6 italic">
+              <p className="font-body text-primary-foreground/90 text-base md:text-lg leading-relaxed mb-6 italic">
                 "{t.text}"
               </p>
               <div className="flex items-center justify-between">
