@@ -151,7 +151,7 @@ const ComoParticipar = () => {
       <TestimonialBar messages={barMessages5} interval={4000} />
 
       {/* CTA Final */}
-      <section className="py-20 md:py-28 bg-background">
+      <section className="py-16 md:py-20 bg-background">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <motion.div {...fadeUp}>
             <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">Venha nos visitar</p>
