@@ -99,7 +99,7 @@ const FAQSection = () => {
               Tire suas dúvidas
             </span>
           </div>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
+          <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground">
             Dúvidas Frequentes
           </h2>
         </div>

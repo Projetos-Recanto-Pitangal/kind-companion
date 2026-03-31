@@ -65,8 +65,8 @@ const TestimonialsSection = () => {
                 "{t.text}"
               </p>
               <div className="flex items-center justify-between">
-                <span className="font-display text-sm font-semibold text-primary-foreground">{t.name}</span>
-                <span className="font-body text-xs text-gold uppercase tracking-wider">{t.source}</span>
+                <span className="font-display text-base font-semibold text-primary-foreground">{t.name}</span>
+                <span className="font-body text-sm text-gold uppercase tracking-wider">{t.source}</span>
               </div>
             </motion.div>
           ))}

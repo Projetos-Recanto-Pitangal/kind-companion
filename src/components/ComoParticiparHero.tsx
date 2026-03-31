@@ -140,7 +140,7 @@ const ComoParticiparHero = () => {
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center">
                   <item.icon className="w-5 h-5 text-gold" />
                 </div>
-                <span className="font-body text-sm text-muted-foreground leading-snug pt-2">{item.text}</span>
+                <span className="font-body text-base text-muted-foreground leading-snug pt-2">{item.text}</span>
               </div>
             ))}
           </div>

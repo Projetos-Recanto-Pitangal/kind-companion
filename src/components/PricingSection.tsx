@@ -147,7 +147,7 @@ const PricingSection = () => {
               href="https://www.airbnb.com.br/rooms/1348774902789161936"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-body text-sm font-medium text-foreground hover:text-gold border border-border rounded-md px-6 py-2.5 transition-colors duration-300"
+              className="font-body text-base font-medium text-foreground hover:text-gold border border-border rounded-md px-6 py-2.5 transition-colors duration-300"
             >
               Airbnb
             </a>

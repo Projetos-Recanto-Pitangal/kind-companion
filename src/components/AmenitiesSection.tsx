@@ -53,10 +53,10 @@ const AmenitiesSection = () => {
               className="bg-card rounded-lg p-5 md:p-6 text-center hover:shadow-lg transition-shadow duration-300 group"
             >
               <item.icon className="w-7 h-7 text-gold mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
-              <h3 className="font-display text-sm md:text-base font-semibold text-foreground mb-1">
+              <h3 className="font-display text-base md:text-lg font-semibold text-foreground mb-1">
                 {item.label}
               </h3>
-              <p className="font-body text-xs md:text-sm text-muted-foreground">{item.desc}</p>
+              <p className="font-body text-sm md:text-base text-muted-foreground">{item.desc}</p>
             </motion.div>
           ))}
         </div>

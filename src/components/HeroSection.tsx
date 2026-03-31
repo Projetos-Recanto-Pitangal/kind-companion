@@ -72,7 +72,7 @@ const HeroSection = () => {
           </div>
           <div className="flex items-center gap-1.5 bg-primary/40 backdrop-blur-sm rounded-full px-4 py-2">
             <Star className="w-4 h-4 text-gold fill-gold" />
-            <span className="font-body text-sm text-primary-foreground">Preferido dos Hóspedes · Airbnb</span>
+            <span className="font-body text-base text-primary-foreground">Preferido dos Hóspedes · Airbnb</span>
           </div>
         </motion.div>
 

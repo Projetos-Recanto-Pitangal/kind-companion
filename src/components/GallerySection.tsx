@@ -36,7 +36,7 @@ const GallerySection = () => {
           <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground mb-4">
             Conheça o Chalé
           </h2>
-          <p className="font-body text-muted-foreground max-w-xl mx-auto text-base md:text-lg">
+          <p className="font-body text-muted-foreground max-w-xl mx-auto text-lg md:text-xl">
             Um chalé completo e privativo, pensado em cada detalhe para proporcionar momentos inesquecíveis a dois.
           </p>
         </motion.div>

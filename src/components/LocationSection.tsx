@@ -75,8 +75,8 @@ const LocationSection = () => {
             <div className="grid grid-cols-2 gap-3">
               {nearbyCities.map((city, i) => (
                 <div key={i} className="bg-card rounded-lg p-4 border border-border">
-                  <p className="font-display text-sm font-semibold text-foreground">{city.name}</p>
-                  <p className="font-body text-xs text-muted-foreground">≈ {city.distance}</p>
+                  <p className="font-display text-base font-semibold text-foreground">{city.name}</p>
+                  <p className="font-body text-sm text-muted-foreground">≈ {city.distance}</p>
                 </div>
               ))}
             </div>
