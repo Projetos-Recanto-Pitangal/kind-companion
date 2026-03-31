@@ -95,7 +95,7 @@ const PricingSection = () => {
               </div>
 
               <p className="font-display text-3xl font-bold mb-2">{pkg.price}</p>
-              <p className={`font-body text-sm mb-1 ${
+              <p className={`font-body text-base mb-1 ${
                 pkg.highlight ? "text-primary-foreground/80" : "text-muted-foreground"
               }`}>
                 {pkg.details}
