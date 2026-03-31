@@ -58,6 +58,54 @@ const ComoParticipar = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
+      {/* Bloco Célia Rabelo - Introdução */}
+      <section className="pt-32 pb-10 md:pt-40 md:pb-16 bg-card">
+        <div className="max-w-4xl mx-auto px-[20px] md:px-4">
+          <motion.div
+            {...fadeUp}
+            className="flex flex-col md:flex-row items-center gap-8 md:gap-12"
+          >
+            {/* Foto */}
+            <div className="flex-shrink-0">
+              <img
+                src={celiaImage}
+                alt="Célia Rabelo - Recanto Pitangal"
+                className="w-40 h-40 md:w-52 md:h-52 object-cover rounded-2xl shadow-lg"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            {/* Info */}
+            <div className="text-center md:text-left">
+              <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-2">
+                Célia Rabelo
+              </h2>
+              <p className="font-body text-sm text-gold tracking-wide mb-4">
+                Naturologista • Chef Vegetariana • Professora • Palestrante
+              </p>
+              <p className="font-body text-base text-muted-foreground leading-relaxed mb-4 max-w-lg">
+                Célia atua na área de saúde natural e integrativa, com formação em Gastronomia pelo SENAC e especialização em Medicina Funcional Integrativa. Ao longo de sua trajetória, já impactou mais de 20 mil pessoas com suas práticas e ensinamentos.
+              </p>
+              <div className="flex flex-wrap justify-center md:justify-start gap-3">
+                <span className="inline-flex items-center gap-1.5 bg-gold/10 text-foreground text-xs font-medium px-3 py-1.5 rounded-full">
+                  Saúde natural e integrativa
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-gold/10 text-foreground text-xs font-medium px-3 py-1.5 rounded-full">
+                  Gastronomia (SENAC)
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-gold/10 text-foreground text-xs font-medium px-3 py-1.5 rounded-full">
+                  Medicina Funcional Integrativa
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-gold/10 text-gold text-xs font-semibold px-3 py-1.5 rounded-full">
+                  +20.000 pessoas impactadas
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Seção Como Participar */}
       <ComoParticiparHero />
 
