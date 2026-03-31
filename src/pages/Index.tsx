@@ -18,6 +18,7 @@ const Index = () => {
       <AmbientAudioPlayer />
       <Navbar />
       <HeroSection />
+      <LuaDeMelBanner />
       <GallerySection />
       <WellnessSection />
       <StorySection />
