@@ -97,7 +97,7 @@ const Navbar = () => {
                 Lua de Mel
               </Link>
               <a
-                href="https://wa.me/5535984011430?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Recanto%20Pitangal."
+                href={buildWhatsAppUrl("fazer uma reserva no Recanto Pitangal")}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}

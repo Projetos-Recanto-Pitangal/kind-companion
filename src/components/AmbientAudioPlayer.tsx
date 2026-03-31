@@ -2,8 +2,9 @@ import { useState, useRef, useEffect } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import herbetMascote from "@/assets/herbet-mascote.png";
+import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 
-const WHATSAPP_URL = "https://wa.me/5535984011430?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Recanto%20Pitangal.";
+const WHATSAPP_URL = buildWhatsAppUrl("fazer uma reserva no Recanto Pitangal");
 
 const pulseAnimation = {
   scale: [1, 1.08, 1],
