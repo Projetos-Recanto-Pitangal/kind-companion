@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Calendar, Heart, Sun, Sparkles } from "lucide-react";
-
-const WHATSAPP_NUMBER = "5535984011430";
+import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 
 const packages = [
   {
@@ -43,11 +42,11 @@ const packages = [
 ];
 
 const PricingSection = () => {
-  const handleWhatsApp = (packageTitle: string) => {
-    const message = encodeURIComponent(
-      `Olá! Gostaria de saber mais sobre o pacote "${packageTitle}" do Recanto Pitangal. Podem me ajudar?`
+  const handleWhatsApp = (pkg: typeof packages[0]) => {
+    const url = buildWhatsAppUrl(
+      `o pacote ${pkg.title}, para o período ${pkg.period}, no valor de ${pkg.price}`
     );
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
+    window.open(url, "_blank");
   };
 
   return (
@@ -108,7 +107,7 @@ const PricingSection = () => {
               </p>
 
               <button
-                onClick={() => handleWhatsApp(pkg.title)}
+                onClick={() => handleWhatsApp(pkg)}
                 className={`w-full font-body font-medium py-3 rounded-md transition-colors duration-300 text-sm uppercase tracking-wider ${
                   pkg.highlight
                     ? "bg-gold text-accent-foreground hover:bg-gold-light"

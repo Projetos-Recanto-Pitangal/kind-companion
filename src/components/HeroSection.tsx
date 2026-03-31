@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Star, ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-chalet.jpg";
 import logoSelo from "@/assets/logo-selo-recanto-pitangal.png";
+import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 
 const HeroSection = () => {
   return (
@@ -82,7 +83,7 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <motion.a
-            href="https://wa.me/5535984011430?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Recanto%20Pitangal."
+            href={buildWhatsAppUrl("fazer uma reserva no Recanto Pitangal")}
             target="_blank"
             rel="noopener noreferrer"
             className="font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-8 py-3.5 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
