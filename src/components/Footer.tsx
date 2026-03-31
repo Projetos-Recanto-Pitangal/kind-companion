@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <img src={logo} alt="Recanto Pitangal" className="h-10 w-auto mb-3" loading="lazy" decoding="async" />
-            <p className="font-body text-primary-foreground/60 text-sm leading-relaxed">
+            <p className="font-body text-primary-foreground/60 text-base leading-relaxed">
               Um chalé exclusivo para casais na Serra da Mantiqueira. Natureza, romance e conforto em Sapucaí-Mirim, MG.
             </p>
           </div>
