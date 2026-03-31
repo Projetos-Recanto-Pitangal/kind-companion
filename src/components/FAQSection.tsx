@@ -95,11 +95,11 @@ const FAQSection = () => {
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 mb-4">
             <HelpCircle className="w-6 h-6 text-gold" />
-            <span className="font-body text-gold text-sm uppercase tracking-[0.2em]">
+            <span className="font-body text-gold text-base uppercase tracking-[0.2em]">
               Tire suas dúvidas
             </span>
           </div>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
+          <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground">
             Dúvidas Frequentes
           </h2>
         </div>

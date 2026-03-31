@@ -33,7 +33,7 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-14"
         >
-          <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">O que dizem nossos hóspedes</p>
+          <p className="font-body text-gold text-base uppercase tracking-[0.3em] mb-3">O que dizem nossos hóspedes</p>
           <h2 className="font-display text-3xl md:text-5xl font-semibold text-primary-foreground mb-4">
             Avaliações
           </h2>
@@ -42,7 +42,7 @@ const TestimonialsSection = () => {
               <Star key={i} className="w-5 h-5 text-gold fill-gold" />
             ))}
           </div>
-          <p className="font-body text-primary-foreground/70 text-sm">Nota 5.0 · Preferido dos Hóspedes no Airbnb</p>
+          <p className="font-body text-primary-foreground/70 text-base">Nota 5.0 · Preferido dos Hóspedes no Airbnb</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -61,12 +61,12 @@ const TestimonialsSection = () => {
                   <Star key={j} className="w-4 h-4 text-gold fill-gold" />
                 ))}
               </div>
-              <p className="font-body text-primary-foreground/90 text-sm md:text-base leading-relaxed mb-6 italic">
+              <p className="font-body text-primary-foreground/90 text-base md:text-lg leading-relaxed mb-6 italic">
                 "{t.text}"
               </p>
               <div className="flex items-center justify-between">
-                <span className="font-display text-sm font-semibold text-primary-foreground">{t.name}</span>
-                <span className="font-body text-xs text-gold uppercase tracking-wider">{t.source}</span>
+                <span className="font-display text-base font-semibold text-primary-foreground">{t.name}</span>
+                <span className="font-body text-sm text-gold uppercase tracking-wider">{t.source}</span>
               </div>
             </motion.div>
           ))}

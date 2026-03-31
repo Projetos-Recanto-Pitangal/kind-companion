@@ -83,23 +83,23 @@ const ComoParticipar = () => {
               <h2 className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-2">
                 Célia Rabello
               </h2>
-              <p className="font-body text-sm text-gold tracking-wide mb-4">
+              <p className="font-body text-base text-gold tracking-wide mb-4">
                 Naturologista • Chef Vegetariana • Professora • Palestrante
               </p>
               <p className="font-body text-base text-muted-foreground leading-relaxed mb-4 max-w-lg">
                 Célia atua na área de saúde natural e integrativa, com formação em Gastronomia pelo SENAC e especialização em Medicina Funcional Integrativa. Ao longo de sua trajetória, já impactou mais de 20 mil pessoas com suas práticas e ensinamentos.
               </p>
               <div className="flex flex-wrap justify-center md:justify-start gap-3">
-                <span className="inline-flex items-center gap-1.5 bg-gold/10 text-foreground text-xs font-medium px-3 py-1.5 rounded-full">
+                <span className="inline-flex items-center gap-1.5 bg-gold/10 text-foreground text-sm font-medium px-4 py-2 rounded-full">
                   Saúde natural e integrativa
                 </span>
-                <span className="inline-flex items-center gap-1.5 bg-gold/10 text-foreground text-xs font-medium px-3 py-1.5 rounded-full">
+                <span className="inline-flex items-center gap-1.5 bg-gold/10 text-foreground text-sm font-medium px-4 py-2 rounded-full">
                   Gastronomia (SENAC)
                 </span>
-                <span className="inline-flex items-center gap-1.5 bg-gold/10 text-foreground text-xs font-medium px-3 py-1.5 rounded-full">
+                <span className="inline-flex items-center gap-1.5 bg-gold/10 text-foreground text-sm font-medium px-4 py-2 rounded-full">
                   Medicina Funcional Integrativa
                 </span>
-                <span className="inline-flex items-center gap-1.5 bg-gold/10 text-gold text-xs font-semibold px-3 py-1.5 rounded-full">
+                <span className="inline-flex items-center gap-1.5 bg-gold/10 text-gold text-sm font-semibold px-4 py-2 rounded-full">
                   +20.000 pessoas impactadas
                 </span>
               </div>

@@ -35,7 +35,7 @@ const ComoParticiparHero = () => {
       <div className="max-w-4xl mx-auto px-[20px] md:px-4">
         {/* Title + Intro */}
         <motion.div {...fadeUp} className="text-center mb-16">
-          <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-4">Recanto Pitangal</p>
+          <p className="font-body text-gold text-base uppercase tracking-[0.3em] mb-4">Recanto Pitangal</p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6">
             Como <span className="text-gold">participar</span>
           </h1>
@@ -70,8 +70,8 @@ const ComoParticiparHero = () => {
                 { label: "Sexta a domingo (até 4 pessoas)", price: "R$ 3.500,00" },
               ].map((item, i) => (
                 <div key={i} className="flex justify-between items-center py-2 border-b border-border/50 last:border-0">
-                  <span className="font-body text-sm text-muted-foreground">{item.label}</span>
-                  <span className="font-display text-base font-semibold text-foreground whitespace-nowrap ml-4">{item.price}</span>
+                  <span className="font-body text-base text-muted-foreground">{item.label}</span>
+                  <span className="font-display text-lg font-semibold text-foreground whitespace-nowrap ml-4">{item.price}</span>
                 </div>
               ))}
             </div>
@@ -104,11 +104,11 @@ const ComoParticiparHero = () => {
             </p>
             <div className="bg-gold/5 rounded-xl p-6 text-center mb-8 flex-1 flex flex-col justify-center">
               <span className="font-display text-4xl font-bold text-gold">R$ 3.900</span>
-              <p className="font-body text-sm text-muted-foreground mt-2">por pessoa · 12 vagas por turma</p>
+              <p className="font-body text-base text-muted-foreground mt-2">por pessoa · 12 vagas por turma</p>
             </div>
 
             {/* Datas */}
-            <p className="font-body text-sm uppercase tracking-[0.2em] text-gold mb-4 text-center">Escolha seu período</p>
+            <p className="font-body text-base uppercase tracking-[0.2em] text-gold mb-4 text-center">Escolha seu período</p>
             <div className="grid grid-cols-1 gap-3">
               {imersaoDates.map((date, i) => (
                 <a
@@ -122,7 +122,7 @@ const ComoParticiparHero = () => {
                     <Calendar className="w-5 h-5 text-gold" />
                     <span className="font-body text-base font-medium text-foreground">{date.label}</span>
                   </div>
-                  <span className="font-body text-xs text-muted-foreground group-hover:text-gold transition-colors">Selecionar →</span>
+                  <span className="font-body text-sm text-muted-foreground group-hover:text-gold transition-colors">Selecionar →</span>
                 </a>
               ))}
             </div>
@@ -140,7 +140,7 @@ const ComoParticiparHero = () => {
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center">
                   <item.icon className="w-5 h-5 text-gold" />
                 </div>
-                <span className="font-body text-sm text-muted-foreground leading-snug pt-2">{item.text}</span>
+                <span className="font-body text-base text-muted-foreground leading-snug pt-2">{item.text}</span>
               </div>
             ))}
           </div>

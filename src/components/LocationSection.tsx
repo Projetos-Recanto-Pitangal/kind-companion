@@ -19,11 +19,11 @@ const LocationSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-14"
         >
-          <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">Serra da Mantiqueira</p>
+          <p className="font-body text-gold text-base uppercase tracking-[0.3em] mb-3">Serra da Mantiqueira</p>
           <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground mb-4">
             Localização Privilegiada
           </h2>
-          <p className="font-body text-muted-foreground max-w-xl mx-auto text-base md:text-lg">
+          <p className="font-body text-muted-foreground max-w-xl mx-auto text-lg md:text-xl">
             Em Sapucaí-Mirim (MG), no coração da Serra da Mantiqueira, cercado por natureza e próximo às melhores cidades turísticas da região.
           </p>
         </motion.div>
@@ -60,11 +60,11 @@ const LocationSection = () => {
               <MapPin className="w-6 h-6 text-gold" />
               <div>
                 <h3 className="font-display text-xl font-semibold text-foreground">Sapucaí-Mirim, MG</h3>
-                <p className="font-body text-sm text-muted-foreground">Serra da Mantiqueira</p>
+                <p className="font-body text-base text-muted-foreground">Serra da Mantiqueira</p>
               </div>
             </div>
 
-            <p className="font-body text-muted-foreground mb-6 leading-relaxed">
+            <p className="font-body text-muted-foreground mb-6 leading-relaxed text-base md:text-lg">
               Check-in a partir das <strong className="text-foreground">15h</strong> · Check-out até as <strong className="text-foreground">12h</strong>
             </p>
 
@@ -75,8 +75,8 @@ const LocationSection = () => {
             <div className="grid grid-cols-2 gap-3">
               {nearbyCities.map((city, i) => (
                 <div key={i} className="bg-card rounded-lg p-4 border border-border">
-                  <p className="font-display text-sm font-semibold text-foreground">{city.name}</p>
-                  <p className="font-body text-xs text-muted-foreground">≈ {city.distance}</p>
+                  <p className="font-display text-base font-semibold text-foreground">{city.name}</p>
+                  <p className="font-body text-sm text-muted-foreground">≈ {city.distance}</p>
                 </div>
               ))}
             </div>

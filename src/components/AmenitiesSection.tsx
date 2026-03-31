@@ -33,11 +33,11 @@ const AmenitiesSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-14"
         >
-          <p className="font-body text-gold text-sm uppercase tracking-[0.3em] mb-3">Tudo pensado para você</p>
+          <p className="font-body text-gold text-base uppercase tracking-[0.3em] mb-3">Tudo pensado para você</p>
           <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground mb-4">
             Comodidades & Diferenciais
           </h2>
-          <p className="font-body text-muted-foreground max-w-xl mx-auto text-base md:text-lg">
+          <p className="font-body text-muted-foreground max-w-xl mx-auto text-lg md:text-xl">
             Cada detalhe do chalé foi planejado para oferecer conforto, privacidade e uma experiência única.
           </p>
         </motion.div>
@@ -53,10 +53,10 @@ const AmenitiesSection = () => {
               className="bg-card rounded-lg p-5 md:p-6 text-center hover:shadow-lg transition-shadow duration-300 group"
             >
               <item.icon className="w-7 h-7 text-gold mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
-              <h3 className="font-display text-sm md:text-base font-semibold text-foreground mb-1">
+              <h3 className="font-display text-base md:text-lg font-semibold text-foreground mb-1">
                 {item.label}
               </h3>
-              <p className="font-body text-xs md:text-sm text-muted-foreground">{item.desc}</p>
+              <p className="font-body text-sm md:text-base text-muted-foreground">{item.desc}</p>
             </motion.div>
           ))}
         </div>

@@ -10,14 +10,14 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <img src={logo} alt="Recanto Pitangal" className="h-10 w-auto mb-3" loading="lazy" decoding="async" />
-            <p className="font-body text-primary-foreground/60 text-sm leading-relaxed">
+            <p className="font-body text-primary-foreground/60 text-base leading-relaxed">
               Um chalé exclusivo para casais na Serra da Mantiqueira. Natureza, romance e conforto em Sapucaí-Mirim, MG.
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h4 className="font-display text-sm font-semibold text-gold uppercase tracking-wider mb-4">Navegação</h4>
+            <h4 className="font-display text-base font-semibold text-gold uppercase tracking-wider mb-4">Navegação</h4>
             <div className="flex flex-col gap-2">
               {[
                 { label: "O Chalé", href: "#gallery" },
@@ -29,7 +29,7 @@ const Footer = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="font-body text-sm text-primary-foreground/60 hover:text-gold transition-colors"
+                  className="font-body text-base text-primary-foreground/60 hover:text-gold transition-colors"
                 >
                   {item.label}
                 </a>
@@ -39,13 +39,13 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display text-sm font-semibold text-gold uppercase tracking-wider mb-4">Contato</h4>
+            <h4 className="font-display text-base font-semibold text-gold uppercase tracking-wider mb-4">Contato</h4>
             <div className="flex flex-col gap-2">
               <a
                 href={buildWhatsAppUrl("em falar com a pousada")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-sm text-primary-foreground/60 hover:text-gold transition-colors"
+                className="font-body text-base text-primary-foreground/60 hover:text-gold transition-colors"
               >
                 WhatsApp
               </a>
@@ -53,7 +53,7 @@ const Footer = () => {
                 href="https://www.instagram.com/pousadarecantopitangal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-sm text-primary-foreground/60 hover:text-gold transition-colors"
+                className="font-body text-base text-primary-foreground/60 hover:text-gold transition-colors"
               >
                 Instagram
               </a>
@@ -61,7 +61,7 @@ const Footer = () => {
                 href="https://linktr.ee/pousadarecantopitangal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-sm text-primary-foreground/60 hover:text-gold transition-colors"
+                className="font-body text-base text-primary-foreground/60 hover:text-gold transition-colors"
               >
                 Linktree
               </a>
@@ -70,10 +70,10 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-moss-light/20 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-body text-xs text-primary-foreground/40">
+          <p className="font-body text-sm text-primary-foreground/40">
             © 2026 Recanto Pitangal. Todos os direitos reservados.
           </p>
-          <p className="font-body text-xs text-primary-foreground/40 flex items-center gap-1">
+          <p className="font-body text-sm text-primary-foreground/40 flex items-center gap-1">
             Feito com <Heart className="w-3 h-3 text-terracotta fill-terracotta" /> na Serra da Mantiqueira
           </p>
         </div>
