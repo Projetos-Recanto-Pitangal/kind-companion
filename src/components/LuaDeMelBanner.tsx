@@ -92,13 +92,15 @@ const LuaDeMelBanner = () => {
           viewport={{ once: true }}
           custom={4}
         >
-          <Link
-            to="/lua-de-mel"
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block font-body font-medium text-sm sm:text-base uppercase tracking-widest rounded-md px-8 py-4 transition-all duration-300 hover:scale-105"
             style={{ background: "hsl(38 50% 55%)", color: "#1a1a1a" }}
           >
             Quero viver essa experiência
-          </Link>
+          </a>
         </motion.div>
       </div>
     </section>
