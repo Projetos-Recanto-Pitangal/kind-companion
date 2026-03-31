@@ -54,7 +54,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="font-display text-lg md:text-2xl text-primary-foreground/90 italic mb-8 max-w-2xl mx-auto"
+          className="font-display text-xl md:text-2xl lg:text-3xl text-primary-foreground/90 italic mb-8 max-w-2xl mx-auto"
         >
           Um refúgio exclusivo para dois, onde a natureza encontra o romance
         </motion.p>
