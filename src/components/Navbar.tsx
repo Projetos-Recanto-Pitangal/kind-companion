@@ -40,9 +40,9 @@ const Navbar = () => {
                 ))}
                 <a
                   href="/lua-de-mel"
-                  className="font-body text-sm font-medium text-gold border border-gold/50 px-4 py-2 rounded-md hover:bg-gold/10 transition-colors duration-300 uppercase tracking-wider"
+                  className="font-body text-sm font-medium text-gold border border-gold/40 px-4 py-2 rounded-md hover:bg-gold/10 transition-colors duration-300 uppercase tracking-wider"
                 >
-                  Lua de Mel ✨
+                  Lua de Mel
                 </a>
                 <a
                   href="https://wa.me/5535984011430?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Recanto%20Pitangal."
@@ -93,7 +93,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className="font-body text-base text-gold py-2 uppercase tracking-widest font-medium"
               >
-                Lua de Mel ✨
+                Lua de Mel
               </a>
               <a
                 href="https://wa.me/5535984011430?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Recanto%20Pitangal."
