@@ -64,7 +64,7 @@ const LocationSection = () => {
               </div>
             </div>
 
-            <p className="font-body text-muted-foreground mb-6 leading-relaxed">
+            <p className="font-body text-muted-foreground mb-6 leading-relaxed text-base md:text-lg">
               Check-in a partir das <strong className="text-foreground">15h</strong> · Check-out até as <strong className="text-foreground">12h</strong>
             </p>
 
