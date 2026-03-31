@@ -104,7 +104,7 @@ const ComoParticiparHero = () => {
             </p>
             <div className="bg-gold/5 rounded-xl p-6 text-center mb-8 flex-1 flex flex-col justify-center">
               <span className="font-display text-4xl font-bold text-gold">R$ 3.900</span>
-              <p className="font-body text-sm text-muted-foreground mt-2">por pessoa · 12 vagas por turma</p>
+              <p className="font-body text-base text-muted-foreground mt-2">por pessoa · 12 vagas por turma</p>
             </div>
 
             {/* Datas */}
