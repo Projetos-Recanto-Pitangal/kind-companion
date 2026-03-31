@@ -11,10 +11,10 @@ const fadeUp = {
 };
 
 const imersaoDates = [
-  { label: "19 a 26 de maio", link: WA_LINK },
-  { label: "16 a 23 de junho", link: WA_LINK },
-  { label: "19 a 26 de agosto", link: WA_LINK },
-  { label: "23 a 30 de setembro", link: WA_LINK },
+  { label: "19 a 26 de maio" },
+  { label: "16 a 23 de junho" },
+  { label: "19 a 26 de agosto" },
+  { label: "23 a 30 de setembro" },
 ];
 
 const included = [
