@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo-recanto-pitangal.png";
+import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 
 const navLinks = [
   { label: "Início", href: "#hero" },
