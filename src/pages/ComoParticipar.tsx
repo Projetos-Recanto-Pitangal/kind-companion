@@ -4,6 +4,7 @@ import { RefreshCw, Leaf, Scale, TreePine, Home, Mountain, Volume2, BedDouble, C
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
+import celiaImage from "@/assets/celia.jpg";
 import TestimonialBar from "@/components/TestimonialBar";
 import ComoParticiparHero from "@/components/ComoParticiparHero";
 
