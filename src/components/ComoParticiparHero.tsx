@@ -76,7 +76,7 @@ const ComoParticiparHero = () => {
               ))}
             </div>
             <a
-              href={hospedagemLink}
+              href={buildWhatsAppUrl("na hospedagem no chalé")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-8 py-4 rounded-lg transition-colors duration-300 text-base w-full"
