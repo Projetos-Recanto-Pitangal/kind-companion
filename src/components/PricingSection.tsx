@@ -63,7 +63,7 @@ const PricingSection = () => {
           <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground mb-4">
             Tarifas & Pacotes
           </h2>
-          <p className="font-body text-muted-foreground max-w-xl mx-auto text-base md:text-lg">
+          <p className="font-body text-muted-foreground max-w-xl mx-auto text-lg md:text-xl">
             Café da manhã incluso em todas as opções. Valores válidos para 2026.
           </p>
         </motion.div>
