@@ -215,7 +215,7 @@ const ComoParticipar = () => {
             </div>
             <div className="text-center mt-8">
               <a
-                href="https://wa.me/5535984011430?text=Ol%C3%A1%2C%20acabo%20de%20vir%20do%20site%20e%20quero%20participar%20do%20day%20use%2C%20como%20funciona%3F"
+                href={buildWhatsAppUrl("a experiência de Day Use")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-10 py-4 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
