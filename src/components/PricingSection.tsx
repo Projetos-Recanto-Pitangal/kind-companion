@@ -108,7 +108,7 @@ const PricingSection = () => {
 
               <button
                 onClick={() => handleWhatsApp(pkg)}
-                className={`w-full font-body font-medium py-3 rounded-md transition-colors duration-300 text-sm uppercase tracking-wider ${
+                className={`w-full font-body font-medium py-3 rounded-md transition-colors duration-300 text-base uppercase tracking-wider ${
                   pkg.highlight
                     ? "bg-gold text-accent-foreground hover:bg-gold-light"
                     : "bg-primary text-primary-foreground hover:bg-moss-light"
