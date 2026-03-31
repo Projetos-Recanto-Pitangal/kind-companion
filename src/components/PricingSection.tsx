@@ -86,7 +86,7 @@ const PricingSection = () => {
                 <div>
                   <pkg.icon className={`w-6 h-6 mb-2 ${pkg.highlight ? "text-gold" : "text-gold"}`} />
                   <h3 className="font-display text-xl font-semibold">{pkg.title}</h3>
-                  <p className={`font-body text-xs uppercase tracking-wider mt-1 ${
+                  <p className={`font-body text-sm uppercase tracking-wider mt-1 ${
                     pkg.highlight ? "text-primary-foreground/60" : "text-muted-foreground"
                   }`}>
                     {pkg.period}
