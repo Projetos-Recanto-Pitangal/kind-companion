@@ -39,7 +39,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display text-sm font-semibold text-gold uppercase tracking-wider mb-4">Contato</h4>
+            <h4 className="font-display text-base font-semibold text-gold uppercase tracking-wider mb-4">Contato</h4>
             <div className="flex flex-col gap-2">
               <a
                 href={buildWhatsAppUrl("em falar com a pousada")}
