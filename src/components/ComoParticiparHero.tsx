@@ -108,7 +108,7 @@ const ComoParticiparHero = () => {
             </div>
 
             {/* Datas */}
-            <p className="font-body text-sm uppercase tracking-[0.2em] text-gold mb-4 text-center">Escolha seu período</p>
+            <p className="font-body text-base uppercase tracking-[0.2em] text-gold mb-4 text-center">Escolha seu período</p>
             <div className="grid grid-cols-1 gap-3">
               {imersaoDates.map((date, i) => (
                 <a
