@@ -37,7 +37,7 @@ const AmenitiesSection = () => {
           <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground mb-4">
             Comodidades & Diferenciais
           </h2>
-          <p className="font-body text-muted-foreground max-w-xl mx-auto text-base md:text-lg">
+          <p className="font-body text-muted-foreground max-w-xl mx-auto text-lg md:text-xl">
             Cada detalhe do chalé foi planejado para oferecer conforto, privacidade e uma experiência única.
           </p>
         </motion.div>
