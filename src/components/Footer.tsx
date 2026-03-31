@@ -45,7 +45,7 @@ const Footer = () => {
                 href={buildWhatsAppUrl("em falar com a pousada")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-sm text-primary-foreground/60 hover:text-gold transition-colors"
+                className="font-body text-base text-primary-foreground/60 hover:text-gold transition-colors"
               >
                 WhatsApp
               </a>
@@ -53,7 +53,7 @@ const Footer = () => {
                 href="https://www.instagram.com/pousadarecantopitangal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-sm text-primary-foreground/60 hover:text-gold transition-colors"
+                className="font-body text-base text-primary-foreground/60 hover:text-gold transition-colors"
               >
                 Instagram
               </a>
@@ -61,7 +61,7 @@ const Footer = () => {
                 href="https://linktr.ee/pousadarecantopitangal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-sm text-primary-foreground/60 hover:text-gold transition-colors"
+                className="font-body text-base text-primary-foreground/60 hover:text-gold transition-colors"
               >
                 Linktree
               </a>
