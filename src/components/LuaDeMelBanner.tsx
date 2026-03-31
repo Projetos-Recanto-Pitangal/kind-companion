@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Star, Bath, Flame, Home } from "lucide-react";
-import { Link } from "react-router-dom";
+
 import heroImage from "@/assets/lua-de-mel-hero.jpg";
 import logoSelo from "@/assets/logo-selo-recanto-pitangal.png";
 
