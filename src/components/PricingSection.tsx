@@ -100,7 +100,7 @@ const PricingSection = () => {
               }`}>
                 {pkg.details}
               </p>
-              <p className={`font-body text-xs mb-6 ${
+              <p className={`font-body text-sm mb-6 ${
                 pkg.highlight ? "text-gold" : "text-gold"
               }`}>
                 {pkg.installment}
