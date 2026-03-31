@@ -122,7 +122,7 @@ const ComoParticiparHero = () => {
                     <Calendar className="w-5 h-5 text-gold" />
                     <span className="font-body text-base font-medium text-foreground">{date.label}</span>
                   </div>
-                  <span className="font-body text-xs text-muted-foreground group-hover:text-gold transition-colors">Selecionar →</span>
+                  <span className="font-body text-sm text-muted-foreground group-hover:text-gold transition-colors">Selecionar →</span>
                 </a>
               ))}
             </div>
