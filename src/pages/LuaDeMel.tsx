@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Star, Bath, Flame, Home, ShoppingCart, Car, MessageCircle, ChevronDown, Heart } from "lucide-react";
 import heroImage from "@/assets/lua-de-mel-hero.jpg";
-import lareiraImage from "@/assets/lua-de-mel-lareira.jpg";
+import lareiraImage from "@/assets/lua-de-mel-fogueira.jpg";
 import logoSelo from "@/assets/logo-selo-recanto-pitangal.png";
 
 import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
