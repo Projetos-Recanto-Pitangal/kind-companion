@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import ComoParticipar from "./pages/ComoParticipar";
 import Reserva from "./pages/Reserva";
+import LuaDeMel from "./pages/LuaDeMel";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
