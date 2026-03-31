@@ -285,6 +285,48 @@ const LuaDeMel = () => {
         </div>
       </section>
 
+      {/* ── COUPLES GALLERY ── */}
+      <section className="py-16 md:py-24 px-5" style={{ background: "#111" }}>
+        <div className="max-w-5xl mx-auto">
+          <motion.p
+            className="font-body text-xs uppercase tracking-[0.3em] text-center mb-10"
+            style={{ color: "hsl(38 50% 55%)" }}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={0}
+          >
+            Momentos vividos por quem escolheu o Recanto
+          </motion.p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { src: casalBanheira, alt: "Casal brindando na hidromassagem com vista para as montanhas" },
+              { src: casalLareira, alt: "Casal curtindo fondue de morango na lareira" },
+              { src: casalCafe, alt: "Casal tomando café da manhã no chalé" },
+            ].map((img, i) => (
+              <motion.div
+                key={i}
+                className="overflow-hidden rounded-lg aspect-[3/4]"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={i}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── PAIN POINT ── */}
       <section className="py-20 md:py-28 px-5 relative overflow-hidden" style={{ background: "#0a0a0a" }}>
         <div
