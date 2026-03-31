@@ -4,6 +4,9 @@ import { Star, Bath, Flame, Home, ShoppingCart, Car, MessageCircle, ChevronDown,
 import heroImage from "@/assets/lua-de-mel-hero.jpg";
 import lareiraImage from "@/assets/lua-de-mel-fogueira.jpg";
 import logoSelo from "@/assets/logo-selo-recanto-pitangal.png";
+import casalCafe from "@/assets/lua-de-mel-cafe.jpg";
+import casalBanheira from "@/assets/lua-de-mel-banheira.jpg";
+import casalLareira from "@/assets/lua-de-mel-lareira-casal.jpg";
 
 import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 
