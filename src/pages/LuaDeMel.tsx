@@ -5,7 +5,7 @@ import heroImage from "@/assets/lua-de-mel-hero.jpg";
 import lareiraImage from "@/assets/lua-de-mel-lareira.jpg";
 import logoSelo from "@/assets/logo-selo-recanto-pitangal.png";
 
-const WHATSAPP_URL = "https://wa.me/5535984011430?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20hospedagem%20%F0%9F%92%9B";
+const WHATSAPP_URL = "https://wa.me/5535984011430?text=Oi%2C%20eu%20vim%20pelo%20site%20e%20estou%20interessado%20em%20fechar%20o%20pacote%20para%20lua%20de%20mel.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es.";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },

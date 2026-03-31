@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { Star, Bath, Flame, Home } from "lucide-react";
-import { Link } from "react-router-dom";
+
 import heroImage from "@/assets/lua-de-mel-hero.jpg";
 import logoSelo from "@/assets/logo-selo-recanto-pitangal.png";
 
-const WHATSAPP_URL = "https://wa.me/5535984011430?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20hospedagem%20%F0%9F%92%9B";
+const WHATSAPP_URL = "https://wa.me/5535984011430?text=Oi%2C%20eu%20vim%20pelo%20site%20e%20estou%20interessado%20em%20fechar%20o%20pacote%20para%20lua%20de%20mel.%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es.";
 
 const highlights = [
   { icon: Bath, label: "Banheira com vista panorâmica" },
@@ -92,13 +92,15 @@ const LuaDeMelBanner = () => {
           viewport={{ once: true }}
           custom={4}
         >
-          <Link
-            to="/lua-de-mel"
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block font-body font-medium text-sm sm:text-base uppercase tracking-widest rounded-md px-8 py-4 transition-all duration-300 hover:scale-105"
             style={{ background: "hsl(38 50% 55%)", color: "#1a1a1a" }}
           >
             Quero viver essa experiência
-          </Link>
+          </a>
         </motion.div>
       </div>
     </section>
