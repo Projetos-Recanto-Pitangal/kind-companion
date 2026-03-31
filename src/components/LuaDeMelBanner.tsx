@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Star, Bath, Flame, Home } from "lucide-react";
 
 import heroImage from "@/assets/lua-de-mel-hero.jpg";
