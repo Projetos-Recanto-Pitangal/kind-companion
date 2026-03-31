@@ -7,6 +7,7 @@ import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 import celiaImage from "@/assets/celia.jpg";
 import TestimonialBar from "@/components/TestimonialBar";
 import ComoParticiparHero from "@/components/ComoParticiparHero";
+import StorySection from "@/components/StorySection";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
