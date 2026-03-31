@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle, Home, Leaf, Calendar, Utensils, Droplets, Sun, Mountain, Flame, Dumbbell, TreePine, FlaskConical, Bath } from "lucide-react";
 import ExperienciasGallery from "./ExperienciasGallery";
+import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -8,12 +9,6 @@ const fadeUp = {
   viewport: { once: true },
   transition: { duration: 0.7 },
 };
-
-const WA_NUMBER = "5535984011430";
-
-const WA_LINK = `https://wa.me/${WA_NUMBER}`;
-
-const hospedagemLink = WA_LINK;
 
 const imersaoDates = [
   { label: "19 a 26 de maio", link: WA_LINK },
