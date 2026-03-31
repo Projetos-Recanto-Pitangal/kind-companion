@@ -42,11 +42,11 @@ const packages = [
 ];
 
 const PricingSection = () => {
-  const handleWhatsApp = (packageTitle: string) => {
-    const message = encodeURIComponent(
-      `Olá! Gostaria de saber mais sobre o pacote "${packageTitle}" do Recanto Pitangal. Podem me ajudar?`
+  const handleWhatsApp = (pkg: typeof packages[0]) => {
+    const url = buildWhatsAppUrl(
+      `o pacote ${pkg.title}, para o período ${pkg.period}, no valor de ${pkg.price}`
     );
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
+    window.open(url, "_blank");
   };
 
   return (
