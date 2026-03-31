@@ -131,8 +131,8 @@ const PricingSection = () => {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <div className="flex items-center gap-2 bg-card border border-gold/30 rounded-full px-5 py-2.5 shadow-sm">
               <span className="text-gold text-lg font-bold">★</span>
-              <span className="font-body text-sm font-semibold text-foreground">Nota 5,0</span>
-              <span className="font-body text-xs text-muted-foreground">no Google</span>
+              <span className="font-body text-base font-semibold text-foreground">Nota 5,0</span>
+              <span className="font-body text-sm text-muted-foreground">no Google</span>
             </div>
             <div className="flex items-center gap-2 bg-card border border-gold/30 rounded-full px-5 py-2.5 shadow-sm">
               <span className="text-gold text-lg font-bold">♥</span>
