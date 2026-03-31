@@ -23,7 +23,7 @@ const LocationSection = () => {
           <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground mb-4">
             Localização Privilegiada
           </h2>
-          <p className="font-body text-muted-foreground max-w-xl mx-auto text-base md:text-lg">
+          <p className="font-body text-muted-foreground max-w-xl mx-auto text-lg md:text-xl">
             Em Sapucaí-Mirim (MG), no coração da Serra da Mantiqueira, cercado por natureza e próximo às melhores cidades turísticas da região.
           </p>
         </motion.div>
