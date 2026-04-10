@@ -12,31 +12,29 @@ function parseICSBlockedDates(icsText: string): string[] {
   let inEvent = false;
   let dtstart = '';
   let dtend = '';
+  let summary = '';
 
   for (const line of lines) {
     if (line === 'BEGIN:VEVENT') {
       inEvent = true;
       dtstart = '';
       dtend = '';
+      summary = '';
     } else if (line === 'END:VEVENT') {
       if (dtstart && dtend) {
         const start = parseDateUTC(dtstart);
         const end = parseDateUTC(dtend);
+        console.log(`VEVENT: summary="${summary}" dtstart=${dtstart} dtend=${dtend} startMs=${start} endMs=${end}`);
         if (start && end && end > start) {
-          // For all-day events (VALUE=DATE), DTEND is exclusive in iCal spec.
-          // We iterate from DTSTART to DTEND-1 (inclusive), which means
-          // we go up to but NOT including DTEND — this is correct for VALUE=DATE.
-          // However, the user reports the last day is missing, meaning
-          // the current code already does `while (current < end)` which should
-          // give DTSTART..DTEND-1. The real issue is timezone: new Date(y,m,d)
-          // uses local time, causing shifts. Fix: use UTC throughout.
-          const currentMs = start;
-          const endMs = end;
-          let ms = currentMs;
-          while (ms < endMs) {
-            dates.add(formatDateFromMs(ms));
-            ms += 86400000; // add 1 day in ms
+          const generatedDays: string[] = [];
+          let ms = start;
+          while (ms < end) {
+            const day = formatDateFromMs(ms);
+            dates.add(day);
+            generatedDays.push(day);
+            ms += 86400000;
           }
+          console.log(`  -> blocked ${generatedDays.length} days: ${generatedDays[0]} to ${generatedDays[generatedDays.length - 1]}`);
         }
       }
       inEvent = false;
@@ -45,6 +43,8 @@ function parseICSBlockedDates(icsText: string): string[] {
         dtstart = line.split(':').pop() || '';
       } else if (line.startsWith('DTEND')) {
         dtend = line.split(':').pop() || '';
+      } else if (line.startsWith('SUMMARY')) {
+        summary = line.split(':').pop() || '';
       }
     }
   }
