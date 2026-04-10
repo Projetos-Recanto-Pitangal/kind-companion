@@ -20,14 +20,22 @@ function parseICSBlockedDates(icsText: string): string[] {
       dtend = '';
     } else if (line === 'END:VEVENT') {
       if (dtstart && dtend) {
-        const start = parseDate(dtstart);
-        const end = parseDate(dtend);
+        const start = parseDateUTC(dtstart);
+        const end = parseDateUTC(dtend);
         if (start && end && end > start) {
-          const current = new Date(start);
-          // end is exclusive in iCal
-          while (current < end) {
-            dates.add(formatDate(current));
-            current.setDate(current.getDate() + 1);
+          // For all-day events (VALUE=DATE), DTEND is exclusive in iCal spec.
+          // We iterate from DTSTART to DTEND-1 (inclusive), which means
+          // we go up to but NOT including DTEND — this is correct for VALUE=DATE.
+          // However, the user reports the last day is missing, meaning
+          // the current code already does `while (current < end)` which should
+          // give DTSTART..DTEND-1. The real issue is timezone: new Date(y,m,d)
+          // uses local time, causing shifts. Fix: use UTC throughout.
+          const currentMs = start;
+          const endMs = end;
+          let ms = currentMs;
+          while (ms < endMs) {
+            dates.add(formatDateFromMs(ms));
+            ms += 86400000; // add 1 day in ms
           }
         }
       }
@@ -43,21 +51,24 @@ function parseICSBlockedDates(icsText: string): string[] {
   return Array.from(dates);
 }
 
-function parseDate(val: string): Date | null {
+// Parse date string like "20260416" into UTC timestamp (ms)
+// Avoids new Date() local timezone issues entirely
+function parseDateUTC(val: string): number | null {
   const clean = val.replace(/[TZ]/g, '').substring(0, 8);
   if (clean.length === 8) {
     const y = parseInt(clean.substring(0, 4));
     const m = parseInt(clean.substring(4, 6)) - 1;
     const d = parseInt(clean.substring(6, 8));
-    return new Date(y, m, d);
+    return Date.UTC(y, m, d);
   }
   return null;
 }
 
-function formatDate(d: Date): string {
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
+function formatDateFromMs(ms: number): string {
+  const d = new Date(ms);
+  const y = d.getUTCFullYear();
+  const m = String(d.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(d.getUTCDate()).padStart(2, '0');
   return `${y}-${m}-${day}`;
 }
 
@@ -75,7 +86,6 @@ serve(async (req) => {
       );
     }
 
-    // Fetch iCal
     const icsResponse = await fetch(icalUrl);
     if (!icsResponse.ok) {
       return new Response(
@@ -87,7 +97,6 @@ serve(async (req) => {
     const icsText = await icsResponse.text();
     const blockedDates = parseICSBlockedDates(icsText);
 
-    // Upsert into blocked_dates using service role
     const supabase = createClient(
       Deno.env.get('SUPABASE_URL')!,
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
