@@ -84,38 +84,15 @@ export default function Reserva() {
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="flex justify-between items-start mb-10">
-            <div className="text-center flex-1">
-              <h1 className="font-['Playfair_Display'] text-3xl sm:text-4xl font-bold text-foreground mb-3">
-                Reservas
-              </h1>
-              <p className="text-muted-foreground max-w-xl mx-auto">
-                {step === "calendar"
-                  ? "Selecione as datas de check-in e check-out para verificar a disponibilidade."
-                  : "Preencha seus dados para solicitar a reserva."}
-              </p>
-            </div>
-            {step === "calendar" && (
-              <Button
-                variant="outline"
-                size="sm"
-                className="gap-2 shrink-0"
-                onClick={handleSync}
-                disabled={syncing}
-              >
-                {syncing ? (
-                  <>
-                    <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                    Sincronizando…
-                  </>
-                ) : (
-                  <>
-                    <RefreshCw className="h-3.5 w-3.5" />
-                    Sincronizar Airbnb
-                  </>
-                )}
-              </Button>
-            )}
+          <div className="text-center mb-10">
+            <h1 className="font-['Playfair_Display'] text-3xl sm:text-4xl font-bold text-foreground mb-3">
+              Reservas
+            </h1>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              {step === "calendar"
+                ? "Selecione as datas de check-in e check-out para verificar a disponibilidade."
+                : "Preencha seus dados para solicitar a reserva."}
+            </p>
           </div>
 
           {loading ? (
