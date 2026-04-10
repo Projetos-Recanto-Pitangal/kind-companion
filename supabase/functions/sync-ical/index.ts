@@ -12,7 +12,6 @@ interface VEvent {
   summary: string;
   startMs: number;
   endMs: number;
-  isReserved: boolean;
 }
 
 function parseICSBlockedDates(icsText: string): string[] {
