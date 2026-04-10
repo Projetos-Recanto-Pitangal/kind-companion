@@ -6,14 +6,24 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
+const ONE_DAY_MS = 86400000;
+
+interface VEvent {
+  summary: string;
+  startMs: number;
+  endMs: number;
+  isReserved: boolean;
+}
+
 function parseICSBlockedDates(icsText: string): string[] {
   const lines = icsText.replace(/\r\n /g, '').split(/\r?\n/);
-  const dates: Set<string> = new Set();
+  const events: VEvent[] = [];
   let inEvent = false;
   let dtstart = '';
   let dtend = '';
   let summary = '';
 
+  // Pass 1: collect all events
   for (const line of lines) {
     if (line === 'BEGIN:VEVENT') {
       inEvent = true;
@@ -24,17 +34,10 @@ function parseICSBlockedDates(icsText: string): string[] {
       if (dtstart && dtend) {
         const start = parseDateUTC(dtstart);
         const end = parseDateUTC(dtend);
-        console.log(`VEVENT: summary="${summary}" dtstart=${dtstart} dtend=${dtend} startMs=${start} endMs=${end}`);
         if (start && end && end > start) {
-          const generatedDays: string[] = [];
-          let ms = start;
-          while (ms < end) {
-            const day = formatDateFromMs(ms);
-            dates.add(day);
-            generatedDays.push(day);
-            ms += 86400000;
-          }
-          console.log(`  -> blocked ${generatedDays.length} days: ${generatedDays[0]} to ${generatedDays[generatedDays.length - 1]}`);
+          const isReserved = summary.toLowerCase().startsWith('reserved');
+          events.push({ summary, startMs: start, endMs: end, isReserved });
+          console.log(`VEVENT: summary="${summary}" isReserved=${isReserved} dtstart=${dtstart} dtend=${dtend}`);
         }
       }
       inEvent = false;
@@ -48,11 +51,37 @@ function parseICSBlockedDates(icsText: string): string[] {
       }
     }
   }
+
+  // Pass 2: generate all blocked dates (DTSTART to DTEND-1 for all events)
+  const dates: Set<string> = new Set();
+  for (const ev of events) {
+    let ms = ev.startMs;
+    while (ms < ev.endMs) {
+      dates.add(formatDateFromMs(ms));
+      ms += ONE_DAY_MS;
+    }
+  }
+
+  // Pass 3: for Reserved events, remove DTSTART if the day before is NOT blocked
+  // This makes changeover days (gaps before a reservation) available,
+  // while keeping back-to-back reservation days blocked
+  for (const ev of events) {
+    if (ev.isReserved) {
+      const dayBefore = formatDateFromMs(ev.startMs - ONE_DAY_MS);
+      const startDay = formatDateFromMs(ev.startMs);
+      if (!dates.has(dayBefore)) {
+        dates.delete(startDay);
+        console.log(`  Changeover: removed ${startDay} (day before ${dayBefore} is free)`);
+      } else {
+        console.log(`  Kept ${startDay} blocked (day before ${dayBefore} is also blocked)`);
+      }
+    }
+  }
+
+  console.log(`Total blocked dates: ${dates.size}`);
   return Array.from(dates);
 }
 
-// Parse date string like "20260416" into UTC timestamp (ms)
-// Avoids new Date() local timezone issues entirely
 function parseDateUTC(val: string): number | null {
   const clean = val.replace(/[TZ]/g, '').substring(0, 8);
   if (clean.length === 8) {
@@ -101,6 +130,16 @@ serve(async (req) => {
       Deno.env.get('SUPABASE_URL')!,
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
     );
+
+    // Full sync: delete all existing dates then insert fresh data
+    const { error: deleteError } = await supabase
+      .from('blocked_dates')
+      .delete()
+      .neq('id', '00000000-0000-0000-0000-000000000000');
+
+    if (deleteError) {
+      console.error('Delete error:', deleteError);
+    }
 
     const rows = blockedDates.map(date => ({ date, source: 'airbnb' }));
 
