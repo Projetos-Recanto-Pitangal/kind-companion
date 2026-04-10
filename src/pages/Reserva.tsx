@@ -19,28 +19,8 @@ export default function Reserva() {
   const [checkOut, setCheckOut] = useState<Date | null>(null);
   const [rangeConflict, setRangeConflict] = useState(false);
   const [step, setStep] = useState<Step>("calendar");
-  const [syncing, setSyncing] = useState(false);
 
-  const handleSync = async () => {
-    setSyncing(true);
-    try {
-      const { data, error } = await supabase.functions.invoke("sync-ical");
-      if (error) throw error;
-      if (data?.success) {
-        toast.success(`${data.synced} datas sincronizadas com sucesso!`);
-        // Refresh blocked dates
-        const { data: fresh } = await supabase.from("blocked_dates").select("date");
-        if (fresh) setBlockedDates(fresh.map((r: { date: string }) => parseISO(r.date)));
-      } else {
-        throw new Error(data?.error || "Unknown error");
-      }
-    } catch (e) {
-      console.error(e);
-      toast.error("Erro ao sincronizar. Verifique a Edge Function.");
-    } finally {
-      setSyncing(false);
-    }
-  };
+
 
   useEffect(() => {
     async function fetchBlocked() {
