@@ -1,12 +1,15 @@
 import { useState, useEffect, useMemo } from "react";
-import { format, parseISO, differenceInCalendarDays, eachDayOfInterval, isBefore, isAfter } from "date-fns";
+import { format, parseISO, differenceInCalendarDays, eachDayOfInterval } from "date-fns";
 import { supabase } from "@/integrations/supabase/client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ReservationCalendar from "@/components/ReservationCalendar";
+import ReservationForm from "@/components/ReservationForm";
 import { Button } from "@/components/ui/button";
 import { Loader2, XCircle, CalendarCheck, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
+
+type Step = "calendar" | "form";
 
 export default function Reserva() {
   const [blockedDates, setBlockedDates] = useState<Date[]>([]);
@@ -15,17 +18,15 @@ export default function Reserva() {
   const [checkIn, setCheckIn] = useState<Date | null>(null);
   const [checkOut, setCheckOut] = useState<Date | null>(null);
   const [rangeConflict, setRangeConflict] = useState(false);
+  const [step, setStep] = useState<Step>("calendar");
 
-  // Fetch blocked dates from Supabase table
   useEffect(() => {
     async function fetchBlocked() {
       try {
         const { data, error: dbError } = await supabase
           .from("blocked_dates")
           .select("date");
-
         if (dbError) throw dbError;
-
         const dates = (data || []).map((r: { date: string }) => parseISO(r.date));
         setBlockedDates(dates);
       } catch (e: any) {
@@ -38,14 +39,12 @@ export default function Reserva() {
     fetchBlocked();
   }, []);
 
-  // Blocked dates as a Set for fast lookup
   const blockedSet = useMemo(() => {
     const s = new Set<string>();
     blockedDates.forEach((d) => s.add(format(d, "yyyy-MM-dd")));
     return s;
   }, [blockedDates]);
 
-  // Check for conflicts when range is selected
   useEffect(() => {
     if (!checkIn || !checkOut) {
       setRangeConflict(false);
@@ -60,27 +59,22 @@ export default function Reserva() {
   }, [checkIn, checkOut, blockedSet]);
 
   const handleSelectDate = (date: Date) => {
-    // If no check-in or if both are already set, start new selection
     if (!checkIn || (checkIn && checkOut)) {
       setCheckIn(date);
       setCheckOut(null);
       setRangeConflict(false);
       return;
     }
-    // If date is before check-in, restart
-    if (isBefore(date, checkIn)) {
+    if (date <= checkIn) {
       setCheckIn(date);
       setCheckOut(null);
       setRangeConflict(false);
       return;
     }
-    // Set check-out
     setCheckOut(date);
   };
 
-  const nights =
-    checkIn && checkOut ? differenceInCalendarDays(checkOut, checkIn) : 0;
-
+  const nights = checkIn && checkOut ? differenceInCalendarDays(checkOut, checkIn) : 0;
   const canContinue = checkIn && checkOut && !rangeConflict && nights > 0;
 
   return (
@@ -88,13 +82,14 @@ export default function Reserva() {
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          {/* Header */}
           <div className="text-center mb-10">
             <h1 className="font-['Playfair_Display'] text-3xl sm:text-4xl font-bold text-foreground mb-3">
               Reservas
             </h1>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              Selecione as datas de check-in e check-out para verificar a disponibilidade e iniciar sua reserva.
+              {step === "calendar"
+                ? "Selecione as datas de check-in e check-out para verificar a disponibilidade."
+                : "Preencha seus dados para solicitar a reserva."}
             </p>
           </div>
 
@@ -108,9 +103,8 @@ export default function Reserva() {
               <XCircle className="h-8 w-8 text-destructive mx-auto mb-3" />
               <p className="text-destructive font-medium">{error}</p>
             </div>
-          ) : (
+          ) : step === "calendar" ? (
             <div className="space-y-6">
-              {/* Calendar */}
               <ReservationCalendar
                 blockedDates={blockedDates}
                 checkIn={checkIn}
@@ -118,7 +112,6 @@ export default function Reserva() {
                 onSelectDate={handleSelectDate}
               />
 
-              {/* Conflict alert */}
               {rangeConflict && (
                 <div className="bg-destructive/10 border border-destructive/30 rounded-xl p-4 flex items-center gap-3 max-w-lg mx-auto">
                   <XCircle className="h-5 w-5 text-destructive shrink-0" />
@@ -128,7 +121,6 @@ export default function Reserva() {
                 </div>
               )}
 
-              {/* Summary */}
               <div className="bg-card rounded-2xl shadow-sm border p-5 max-w-lg mx-auto">
                 <div className="flex items-center gap-2 mb-4">
                   <CalendarCheck className="h-5 w-5 text-primary" />
@@ -154,13 +146,23 @@ export default function Reserva() {
                   </p>
                 )}
                 {canContinue && (
-                  <Button size="lg" className="w-full text-base gap-2">
+                  <Button
+                    size="lg"
+                    className="w-full text-base gap-2"
+                    onClick={() => setStep("form")}
+                  >
                     Continuar para reserva
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 )}
               </div>
             </div>
+          ) : (
+            <ReservationForm
+              checkIn={checkIn!}
+              checkOut={checkOut!}
+              onBack={() => setStep("calendar")}
+            />
           )}
         </div>
       </main>
