@@ -87,17 +87,17 @@ export default function ReservationCalendar({
       if (isBlocked(date)) {
         return (
           base +
-          "bg-red-100 text-red-400 line-through cursor-default dark:bg-red-900/30 dark:text-red-500"
+          "bg-destructive/15 text-destructive/60 line-through cursor-default"
         );
       }
       if (checkIn && isSameDay(date, checkIn)) {
-        return base + "bg-emerald-700 text-white font-semibold shadow-md";
+        return base + "bg-primary text-primary-foreground font-semibold shadow-md";
       }
       if (checkOut && isSameDay(date, checkOut)) {
-        return base + "bg-emerald-500 text-white font-semibold shadow-md";
+        return base + "bg-primary/70 text-primary-foreground font-semibold shadow-md";
       }
       if (isInRange(date)) {
-        return base + "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300";
+        return base + "bg-primary/10 text-foreground dark:bg-primary/20";
       }
       return (
         base +
@@ -126,7 +126,7 @@ export default function ReservationCalendar({
 
     return (
       <div className="flex-1 min-w-[280px]">
-        <h3 className="text-center font-semibold text-foreground mb-3 capitalize">
+        <h3 className="text-center font-['Playfair_Display'] font-semibold text-foreground mb-3 capitalize text-lg">
           {format(month, "MMMM yyyy", { locale: ptBR })}
         </h3>
         <div className="grid grid-cols-7 gap-1 mb-1">
@@ -203,19 +203,19 @@ export default function ReservationCalendar({
       {/* Legend */}
       <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-muted-foreground mt-5 pt-4 border-t">
         <div className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded bg-red-100 border border-red-200 inline-block dark:bg-red-900/30" />
+          <span className="w-3 h-3 rounded bg-destructive/20 border border-destructive/30 inline-block" />
           Indisponível
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded bg-emerald-700 inline-block" />
+          <span className="w-3 h-3 rounded bg-primary inline-block" />
           Check-in
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded bg-emerald-500 inline-block" />
+          <span className="w-3 h-3 rounded bg-primary/70 inline-block" />
           Check-out
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded bg-emerald-100 border border-emerald-200 inline-block dark:bg-emerald-900/30" />
+          <span className="w-3 h-3 rounded bg-primary/10 border border-primary/20 inline-block" />
           Período
         </div>
       </div>
