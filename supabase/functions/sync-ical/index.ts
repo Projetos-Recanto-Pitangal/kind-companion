@@ -6,6 +6,8 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
+const ONE_DAY_MS = 86400000;
+
 function parseICSBlockedDates(icsText: string): string[] {
   const lines = icsText.replace(/\r\n /g, '').split(/\r?\n/);
   const dates: Set<string> = new Set();
@@ -24,17 +26,30 @@ function parseICSBlockedDates(icsText: string): string[] {
       if (dtstart && dtend) {
         const start = parseDateUTC(dtstart);
         const end = parseDateUTC(dtend);
-        console.log(`VEVENT: summary="${summary}" dtstart=${dtstart} dtend=${dtend} startMs=${start} endMs=${end}`);
+        const isReserved = summary.toLowerCase().startsWith('reserved');
+
+        console.log(`VEVENT: summary="${summary}" isReserved=${isReserved} dtstart=${dtstart} dtend=${dtend}`);
+
         if (start && end && end > start) {
+          // For "Reserved" events: DTSTART is a changeover day (available for new check-ins)
+          //   -> block from DTSTART+1 to DTEND-1 (exclusive end, so iterate < end)
+          // For "Not available" events: block all days from DTSTART to DTEND-1
+          const blockStart = isReserved ? start + ONE_DAY_MS : start;
+          const blockEnd = end; // DTEND is exclusive in iCal spec
+
           const generatedDays: string[] = [];
-          let ms = start;
-          while (ms < end) {
+          let ms = blockStart;
+          while (ms < blockEnd) {
             const day = formatDateFromMs(ms);
             dates.add(day);
             generatedDays.push(day);
-            ms += 86400000;
+            ms += ONE_DAY_MS;
           }
-          console.log(`  -> blocked ${generatedDays.length} days: ${generatedDays[0]} to ${generatedDays[generatedDays.length - 1]}`);
+          if (generatedDays.length > 0) {
+            console.log(`  -> blocked ${generatedDays.length} days: ${generatedDays[0]} to ${generatedDays[generatedDays.length - 1]}`);
+          } else {
+            console.log(`  -> no days blocked (single-day reserved event = changeover only)`);
+          }
         }
       }
       inEvent = false;
@@ -52,7 +67,6 @@ function parseICSBlockedDates(icsText: string): string[] {
 }
 
 // Parse date string like "20260416" into UTC timestamp (ms)
-// Avoids new Date() local timezone issues entirely
 function parseDateUTC(val: string): number | null {
   const clean = val.replace(/[TZ]/g, '').substring(0, 8);
   if (clean.length === 8) {
@@ -101,6 +115,16 @@ serve(async (req) => {
       Deno.env.get('SUPABASE_URL')!,
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
     );
+
+    // Full sync: delete all existing dates then insert fresh data
+    const { error: deleteError } = await supabase
+      .from('blocked_dates')
+      .delete()
+      .neq('id', '00000000-0000-0000-0000-000000000000');
+
+    if (deleteError) {
+      console.error('Delete error:', deleteError);
+    }
 
     const rows = blockedDates.map(date => ({ date, source: 'airbnb' }));
 
