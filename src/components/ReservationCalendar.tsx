@@ -203,19 +203,19 @@ export default function ReservationCalendar({
       {/* Legend */}
       <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-muted-foreground mt-5 pt-4 border-t">
         <div className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded bg-red-100 border border-red-200 inline-block dark:bg-red-900/30" />
+          <span className="w-3 h-3 rounded bg-destructive/20 border border-destructive/30 inline-block" />
           Indisponível
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded bg-emerald-700 inline-block" />
+          <span className="w-3 h-3 rounded bg-primary inline-block" />
           Check-in
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded bg-emerald-500 inline-block" />
+          <span className="w-3 h-3 rounded bg-primary/70 inline-block" />
           Check-out
         </div>
         <div className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded bg-emerald-100 border border-emerald-200 inline-block dark:bg-emerald-900/30" />
+          <span className="w-3 h-3 rounded bg-primary/10 border border-primary/20 inline-block" />
           Período
         </div>
       </div>
