@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import ReservationCalendar from "@/components/ReservationCalendar";
 import ReservationForm from "@/components/ReservationForm";
 import { Button } from "@/components/ui/button";
-import { Loader2, XCircle, CalendarCheck, ArrowRight } from "lucide-react";
+import { Loader2, XCircle, CalendarCheck, ArrowRight, RefreshCw } from "lucide-react";
 import { toast } from "sonner";
 
 type Step = "calendar" | "form";
@@ -19,6 +19,28 @@ export default function Reserva() {
   const [checkOut, setCheckOut] = useState<Date | null>(null);
   const [rangeConflict, setRangeConflict] = useState(false);
   const [step, setStep] = useState<Step>("calendar");
+  const [syncing, setSyncing] = useState(false);
+
+  const handleSync = async () => {
+    setSyncing(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("sync-ical");
+      if (error) throw error;
+      if (data?.success) {
+        toast.success(`${data.synced} datas sincronizadas com sucesso!`);
+        // Refresh blocked dates
+        const { data: fresh } = await supabase.from("blocked_dates").select("date");
+        if (fresh) setBlockedDates(fresh.map((r: { date: string }) => parseISO(r.date)));
+      } else {
+        throw new Error(data?.error || "Unknown error");
+      }
+    } catch (e) {
+      console.error(e);
+      toast.error("Erro ao sincronizar. Verifique a Edge Function.");
+    } finally {
+      setSyncing(false);
+    }
+  };
 
   useEffect(() => {
     async function fetchBlocked() {
@@ -82,15 +104,38 @@ export default function Reserva() {
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-10">
-            <h1 className="font-['Playfair_Display'] text-3xl sm:text-4xl font-bold text-foreground mb-3">
-              Reservas
-            </h1>
-            <p className="text-muted-foreground max-w-xl mx-auto">
-              {step === "calendar"
-                ? "Selecione as datas de check-in e check-out para verificar a disponibilidade."
-                : "Preencha seus dados para solicitar a reserva."}
-            </p>
+          <div className="flex justify-between items-start mb-10">
+            <div className="text-center flex-1">
+              <h1 className="font-['Playfair_Display'] text-3xl sm:text-4xl font-bold text-foreground mb-3">
+                Reservas
+              </h1>
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                {step === "calendar"
+                  ? "Selecione as datas de check-in e check-out para verificar a disponibilidade."
+                  : "Preencha seus dados para solicitar a reserva."}
+              </p>
+            </div>
+            {step === "calendar" && (
+              <Button
+                variant="outline"
+                size="sm"
+                className="gap-2 shrink-0"
+                onClick={handleSync}
+                disabled={syncing}
+              >
+                {syncing ? (
+                  <>
+                    <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                    Sincronizando…
+                  </>
+                ) : (
+                  <>
+                    <RefreshCw className="h-3.5 w-3.5" />
+                    Sincronizar Airbnb
+                  </>
+                )}
+              </Button>
+            )}
           </div>
 
           {loading ? (
