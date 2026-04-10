@@ -91,13 +91,13 @@ export default function ReservationCalendar({
         );
       }
       if (checkIn && isSameDay(date, checkIn)) {
-        return base + "bg-emerald-700 text-white font-semibold shadow-md";
+        return base + "bg-primary text-primary-foreground font-semibold shadow-md";
       }
       if (checkOut && isSameDay(date, checkOut)) {
-        return base + "bg-emerald-500 text-white font-semibold shadow-md";
+        return base + "bg-primary/70 text-primary-foreground font-semibold shadow-md";
       }
       if (isInRange(date)) {
-        return base + "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300";
+        return base + "bg-primary/10 text-foreground dark:bg-primary/20";
       }
       return (
         base +
