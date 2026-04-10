@@ -87,7 +87,7 @@ export default function ReservationCalendar({
       if (isBlocked(date)) {
         return (
           base +
-          "bg-red-100 text-red-400 line-through cursor-default dark:bg-red-900/30 dark:text-red-500"
+          "bg-destructive/15 text-destructive/60 line-through cursor-default"
         );
       }
       if (checkIn && isSameDay(date, checkIn)) {
