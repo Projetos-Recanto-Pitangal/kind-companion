@@ -29,7 +29,7 @@ export default function ReservaConfirmacao() {
       <main className="pt-24 pb-16">
         <div className="max-w-lg mx-auto px-4 sm:px-6 text-center">
           <div className="bg-card rounded-2xl shadow-sm border p-8 space-y-6">
-            <CheckCircle className="h-16 w-16 text-emerald-500 mx-auto" />
+            <CheckCircle className="h-16 w-16 text-primary mx-auto" />
             <h1 className="font-['Playfair_Display'] text-2xl sm:text-3xl font-bold text-foreground">
               Solicitação recebida com sucesso!
             </h1>
