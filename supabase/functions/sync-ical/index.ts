@@ -12,7 +12,6 @@ interface VEvent {
   summary: string;
   startMs: number;
   endMs: number;
-  isReserved: boolean;
 }
 
 function parseICSBlockedDates(icsText: string): string[] {
@@ -35,9 +34,8 @@ function parseICSBlockedDates(icsText: string): string[] {
         const start = parseDateUTC(dtstart);
         const end = parseDateUTC(dtend);
         if (start && end && end > start) {
-          const isReserved = summary.toLowerCase().startsWith('reserved');
-          events.push({ summary, startMs: start, endMs: end, isReserved });
-          console.log(`VEVENT: summary="${summary}" isReserved=${isReserved} dtstart=${dtstart} dtend=${dtend}`);
+          events.push({ summary, startMs: start, endMs: end });
+          console.log(`VEVENT: summary="${summary}" dtstart=${dtstart} dtend=${dtend}`);
         }
       }
       inEvent = false;
@@ -62,19 +60,16 @@ function parseICSBlockedDates(icsText: string): string[] {
     }
   }
 
-  // Pass 3: for Reserved events, remove DTSTART if the day before is NOT blocked
-  // This makes changeover days (gaps before a reservation) available,
-  // while keeping back-to-back reservation days blocked
+  // Pass 3: for ALL events, remove DTSTART if the day before is NOT blocked
+  // This makes changeover/preparation days available
   for (const ev of events) {
-    if (ev.isReserved) {
-      const dayBefore = formatDateFromMs(ev.startMs - ONE_DAY_MS);
-      const startDay = formatDateFromMs(ev.startMs);
-      if (!dates.has(dayBefore)) {
-        dates.delete(startDay);
-        console.log(`  Changeover: removed ${startDay} (day before ${dayBefore} is free)`);
-      } else {
-        console.log(`  Kept ${startDay} blocked (day before ${dayBefore} is also blocked)`);
-      }
+    const dayBefore = formatDateFromMs(ev.startMs - ONE_DAY_MS);
+    const startDay = formatDateFromMs(ev.startMs);
+    if (!dates.has(dayBefore)) {
+      dates.delete(startDay);
+      console.log(`  Changeover: removed ${startDay} (day before ${dayBefore} is free)`);
+    } else {
+      console.log(`  Kept ${startDay} blocked (day before ${dayBefore} is also blocked)`);
     }
   }
 
