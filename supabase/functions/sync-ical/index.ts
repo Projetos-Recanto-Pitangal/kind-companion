@@ -34,9 +34,8 @@ function parseICSBlockedDates(icsText: string): string[] {
         const start = parseDateUTC(dtstart);
         const end = parseDateUTC(dtend);
         if (start && end && end > start) {
-          const isReserved = summary.toLowerCase().startsWith('reserved');
-          events.push({ summary, startMs: start, endMs: end, isReserved });
-          console.log(`VEVENT: summary="${summary}" isReserved=${isReserved} dtstart=${dtstart} dtend=${dtend}`);
+          events.push({ summary, startMs: start, endMs: end });
+          console.log(`VEVENT: summary="${summary}" dtstart=${dtstart} dtend=${dtend}`);
         }
       }
       inEvent = false;
