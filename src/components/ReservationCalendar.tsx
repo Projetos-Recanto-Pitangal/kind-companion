@@ -126,7 +126,7 @@ export default function ReservationCalendar({
 
     return (
       <div className="flex-1 min-w-[280px]">
-        <h3 className="text-center font-semibold text-foreground mb-3 capitalize">
+        <h3 className="text-center font-['Playfair_Display'] font-semibold text-foreground mb-3 capitalize text-lg">
           {format(month, "MMMM yyyy", { locale: ptBR })}
         </h3>
         <div className="grid grid-cols-7 gap-1 mb-1">
