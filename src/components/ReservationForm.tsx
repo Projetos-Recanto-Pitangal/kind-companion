@@ -12,6 +12,7 @@ import { toast } from "sonner";
 interface ReservationFormProps {
   checkIn: Date;
   checkOut: Date;
+  totalPrice?: number | null;
   onBack: () => void;
 }
 
