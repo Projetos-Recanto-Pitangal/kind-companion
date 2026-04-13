@@ -1,6 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-import { format, parseISO, differenceInCalendarDays, eachDayOfInterval } from "date-fns";
-import { supabase } from "@/integrations/supabase/client";
+import { format, differenceInCalendarDays, eachDayOfInterval, addMonths } from "date-fns";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ReservationCalendar from "@/components/ReservationCalendar";
@@ -8,6 +7,7 @@ import ReservationForm from "@/components/ReservationForm";
 import { Button } from "@/components/ui/button";
 import { Loader2, XCircle, CalendarCheck, ArrowRight } from "lucide-react";
 import { toast } from "sonner";
+import { fetchAvailability, checkPeriod, type CheckResponse } from "@/lib/pousada-api";
 
 type Step = "calendar" | "form";
 
@@ -19,18 +19,26 @@ export default function Reserva() {
   const [checkOut, setCheckOut] = useState<Date | null>(null);
   const [rangeConflict, setRangeConflict] = useState(false);
   const [step, setStep] = useState<Step>("calendar");
+  const [priceInfo, setPriceInfo] = useState<CheckResponse | null>(null);
+  const [checkingPrice, setCheckingPrice] = useState(false);
 
-
-
+  // Fetch blocked dates from external API
   useEffect(() => {
     async function fetchBlocked() {
       try {
-        const { data, error: dbError } = await supabase
-          .from("blocked_dates")
-          .select("date");
-        if (dbError) throw dbError;
-        const dates = (data || []).map((r: { date: string }) => parseISO(r.date));
-        setBlockedDates(dates);
+        const now = new Date();
+        const currentMonth = format(now, "yyyy-MM");
+        const data = await fetchAvailability(currentMonth);
+
+        const blocked: Date[] = [];
+        for (const [, days] of Object.entries(data.calendar)) {
+          for (const [dateStr, info] of Object.entries(days)) {
+            if (info.blocked) {
+              blocked.push(new Date(dateStr + "T12:00:00"));
+            }
+          }
+        }
+        setBlockedDates(blocked);
       } catch (e: any) {
         console.error(e);
         setError("Não foi possível carregar as datas do calendário.");
@@ -47,17 +55,49 @@ export default function Reserva() {
     return s;
   }, [blockedDates]);
 
+  // Check availability and price when both dates are selected
   useEffect(() => {
     if (!checkIn || !checkOut) {
       setRangeConflict(false);
+      setPriceInfo(null);
       return;
     }
+
+    // Quick local check for blocked days in range
     const days = eachDayOfInterval({ start: checkIn, end: checkOut });
-    const hasConflict = days.some((d) => blockedSet.has(format(d, "yyyy-MM-dd")));
-    setRangeConflict(hasConflict);
-    if (hasConflict) {
+    const hasLocalConflict = days.some((d) => blockedSet.has(format(d, "yyyy-MM-dd")));
+
+    if (hasLocalConflict) {
+      setRangeConflict(true);
+      setPriceInfo(null);
       toast.error("Há datas indisponíveis neste período. Por favor, escolha outro intervalo.");
+      return;
     }
+
+    // Call external API for definitive check + pricing
+    setCheckingPrice(true);
+    setRangeConflict(false);
+    setPriceInfo(null);
+
+    const ciStr = format(checkIn, "yyyy-MM-dd");
+    const coStr = format(checkOut, "yyyy-MM-dd");
+
+    checkPeriod(ciStr, coStr)
+      .then((result) => {
+        if (!result.available) {
+          setRangeConflict(true);
+          setPriceInfo(null);
+          toast.error("Estas datas não estão disponíveis. Por favor, escolha outro período.");
+        } else {
+          setRangeConflict(false);
+          setPriceInfo(result);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error("Erro ao verificar disponibilidade. Tente novamente.");
+      })
+      .finally(() => setCheckingPrice(false));
   }, [checkIn, checkOut, blockedSet]);
 
   const handleSelectDate = (date: Date) => {
@@ -65,19 +105,21 @@ export default function Reserva() {
       setCheckIn(date);
       setCheckOut(null);
       setRangeConflict(false);
+      setPriceInfo(null);
       return;
     }
     if (date <= checkIn) {
       setCheckIn(date);
       setCheckOut(null);
       setRangeConflict(false);
+      setPriceInfo(null);
       return;
     }
     setCheckOut(date);
   };
 
   const nights = checkIn && checkOut ? differenceInCalendarDays(checkOut, checkIn) : 0;
-  const canContinue = checkIn && checkOut && !rangeConflict && nights > 0;
+  const canContinue = checkIn && checkOut && !rangeConflict && !checkingPrice && nights > 0 && priceInfo?.available;
 
   return (
     <div className="min-h-screen bg-background">
@@ -118,7 +160,7 @@ export default function Reserva() {
                 <div className="bg-destructive/10 border border-destructive/30 rounded-xl p-4 flex items-center gap-3 max-w-lg mx-auto">
                   <XCircle className="h-5 w-5 text-destructive shrink-0" />
                   <p className="text-destructive text-sm font-medium">
-                    Há datas indisponíveis neste período. Por favor, escolha outro intervalo.
+                    Estas datas não estão disponíveis. Por favor, escolha outro período.
                   </p>
                 </div>
               )}
@@ -142,11 +184,34 @@ export default function Reserva() {
                     </p>
                   </div>
                 </div>
+
                 {nights > 0 && (
-                  <p className="text-sm text-muted-foreground mb-4">
+                  <p className="text-sm text-muted-foreground mb-2">
                     Total: <span className="font-semibold text-foreground">{nights} noite{nights > 1 ? "s" : ""}</span>
                   </p>
                 )}
+
+                {checkingPrice && (
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    Verificando disponibilidade e preço…
+                  </div>
+                )}
+
+                {priceInfo?.available && priceInfo.totalPrice !== null && (
+                  <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-4">
+                    <p className="text-sm text-muted-foreground">Valor total do período:</p>
+                    <p className="text-2xl font-bold text-primary">
+                      R$ {priceInfo.totalPrice.toLocaleString("pt-BR", { minimumFractionDigits: 0 })}
+                    </p>
+                    {priceInfo.breakdown && priceInfo.breakdown.length > 0 && (
+                      <p className="text-xs text-muted-foreground mt-1">
+                        Média de R$ {Math.round(priceInfo.totalPrice / priceInfo.nights).toLocaleString("pt-BR")} por noite
+                      </p>
+                    )}
+                  </div>
+                )}
+
                 {canContinue && (
                   <Button
                     size="lg"
@@ -163,6 +228,7 @@ export default function Reserva() {
             <ReservationForm
               checkIn={checkIn!}
               checkOut={checkOut!}
+              totalPrice={priceInfo?.totalPrice ?? null}
               onBack={() => setStep("calendar")}
             />
           )}
