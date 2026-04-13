@@ -16,7 +16,7 @@ interface ReservationFormProps {
   onBack: () => void;
 }
 
-export default function ReservationForm({ checkIn, checkOut, onBack }: ReservationFormProps) {
+export default function ReservationForm({ checkIn, checkOut, totalPrice, onBack }: ReservationFormProps) {
   const navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);
   const [name, setName] = useState("");
