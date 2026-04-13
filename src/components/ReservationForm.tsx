@@ -85,6 +85,14 @@ export default function ReservationForm({ checkIn, checkOut, totalPrice, onBack 
             <p className="font-medium text-foreground">{nights}</p>
           </div>
         </div>
+        {totalPrice !== undefined && totalPrice !== null && (
+          <div className="mt-3 pt-3 border-t">
+            <span className="text-muted-foreground text-sm">Valor total</span>
+            <p className="text-xl font-bold text-primary">
+              R$ {totalPrice.toLocaleString("pt-BR", { minimumFractionDigits: 0 })}
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Form */}
