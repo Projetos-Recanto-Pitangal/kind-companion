@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Calendar, Heart, Sun, Sparkles } from "lucide-react";
 import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
+import { Badge } from "@/components/ui/badge";
 
 const packages = [
   {
@@ -11,6 +12,7 @@ const packages = [
     details: "3 diárias para 1 casal · Café da manhã incluso",
     installment: "até 5x sem juros no cartão de crédito",
     highlight: false,
+    soldOut: true,
   },
   {
     icon: Calendar,
@@ -20,6 +22,7 @@ const packages = [
     details: "3 diárias para 1 casal · Café da manhã incluso",
     installment: "até 5x sem juros no cartão de crédito",
     highlight: false,
+    soldOut: false,
   },
   {
     icon: Sun,
@@ -29,6 +32,7 @@ const packages = [
     details: "3 diárias para 1 casal · Café da manhã incluso",
     installment: "até 5x sem juros no cartão de crédito",
     highlight: false,
+    soldOut: false,
   },
   {
     icon: Heart,
@@ -38,13 +42,16 @@ const packages = [
     details: "2 diárias para 1 casal · Café da manhã incluso",
     installment: "até 5x sem juros no cartão de crédito",
     highlight: true,
+    soldOut: false,
   },
 ];
 
 const PricingSection = () => {
   const handleWhatsApp = (pkg: typeof packages[0]) => {
     const url = buildWhatsAppUrl(
-      `no pacote ${pkg.title}, para o período ${pkg.period}, no valor de ${pkg.price}`
+      pkg.soldOut
+        ? `em consultar outras datas disponíveis (vi que o pacote ${pkg.title} — ${pkg.period} — já está esgotado)`
+        : `no pacote ${pkg.title}, para o período ${pkg.period}, no valor de ${pkg.price}`
     );
     window.open(url, "_blank");
   };
@@ -76,45 +83,70 @@ const PricingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`rounded-lg p-6 md:p-8 border transition-shadow duration-300 hover:shadow-xl ${
-                pkg.highlight
-                  ? "bg-primary text-primary-foreground border-gold/30"
-                  : "bg-card text-card-foreground border-border"
+              className={`relative rounded-lg p-6 md:p-8 border transition-shadow duration-300 overflow-hidden ${
+                pkg.soldOut
+                  ? "bg-card/60 text-card-foreground border-border opacity-80"
+                  : pkg.highlight
+                    ? "bg-primary text-primary-foreground border-gold/30 hover:shadow-xl"
+                    : "bg-card text-card-foreground border-border hover:shadow-xl"
               }`}
             >
+              {/* Sold-out ribbon */}
+              {pkg.soldOut && (
+                <div className="absolute top-4 right-4 z-10">
+                  <Badge className="bg-destructive text-destructive-foreground border-none text-xs font-bold uppercase tracking-wider px-3 py-1.5 shadow-md">
+                    Esgotado
+                  </Badge>
+                </div>
+              )}
+
               <div className="flex items-start justify-between mb-4">
                 <div>
-                  <pkg.icon className={`w-6 h-6 mb-2 ${pkg.highlight ? "text-gold" : "text-gold"}`} />
-                  <h3 className="font-display text-xl font-semibold">{pkg.title}</h3>
+                  <pkg.icon className={`w-6 h-6 mb-2 ${pkg.soldOut ? "text-muted-foreground" : "text-gold"}`} />
+                  <h3 className={`font-display text-xl font-semibold ${pkg.soldOut ? "text-muted-foreground" : ""}`}>{pkg.title}</h3>
                   <p className={`font-body text-sm uppercase tracking-wider mt-1 ${
-                    pkg.highlight ? "text-primary-foreground/60" : "text-muted-foreground"
+                    pkg.soldOut
+                      ? "text-muted-foreground/60"
+                      : pkg.highlight ? "text-primary-foreground/60" : "text-muted-foreground"
                   }`}>
                     {pkg.period}
                   </p>
                 </div>
               </div>
 
-              <p className="font-display text-3xl font-bold mb-2">{pkg.price}</p>
+              <p className={`font-display text-3xl font-bold mb-2 ${pkg.soldOut ? "text-muted-foreground line-through decoration-destructive/50" : ""}`}>
+                {pkg.price}
+              </p>
               <p className={`font-body text-base mb-1 ${
-                pkg.highlight ? "text-primary-foreground/80" : "text-muted-foreground"
+                pkg.soldOut
+                  ? "text-muted-foreground/60"
+                  : pkg.highlight ? "text-primary-foreground/80" : "text-muted-foreground"
               }`}>
                 {pkg.details}
               </p>
-              <p className={`font-body text-sm mb-6 ${
-                pkg.highlight ? "text-gold" : "text-gold"
+              <p className={`font-body text-sm mb-4 ${
+                pkg.soldOut ? "text-muted-foreground/60" : "text-gold"
               }`}>
                 {pkg.installment}
               </p>
 
+              {pkg.soldOut && (
+                <p className="font-body text-sm text-muted-foreground mb-4 italic">
+                  Essa data já foi reservada. Consulte novos períodos disponíveis.
+                </p>
+              )}
+
               <button
                 onClick={() => handleWhatsApp(pkg)}
                 className={`w-full font-body font-medium py-3 rounded-md transition-colors duration-300 text-base uppercase tracking-wider ${
-                  pkg.highlight
-                    ? "bg-gold text-accent-foreground hover:bg-gold-light"
-                    : "bg-primary text-primary-foreground hover:bg-moss-light"
+                  pkg.soldOut
+                    ? "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                    : pkg.highlight
+                      ? "bg-gold text-accent-foreground hover:bg-gold-light"
+                      : "bg-primary text-primary-foreground hover:bg-moss-light"
                 }`}
               >
-                Reservar via WhatsApp
+                {pkg.soldOut ? "Consultar outras datas" : "Reservar via WhatsApp"}
               </button>
             </motion.div>
           ))}
