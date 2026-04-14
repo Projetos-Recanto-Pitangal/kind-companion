@@ -1,4 +1,4 @@
-const API_BASE = "https://pousada-sync-production.up.railway.app";
+import { supabase } from "@/integrations/supabase/client";
 
 export interface DayInfo {
   available: boolean;
@@ -9,6 +9,8 @@ export interface DayInfo {
 export interface AvailabilityResponse {
   updatedAt: string;
   calendar: Record<string, Record<string, DayInfo>>;
+  fallback?: boolean;
+  error?: string;
 }
 
 export interface CheckResponse {
@@ -20,16 +22,33 @@ export interface CheckResponse {
   priceSource: string;
   breakdown: { date: string; available: boolean; price: number | null }[];
   updatedAt: string;
+  fallback?: boolean;
+  error?: string;
+}
+
+async function invokeReservationProxy<T>(body: Record<string, string>): Promise<T> {
+  const { data, error } = await supabase.functions.invoke("reservation-proxy", {
+    body,
+  });
+
+  if (error || !data) {
+    throw new Error("Erro ao carregar dados de reserva.");
+  }
+
+  return data as T;
 }
 
 export async function fetchAvailability(month: string): Promise<AvailabilityResponse> {
-  const res = await fetch(`${API_BASE}/availability?month=${month}`);
-  if (!res.ok) throw new Error("Erro ao buscar disponibilidade.");
-  return res.json();
+  return invokeReservationProxy<AvailabilityResponse>({
+    action: "availability",
+    month,
+  });
 }
 
 export async function checkPeriod(checkin: string, checkout: string): Promise<CheckResponse> {
-  const res = await fetch(`${API_BASE}/check?checkin=${encodeURIComponent(checkin)}&checkout=${encodeURIComponent(checkout)}`);
-  if (!res.ok) throw new Error("Erro ao verificar período.");
-  return res.json();
+  return invokeReservationProxy<CheckResponse>({
+    action: "check",
+    checkin,
+    checkout,
+  });
 }

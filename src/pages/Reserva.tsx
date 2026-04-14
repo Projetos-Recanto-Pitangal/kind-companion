@@ -30,6 +30,10 @@ export default function Reserva() {
         const currentMonth = format(now, "yyyy-MM");
         const data = await fetchAvailability(currentMonth);
 
+        if (data.fallback) {
+          toast.warning("Calendário carregado em modo alternativo. Alguns preços podem ficar indisponíveis.");
+        }
+
         const blocked: Date[] = [];
         for (const [, days] of Object.entries(data.calendar)) {
           for (const [dateStr, info] of Object.entries(days)) {
@@ -84,6 +88,10 @@ export default function Reserva() {
 
     checkPeriod(ciStr, coStr)
       .then((result) => {
+        if (result.fallback && result.available && result.totalPrice === null) {
+          toast.warning("Disponibilidade confirmada, mas o valor total não pôde ser carregado agora.");
+        }
+
         if (!result.available) {
           setRangeConflict(true);
           setPriceInfo(null);
@@ -195,6 +203,14 @@ export default function Reserva() {
                   <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
                     <Loader2 className="h-4 w-4 animate-spin" />
                     Verificando disponibilidade e preço…
+                  </div>
+                )}
+
+                {priceInfo?.available && priceInfo.totalPrice === null && (
+                  <div className="bg-muted/50 border rounded-xl p-4 mb-4">
+                    <p className="text-sm text-foreground">
+                      Disponibilidade confirmada, mas o valor total não pôde ser carregado agora.
+                    </p>
                   </div>
                 )}
 
