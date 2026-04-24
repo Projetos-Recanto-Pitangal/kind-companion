@@ -22,7 +22,7 @@ const packages = [
     details: "3 diárias para 1 casal · Café da manhã incluso",
     installment: "até 5x sem juros no cartão de crédito",
     highlight: false,
-    soldOut: false,
+    soldOut: true,
   },
   {
     icon: Sun,
