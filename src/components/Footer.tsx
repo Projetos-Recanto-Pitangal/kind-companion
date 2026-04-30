@@ -69,9 +69,20 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-moss-light/20 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="border-t border-moss-light/20 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <p className="font-body text-sm text-primary-foreground/40">
-            © 2026 Recanto Pitangal. Todos os direitos reservados.
+            © 2026 Recanto Pitangal. Todos os direitos reservados.{" "}
+            <span className="block md:inline mt-1 md:mt-0">
+              Desenvolvido por{" "}
+              <a 
+                href="https://www.novismarketing.com.br" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-gold transition-colors underline-offset-4 hover:underline"
+              >
+                Novis Marketing
+              </a>
+            </span>
           </p>
           <p className="font-body text-sm text-primary-foreground/40 flex items-center gap-1">
             Feito com <Heart className="w-3 h-3 text-terracotta fill-terracotta" /> na Serra da Mantiqueira
