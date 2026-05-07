@@ -4,7 +4,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import ComoParticipar from "./pages/ComoParticipar";
 import Reserva from "./pages/Reserva";
 import ReservaConfirmacao from "./pages/ReservaConfirmacao";
 import LuaDeMel from "./pages/LuaDeMel";
@@ -20,7 +19,6 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/como-participar" element={<ComoParticipar />} />
           <Route path="/reserva" element={<Reserva />} />
           <Route path="/reserva/confirmacao" element={<ReservaConfirmacao />} />
           <Route path="/lua-de-mel" element={<LuaDeMel />} />
