@@ -34,8 +34,8 @@ export default function ReservaConfirmacao() {
               Solicitação recebida com sucesso!
             </h1>
             <p className="text-muted-foreground leading-relaxed">
-              Em breve entraremos em contato pelo WhatsApp para confirmar
-              sua reserva e combinar os detalhes.
+              Em até 2 horas entraremos em contato pelo WhatsApp para confirmar
+              a disponibilidade e combinar os detalhes.
             </p>
 
             <div className="bg-accent/30 rounded-xl p-5 text-sm space-y-2 text-left">
