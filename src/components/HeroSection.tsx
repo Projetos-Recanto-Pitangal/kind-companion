@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Star, ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-chalet.jpg";
 import logoSelo from "@/assets/logo-selo-recanto-pitangal.png";
-import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 
 const HeroSection = () => {
   return (
@@ -79,42 +78,6 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.4 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <motion.a
-            href={buildWhatsAppUrl("em fazer uma reserva")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-8 py-3.5 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
-            animate={{
-              scale: [1, 1.05, 1],
-              boxShadow: [
-                "0 0 0 0 rgba(191, 155, 48, 0)",
-                "0 0 0 8px rgba(191, 155, 48, 0.3)",
-                "0 0 0 0 rgba(191, 155, 48, 0)",
-              ],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            whileHover={{ scale: 1.08 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            Reserve Agora
-          </motion.a>
-          <a
-            href="#gallery"
-            className="font-body font-medium border border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 px-8 py-3.5 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
-          >
-            Conheça o Chalé
-          </a>
-        </motion.div>
       </div>
 
       {/* Scroll indicator */}
