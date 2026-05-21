@@ -17,7 +17,10 @@ const HeroSection = () => {
           fetchPriority="high"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/60 to-primary/30" />
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to top, hsla(330, 30%, 22%, 0.90), hsla(330, 30%, 22%, 0.60), hsla(330, 30%, 22%, 0.30))' }}
+        />
       </div>
 
       {/* Content */}

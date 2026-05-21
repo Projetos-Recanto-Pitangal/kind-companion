@@ -27,8 +27,14 @@ const MantiqueiraHero = () => {
           fetchPriority="high"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/55 to-primary/85" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/40 via-transparent to-primary/40" />
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, hsla(330, 30%, 22%, 0.70), hsla(330, 30%, 22%, 0.55), hsla(330, 30%, 22%, 0.85))' }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to right, hsla(330, 30%, 22%, 0.40), transparent, hsla(330, 30%, 22%, 0.40))' }}
+        />
       </div>
 
       {/* Content */}
