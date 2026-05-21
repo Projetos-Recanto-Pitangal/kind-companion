@@ -76,7 +76,7 @@ export default function ReservationCalendar({
   const getDayClass = useCallback(
     (date: Date, currentMonth: Date) => {
       const base =
-        "relative w-10 h-10 flex items-center justify-center text-sm rounded-lg transition-all duration-150 ";
+        "relative w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 flex items-center justify-center text-sm sm:text-base lg:text-lg rounded-lg transition-all duration-150 ";
 
       if (!isSameMonth(date, currentMonth)) {
         return base + "text-transparent pointer-events-none";
@@ -126,20 +126,20 @@ export default function ReservationCalendar({
 
     return (
       <div className="flex-1 min-w-[280px]">
-        <h3 className="text-center font-['Playfair_Display'] font-semibold text-foreground mb-3 capitalize text-lg">
+        <h3 className="text-center font-['Playfair_Display'] font-semibold text-foreground mb-3 capitalize text-lg lg:text-xl">
           {format(month, "MMMM yyyy", { locale: ptBR })}
         </h3>
-        <div className="grid grid-cols-7 gap-1 mb-1">
+        <div className="grid grid-cols-7 gap-1 lg:gap-1.5 mb-1">
           {WEEKDAYS.map((d) => (
             <div
               key={d}
-              className="text-center text-xs font-medium text-muted-foreground py-1"
+              className="text-center text-xs lg:text-sm font-medium text-muted-foreground py-1"
             >
               {d}
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-7 gap-1">
+        <div className="grid grid-cols-7 gap-1 lg:gap-1.5 justify-items-center">
           {weeks.flat().map((date, i) => {
             const blocked = isBlocked(date) && isSameMonth(date, month) && !isPast(date);
             const dayEl = (
@@ -174,7 +174,7 @@ export default function ReservationCalendar({
   const canGoPrev = !isBefore(subMonths(baseMonth, 1), startOfMonth(today));
 
   return (
-    <div className="bg-card rounded-2xl shadow-sm border p-4 sm:p-6">
+    <div className="bg-card rounded-2xl shadow-sm border p-4 sm:p-6 lg:p-8">
       {/* Navigation */}
       <div className="flex items-center justify-between mb-4">
         <button
@@ -195,7 +195,7 @@ export default function ReservationCalendar({
       </div>
 
       {/* Two months side by side */}
-      <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
+      <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 lg:gap-16">
         {renderMonth(baseMonth)}
         {renderMonth(addMonths(baseMonth, 1))}
       </div>
