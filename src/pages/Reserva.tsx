@@ -244,7 +244,6 @@ export default function Reserva() {
             <ReservationForm
               checkIn={checkIn!}
               checkOut={checkOut!}
-              totalPrice={priceInfo?.totalPrice ?? null}
               onBack={() => setStep("calendar")}
             />
           )}
