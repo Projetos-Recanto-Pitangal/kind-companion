@@ -145,6 +145,21 @@ export default function Reserva() {
             </p>
           </div>
 
+          <div className="bg-accent/10 border border-accent/20 rounded-xl p-4 sm:p-5 max-w-2xl mx-auto mb-8 flex items-start gap-3">
+            <Info className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+            <div className="text-sm text-foreground/80 leading-relaxed">
+              <p className="font-semibold text-foreground mb-1">
+                📋 Como funciona a reserva:
+              </p>
+              <p>
+                Selecione o período desejado e preencha seus dados. Ao final, sua solicitação será enviada diretamente para o WhatsApp do anfitrião, que confirmará a disponibilidade e informará os valores.
+              </p>
+              <p className="mt-1.5">
+                Os preços variam conforme a temporada e datas especiais, por isso a confirmação é feita diretamente com o anfitrião.
+              </p>
+            </div>
+          </div>
+
           {loading ? (
             <div className="flex flex-col items-center justify-center py-20 gap-3">
               <Loader2 className="h-8 w-8 animate-spin text-primary" />
