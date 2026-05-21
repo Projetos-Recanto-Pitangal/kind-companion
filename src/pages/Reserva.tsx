@@ -133,7 +133,7 @@ export default function Reserva() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h1 className="font-['Playfair_Display'] text-3xl sm:text-4xl font-bold text-foreground mb-3">
               Reservas
