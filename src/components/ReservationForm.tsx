@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
 import { Loader2, CalendarCheck, ArrowLeft } from "lucide-react";
 import { toast } from "sonner";
 
@@ -52,7 +53,7 @@ export default function ReservationForm({ checkIn, checkOut, onBack }: Reservati
       if (error) throw error;
 
       const message = `Olá! Vim através do site da pousada e tenho interesse em reservar o chalé neste período. Gostaria de saber os valores e as condições de pagamento.\n\n📅 *Check-in:* ${format(checkIn, "dd/MM/yyyy")}\n📅 *Check-out:* ${format(checkOut, "dd/MM/yyyy")}\n🌙 *Período:* ${nights} noite${nights > 1 ? "s" : ""}\n\n👤 *Nome:* ${name.trim()}\n📱 *WhatsApp:* ${phone.trim()}\n📧 *E-mail:* ${email.trim()}\n\n💬 *Observações:* ${notes.trim() || "Nenhuma"}\n\nAguardo seu retorno. Obrigado!`;
-      const whatsappUrl = `https://wa.me/5535984011430?text=${encodeURIComponent(message)}`;
+      const whatsappUrl = buildWhatsAppUrl("em fazer uma reserva", message);
       window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 
       navigate("/reserva/confirmacao", {
