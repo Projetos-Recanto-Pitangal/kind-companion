@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import ReservationCalendar from "@/components/ReservationCalendar";
 import ReservationForm from "@/components/ReservationForm";
 import { Button } from "@/components/ui/button";
-import { Loader2, XCircle, CalendarCheck, ArrowRight } from "lucide-react";
+import { Loader2, XCircle, CalendarCheck, ArrowRight, Info } from "lucide-react";
 import { toast } from "sonner";
 import { fetchAvailability, checkPeriod, type CheckResponse } from "@/lib/pousada-api";
 
