@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import MantiqueiraHero from "@/components/MantiqueiraHero";
 import HeroSection from "@/components/HeroSection";
 import LuaDeMelBanner from "@/components/LuaDeMelBanner";
 import GallerySection from "@/components/GallerySection";
@@ -15,6 +16,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <AmbientAudioPlayer />
       <Navbar />
+      <MantiqueiraHero />
       <HeroSection />
       <LuaDeMelBanner />
       <GallerySection />
