@@ -29,11 +29,11 @@ const MantiqueiraHero = () => {
         />
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to bottom, hsla(330, 30%, 22%, 0.70), hsla(330, 30%, 22%, 0.55), hsla(330, 30%, 22%, 0.85))' }}
+          style={{ background: 'linear-gradient(to bottom, hsla(0, 0%, 0%, 0.75), hsla(0, 0%, 0%, 0.55), hsla(0, 0%, 0%, 0.9))' }}
         />
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to right, hsla(330, 30%, 22%, 0.40), transparent, hsla(330, 30%, 22%, 0.40))' }}
+          style={{ background: 'linear-gradient(to right, hsla(0, 0%, 0%, 0.45), transparent, hsla(0, 0%, 0%, 0.45))' }}
         />
       </div>
 
