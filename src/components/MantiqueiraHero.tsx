@@ -115,7 +115,7 @@ const MantiqueiraHero = () => {
             </Link>
           </motion.div>
           <a
-            href="#hero"
+            href="#gallery"
             className="font-body font-medium border border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/70 px-9 py-4 rounded-md transition-colors duration-300 text-sm md:text-base uppercase tracking-wider"
           >
             Conheça o Recanto Pitangal
