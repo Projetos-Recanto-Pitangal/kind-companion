@@ -89,12 +89,31 @@ const MantiqueiraHero = () => {
           transition={{ duration: 0.8, delay: 1.2 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
         >
-          <Link
-            to="/reserva"
-            className="font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-9 py-4 rounded-md transition-all duration-300 text-sm md:text-base uppercase tracking-wider shadow-lg shadow-gold/20 hover:shadow-gold/40 hover:-translate-y-0.5"
+          <motion.div
+            animate={{
+              scale: [1, 1.05, 1],
+              boxShadow: [
+                "0 0 0 0 rgba(191, 155, 48, 0)",
+                "0 0 0 8px rgba(191, 155, 48, 0.3)",
+                "0 0 0 0 rgba(191, 155, 48, 0)",
+              ],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.97 }}
+            className="rounded-md"
           >
-            Consultar datas disponíveis
-          </Link>
+            <Link
+              to="/reserva"
+              className="inline-block font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-8 py-3.5 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
+            >
+              Consultar datas disponíveis
+            </Link>
+          </motion.div>
           <a
             href="#hero"
             className="font-body font-medium border border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/70 px-9 py-4 rounded-md transition-colors duration-300 text-sm md:text-base uppercase tracking-wider"
