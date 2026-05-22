@@ -24,25 +24,25 @@ const amenities = [
 
 const AmenitiesSection = () => {
   return (
-    <section id="amenities" className="py-16 md:py-28 bg-secondary">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="amenities" className="py-16 md:py-28 lg:py-36 bg-secondary">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-14"
+          className="text-center mb-14 lg:mb-20"
         >
-          <p className="font-body text-gold text-base uppercase tracking-[0.3em] mb-3">Tudo pensado para você</p>
-          <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground mb-4">
+          <p className="font-body text-gold text-base lg:text-lg uppercase tracking-[0.3em] mb-3 lg:mb-5">Tudo pensado para você</p>
+          <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-4 lg:mb-6">
             Comodidades & Diferenciais
           </h2>
-          <p className="font-body text-muted-foreground max-w-xl mx-auto text-lg md:text-xl">
+          <p className="font-body text-muted-foreground max-w-xl lg:max-w-2xl mx-auto text-lg md:text-xl lg:text-2xl leading-relaxed">
             Cada detalhe do chalé foi planejado para oferecer conforto, privacidade e uma experiência única.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
           {amenities.map((item, i) => (
             <motion.div
               key={i}
@@ -50,13 +50,13 @@ const AmenitiesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="bg-card rounded-lg p-5 md:p-6 text-center hover:shadow-lg transition-shadow duration-300 group"
+              className="bg-card rounded-lg p-5 md:p-6 lg:p-8 text-center hover:shadow-lg transition-shadow duration-300 group"
             >
-              <item.icon className="w-7 h-7 text-gold mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
-              <h3 className="font-display text-base md:text-lg font-semibold text-foreground mb-1">
+              <item.icon className="w-7 h-7 lg:w-9 lg:h-9 text-gold mx-auto mb-3 lg:mb-4 group-hover:scale-110 transition-transform duration-300" />
+              <h3 className="font-display text-base md:text-lg lg:text-xl font-semibold text-foreground mb-1 lg:mb-2">
                 {item.label}
               </h3>
-              <p className="font-body text-sm md:text-base text-muted-foreground">{item.desc}</p>
+              <p className="font-body text-sm md:text-base lg:text-lg text-muted-foreground leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>

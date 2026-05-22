@@ -23,25 +23,25 @@ const images = [
 
 const GallerySection = () => {
   return (
-    <section id="gallery" className="py-16 md:py-28 bg-background">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="gallery" className="py-16 md:py-28 lg:py-36 bg-background">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-14"
+          className="text-center mb-14 lg:mb-20"
         >
-          <p className="font-body text-gold text-base uppercase tracking-[0.3em] mb-3">Exclusivo para dois</p>
-          <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground mb-4">
+          <p className="font-body text-gold text-base lg:text-lg uppercase tracking-[0.3em] mb-3 lg:mb-5">Exclusivo para dois</p>
+          <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-4 lg:mb-6">
             Conheça o Chalé
           </h2>
-          <p className="font-body text-muted-foreground max-w-xl mx-auto text-lg md:text-xl">
+          <p className="font-body text-muted-foreground max-w-xl lg:max-w-2xl mx-auto text-lg md:text-xl lg:text-2xl leading-relaxed">
             Um chalé completo e privativo, pensado em cada detalhe para proporcionar momentos inesquecíveis a dois.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 lg:gap-6">
           {images.map((img, i) => (
             <motion.div
               key={i}

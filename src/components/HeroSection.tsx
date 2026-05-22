@@ -23,7 +23,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 max-w-4xl lg:max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
         >
-          <p className="font-body text-primary-foreground/90 text-base md:text-lg uppercase tracking-[0.3em] mb-4">
+          <p className="font-body text-primary-foreground/90 text-base md:text-lg lg:text-xl uppercase tracking-[0.3em] mb-4 lg:mb-6">
             Sapucaí-Mirim · Serra da Mantiqueira
           </p>
         </motion.div>
@@ -47,7 +47,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="font-display text-4xl md:text-6xl lg:text-7xl font-semibold text-primary-foreground leading-tight mb-6"
+          className="font-display text-4xl md:text-6xl lg:text-8xl font-semibold text-primary-foreground leading-tight mb-6 lg:mb-8"
         >
           Recanto Pitangal
         </motion.h1>
@@ -56,7 +56,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="font-display text-xl md:text-2xl lg:text-3xl text-primary-foreground/90 italic mb-8 max-w-2xl mx-auto"
+          className="font-display text-xl md:text-2xl lg:text-4xl text-primary-foreground/90 italic mb-8 lg:mb-12 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed"
         >
           Um refúgio exclusivo para dois, onde a natureza encontra o romance
         </motion.p>
@@ -68,13 +68,13 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 1.1 }}
           className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mb-10"
         >
-          <div className="flex items-center gap-1.5 bg-primary/40 backdrop-blur-sm rounded-full px-4 py-2">
-            <Star className="w-4 h-4 text-gold fill-gold" />
-            <span className="font-body text-base text-primary-foreground">5.0 no Google</span>
+          <div className="flex items-center gap-1.5 bg-primary/40 backdrop-blur-sm rounded-full px-4 py-2 lg:px-6 lg:py-3">
+            <Star className="w-4 h-4 lg:w-5 lg:h-5 text-gold fill-gold" />
+            <span className="font-body text-base lg:text-lg text-primary-foreground">5.0 no Google</span>
           </div>
-          <div className="flex items-center gap-1.5 bg-primary/40 backdrop-blur-sm rounded-full px-4 py-2">
-            <Star className="w-4 h-4 text-gold fill-gold" />
-            <span className="font-body text-base text-primary-foreground">Preferido dos Hóspedes · Airbnb</span>
+          <div className="flex items-center gap-1.5 bg-primary/40 backdrop-blur-sm rounded-full px-4 py-2 lg:px-6 lg:py-3">
+            <Star className="w-4 h-4 lg:w-5 lg:h-5 text-gold fill-gold" />
+            <span className="font-body text-base lg:text-lg text-primary-foreground">Preferido dos Hóspedes · Airbnb</span>
           </div>
         </motion.div>
 

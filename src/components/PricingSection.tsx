@@ -57,25 +57,25 @@ const PricingSection = () => {
   };
 
   return (
-    <section id="pricing" className="py-16 md:py-28 bg-background">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="pricing" className="py-16 md:py-28 lg:py-36 bg-background">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-14"
+          className="text-center mb-14 lg:mb-20"
         >
-          <p className="font-body text-gold text-base uppercase tracking-[0.3em] mb-3">Valores para 1 casal</p>
-          <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground mb-4">
+          <p className="font-body text-gold text-base lg:text-lg uppercase tracking-[0.3em] mb-3 lg:mb-5">Valores para 1 casal</p>
+          <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-4 lg:mb-6">
             Tarifas & Pacotes
           </h2>
-          <p className="font-body text-muted-foreground max-w-xl mx-auto text-lg md:text-xl">
+          <p className="font-body text-muted-foreground max-w-xl lg:max-w-2xl mx-auto text-lg md:text-xl lg:text-2xl leading-relaxed">
             Café da manhã incluso em todas as opções. Valores válidos para 2026.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 lg:gap-8 max-w-4xl lg:max-w-5xl mx-auto">
           {packages.map((pkg, i) => (
             <motion.div
               key={i}
@@ -83,7 +83,7 @@ const PricingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`relative rounded-lg p-6 md:p-8 border transition-shadow duration-300 overflow-hidden ${
+              className={`relative rounded-lg p-6 md:p-8 lg:p-10 border transition-shadow duration-300 overflow-hidden ${
                 pkg.soldOut
                   ? "bg-card/60 text-card-foreground border-border opacity-80"
                   : pkg.highlight
@@ -102,9 +102,9 @@ const PricingSection = () => {
 
               <div className="flex items-start justify-between mb-4">
                 <div>
-                  <pkg.icon className={`w-6 h-6 mb-2 ${pkg.soldOut ? "text-muted-foreground" : "text-gold"}`} />
-                  <h3 className={`font-display text-xl font-semibold ${pkg.soldOut ? "text-muted-foreground" : ""}`}>{pkg.title}</h3>
-                  <p className={`font-body text-sm uppercase tracking-wider mt-1 ${
+                  <pkg.icon className={`w-6 h-6 lg:w-8 lg:h-8 mb-2 lg:mb-3 ${pkg.soldOut ? "text-muted-foreground" : "text-gold"}`} />
+                  <h3 className={`font-display text-xl lg:text-2xl font-semibold ${pkg.soldOut ? "text-muted-foreground" : ""}`}>{pkg.title}</h3>
+                  <p className={`font-body text-sm lg:text-base uppercase tracking-wider mt-1 lg:mt-2 ${
                     pkg.soldOut
                       ? "text-muted-foreground/60"
                       : pkg.highlight ? "text-primary-foreground/60" : "text-muted-foreground"
@@ -114,17 +114,17 @@ const PricingSection = () => {
                 </div>
               </div>
 
-              <p className={`font-display text-3xl font-bold mb-2 ${pkg.soldOut ? "text-muted-foreground line-through decoration-destructive/50" : ""}`}>
+              <p className={`font-display text-3xl lg:text-4xl font-bold mb-2 lg:mb-3 ${pkg.soldOut ? "text-muted-foreground line-through decoration-destructive/50" : ""}`}>
                 {pkg.price}
               </p>
-              <p className={`font-body text-base mb-1 ${
+              <p className={`font-body text-base lg:text-lg mb-1 lg:mb-2 ${
                 pkg.soldOut
                   ? "text-muted-foreground/60"
                   : pkg.highlight ? "text-primary-foreground/80" : "text-muted-foreground"
               }`}>
                 {pkg.details}
               </p>
-              <p className={`font-body text-sm mb-4 ${
+              <p className={`font-body text-sm lg:text-base mb-4 lg:mb-6 ${
                 pkg.soldOut ? "text-muted-foreground/60" : "text-gold"
               }`}>
                 {pkg.installment}
@@ -138,7 +138,7 @@ const PricingSection = () => {
 
               <button
                 onClick={() => handleWhatsApp(pkg)}
-                className={`w-full font-body font-medium py-3 rounded-md transition-colors duration-300 text-base uppercase tracking-wider ${
+                className={`w-full font-body font-medium py-3 lg:py-4 rounded-md transition-colors duration-300 text-base lg:text-lg uppercase tracking-wider shadow-sm ${
                   pkg.soldOut
                     ? "bg-secondary text-secondary-foreground hover:bg-secondary/80"
                     : pkg.highlight
