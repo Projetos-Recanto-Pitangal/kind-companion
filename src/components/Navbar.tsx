@@ -23,26 +23,26 @@ const Navbar = () => {
       {/* Navbar bar */}
       <div className="fixed top-0 left-0 right-0 z-50">
         <nav className="bg-primary/95 backdrop-blur-md border-b border-moss-light/20">
-          <div className="container mx-auto px-4 md:px-8">
-            <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="container mx-auto px-4 md:px-8 lg:px-12">
+            <div className="flex items-center justify-between h-16 md:h-20 lg:h-24">
               <a href="/" className="flex items-center gap-2">
-                <img src={logo} alt="Recanto Pitangal" className="h-8 md:h-10 w-auto" />
+                <img src={logo} alt="Recanto Pitangal" className="h-8 md:h-10 lg:h-12 w-auto" />
               </a>
 
               {/* Desktop nav */}
-              <div className="hidden md:flex items-center gap-8">
+              <div className="hidden md:flex items-center gap-8 lg:gap-10">
                 {navLinks.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}
-                    className="font-body text-sm text-primary-foreground/80 hover:text-gold transition-colors duration-300 tracking-wide uppercase"
+                    className="font-body text-sm lg:text-base text-primary-foreground/80 hover:text-gold transition-colors duration-300 tracking-wide uppercase"
                   >
                     {link.label}
                   </a>
                 ))}
                 <Link
                   to="/lua-de-mel"
-                  className="font-body text-sm font-medium text-gold border border-gold/40 px-4 py-2 rounded-md hover:bg-gold/10 transition-colors duration-300 uppercase tracking-wider"
+                  className="font-body text-sm lg:text-base font-medium text-gold border border-gold/40 px-4 py-2 lg:px-5 lg:py-2.5 rounded-md hover:bg-gold/10 transition-colors duration-300 uppercase tracking-wider"
                 >
                   Lua de Mel
                 </Link>
@@ -50,7 +50,7 @@ const Navbar = () => {
                   href={buildWhatsAppUrl("em fazer uma reserva")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-body text-sm font-medium bg-gold text-accent-foreground px-5 py-2.5 rounded-md hover:bg-gold-light transition-colors duration-300 uppercase tracking-wider"
+                  className="font-body text-sm lg:text-base font-medium bg-gold text-accent-foreground px-5 py-2.5 lg:px-7 lg:py-3 rounded-md hover:bg-gold-light transition-colors duration-300 uppercase tracking-wider shadow-sm"
                 >
                   Reservar
                 </a>

@@ -10,32 +10,32 @@ const nearbyCities = [
 
 const LocationSection = () => {
   return (
-    <section id="location" className="py-16 md:py-28 bg-secondary">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="location" className="py-16 md:py-28 lg:py-36 bg-secondary">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-14"
+          className="text-center mb-14 lg:mb-20"
         >
-          <p className="font-body text-gold text-base uppercase tracking-[0.3em] mb-3">Serra da Mantiqueira</p>
-          <h2 className="font-display text-3xl md:text-5xl font-semibold text-foreground mb-4">
+          <p className="font-body text-gold text-base lg:text-lg uppercase tracking-[0.3em] mb-3 lg:mb-5">Serra da Mantiqueira</p>
+          <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-semibold text-foreground mb-4 lg:mb-6">
             Localização Privilegiada
           </h2>
-          <p className="font-body text-muted-foreground max-w-xl mx-auto text-lg md:text-xl">
+          <p className="font-body text-muted-foreground max-w-xl lg:max-w-2xl mx-auto text-lg md:text-xl lg:text-2xl leading-relaxed">
             Em Sapucaí-Mirim (MG), no coração da Serra da Mantiqueira, cercado por natureza e próximo às melhores cidades turísticas da região.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
           {/* Map embed */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="rounded-lg overflow-hidden shadow-lg h-72 md:h-96"
+            className="rounded-lg overflow-hidden shadow-lg h-72 md:h-96 lg:h-[480px]"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29324.15!2d-45.74!3d-22.68!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cc8f1a4a3a3a3b%3A0x4a3a3a3b4a3a3a3b!2sSapuca%C3%AD-Mirim%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
@@ -56,27 +56,27 @@ const LocationSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <MapPin className="w-6 h-6 text-gold" />
+            <div className="flex items-center gap-3 lg:gap-4 mb-6 lg:mb-8">
+              <MapPin className="w-6 h-6 lg:w-8 lg:h-8 text-gold" />
               <div>
-                <h3 className="font-display text-xl font-semibold text-foreground">Sapucaí-Mirim, MG</h3>
-                <p className="font-body text-base text-muted-foreground">Serra da Mantiqueira</p>
+                <h3 className="font-display text-xl lg:text-2xl font-semibold text-foreground">Sapucaí-Mirim, MG</h3>
+                <p className="font-body text-base lg:text-lg text-muted-foreground">Serra da Mantiqueira</p>
               </div>
             </div>
 
-            <p className="font-body text-muted-foreground mb-6 leading-relaxed text-base md:text-lg">
+            <p className="font-body text-muted-foreground mb-6 lg:mb-8 leading-relaxed text-base md:text-lg lg:text-xl">
               Check-in a partir das <strong className="text-foreground">15h</strong> · Check-out até as <strong className="text-foreground">12h</strong>
             </p>
 
-            <h4 className="font-display text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-              <Mountain className="w-5 h-5 text-gold" />
+            <h4 className="font-display text-lg lg:text-xl font-semibold text-foreground mb-4 lg:mb-6 flex items-center gap-2">
+              <Mountain className="w-5 h-5 lg:w-6 lg:h-6 text-gold" />
               Cidades Próximas
             </h4>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-3 lg:gap-4">
               {nearbyCities.map((city, i) => (
-                <div key={i} className="bg-card rounded-lg p-4 border border-border">
-                  <p className="font-display text-base font-semibold text-foreground">{city.name}</p>
-                  <p className="font-body text-sm text-muted-foreground">≈ {city.distance}</p>
+                <div key={i} className="bg-card rounded-lg p-4 lg:p-5 border border-border">
+                  <p className="font-display text-base lg:text-lg font-semibold text-foreground">{city.name}</p>
+                  <p className="font-body text-sm lg:text-base text-muted-foreground">≈ {city.distance}</p>
                 </div>
               ))}
             </div>
