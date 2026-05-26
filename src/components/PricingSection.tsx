@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Calendar, Heart, Sun, Sparkles } from "lucide-react";
 import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
+import { track } from "@/lib/tracking";
 import { Badge } from "@/components/ui/badge";
 
 const packages = [
@@ -48,6 +49,12 @@ const packages = [
 
 const PricingSection = () => {
   const handleWhatsApp = (pkg: typeof packages[0]) => {
+    track("ViewContent", {
+      content_name: pkg.title,
+      content_category: "pacote",
+      period: pkg.period,
+      sold_out: pkg.soldOut,
+    });
     const url = buildWhatsAppUrl(
       pkg.soldOut
         ? `em consultar outras datas disponíveis (vi que o pacote ${pkg.title} — ${pkg.period} — já está esgotado)`
