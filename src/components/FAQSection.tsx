@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { trackCustom } from "@/lib/tracking";
 
 const faqs = [
   {
@@ -89,6 +90,13 @@ Check-out: até 12h`,
 ];
 
 const FAQSection = () => {
+  const handleFaqOpen = (value: string) => {
+    if (!value) return; // ignora o fechamento
+    const index = Number(value.replace("faq-", ""));
+    const question = faqs[index]?.question;
+    if (question) trackCustom("FAQOpen", { question });
+  };
+
   return (
     <section id="faq" className="py-16 md:py-28 lg:py-36 bg-secondary">
       <div className="container mx-auto px-4 md:px-8 lg:px-12 max-w-3xl lg:max-w-4xl">
@@ -104,7 +112,12 @@ const FAQSection = () => {
           </h2>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-3 lg:space-y-4">
+        <Accordion
+          type="single"
+          collapsible
+          className="space-y-3 lg:space-y-4"
+          onValueChange={handleFaqOpen}
+        >
           {faqs.map((faq, index) => (
             <AccordionItem
               key={index}
