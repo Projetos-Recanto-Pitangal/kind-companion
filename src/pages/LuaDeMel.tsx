@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Star, Bath, Flame, Home, ShoppingCart, Car, MessageCircle, ChevronDown, Heart } from "lucide-react";
 import heroImage from "@/assets/lua-de-mel-hero.jpg";
 import lareiraImage from "@/assets/lua-de-mel-fogueira.jpg";
@@ -9,6 +9,7 @@ import casalBanheira from "@/assets/lua-de-mel-banheira.jpg";
 import casalLareira from "@/assets/lua-de-mel-lareira-casal.jpg";
 
 import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
+import { track } from "@/lib/tracking";
 
 const WHATSAPP_URL = buildWhatsAppUrl("no pacote de Lua de Mel");
 
@@ -62,6 +63,14 @@ const LuaDeMel = () => {
   });
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.3]);
+
+  useEffect(() => {
+    track("ViewContent", {
+      content_name: "Pacote Lua de Mel",
+      content_category: "honeymoon",
+      content_type: "product",
+    });
+  }, []);
 
   return (
     <div className="min-h-screen" style={{ background: "#0d0d0d", color: "#f5f0e8" }}>
