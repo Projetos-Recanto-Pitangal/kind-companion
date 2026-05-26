@@ -64,6 +64,14 @@ const LuaDeMel = () => {
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.3]);
 
+  useEffect(() => {
+    track("ViewContent", {
+      content_name: "Pacote Lua de Mel",
+      content_category: "honeymoon",
+      content_type: "product",
+    });
+  }, []);
+
   return (
     <div className="min-h-screen" style={{ background: "#0d0d0d", color: "#f5f0e8" }}>
       {/* Fixed WhatsApp Button */}
