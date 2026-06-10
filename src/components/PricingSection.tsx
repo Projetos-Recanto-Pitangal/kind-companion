@@ -42,8 +42,8 @@ const packages = [
     price: "R$ 2.000",
     details: "2 diárias para 1 casal · Café da manhã incluso",
     installment: "até 5x sem juros no cartão de crédito",
-    highlight: true,
-    soldOut: false,
+    highlight: false,
+    soldOut: true,
   },
 ];
 
