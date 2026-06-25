@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Sparkles, Mountain, Heart, Compass, ChevronDown } from "lucide-react";
+import { MapPin, Sparkles, Mountain, Heart, Compass, ChevronDown, PawPrint } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroBanner from "@/assets/hero-banner-mantiqueira.png";
 
@@ -39,6 +39,29 @@ const MantiqueiraHero = () => {
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-8 py-24 md:py-32 text-center">
+        {/* Pet Friendly Sticker */}
+        <motion.a
+          href="#pet-friendly"
+          initial={{ opacity: 0, y: -10, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 1.3 }}
+          whileHover={{ scale: 1.03 }}
+          className="absolute top-4 right-4 md:top-6 md:right-6 z-20 flex items-start gap-2.5 max-w-[200px] md:max-w-[260px] px-3.5 py-2.5 md:px-4 md:py-3 rounded-xl bg-background/90 backdrop-blur-md border border-gold/40 shadow-xl text-left hover:border-gold transition-colors"
+          aria-label="Pousada pet friendly — saiba mais"
+        >
+          <div className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full bg-gold/15 flex items-center justify-center">
+            <PawPrint className="w-3.5 h-3.5 md:w-4 md:h-4 text-gold" />
+          </div>
+          <div className="leading-tight">
+            <p className="font-display text-[11px] md:text-sm font-semibold text-foreground">
+              Seu pet é bem-vindo por aqui!
+            </p>
+            <p className="hidden md:block font-body text-[11px] text-muted-foreground mt-0.5 leading-snug">
+              Área externa cercada, com conforto e segurança.
+            </p>
+          </div>
+        </motion.a>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
