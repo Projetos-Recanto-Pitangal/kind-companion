@@ -18,6 +18,7 @@ const Index = () => {
       <AmbientAudioPlayer />
       <Navbar />
       <MantiqueiraHero />
+      <PetFriendlySection />
       <HeroSection />
       <LuaDeMelBanner />
       <GallerySection />
@@ -25,7 +26,6 @@ const Index = () => {
       <TestimonialsSection />
       <PricingSection />
       <LocationSection />
-      <PetFriendlySection />
       <FAQSection />
       <Footer />
     </div>
