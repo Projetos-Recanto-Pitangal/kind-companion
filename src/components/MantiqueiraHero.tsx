@@ -66,7 +66,7 @@ const MantiqueiraHero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 0.4 }}
-          className="font-display text-4xl md:text-6xl lg:text-7xl font-medium text-primary-foreground leading-[1.1] mb-8 max-w-4xl mx-auto"
+          className="font-display text-4xl md:text-6xl lg:text-7xl font-medium text-primary-foreground leading-[1.1] mt-16 md:mt-24 mb-8 max-w-4xl mx-auto"
         >
           Talvez esse seja o final de semana que vocês estavam precisando
         </motion.h1>
