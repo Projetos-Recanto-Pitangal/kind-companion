@@ -62,15 +62,6 @@ const MantiqueiraHero = () => {
           </div>
         </motion.a>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="font-body text-primary-foreground/80 text-xs md:text-sm uppercase tracking-[0.4em] mb-8"
-        >
-          Recanto Pitangal · Serra da Mantiqueira
-        </motion.p>
-
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
