@@ -54,7 +54,7 @@ const MantiqueiraHero = () => {
           transition={{ duration: 1.1, delay: 0.4 }}
           className="font-display text-4xl md:text-6xl lg:text-7xl font-medium text-primary-foreground leading-[1.1] mb-8 max-w-4xl mx-auto"
         >
-          Viva a Mantiqueira sem pressa, em um refúgio entre serras
+          Talvez esse seja o final de semana que vocês estavam precisando
         </motion.h1>
 
         <motion.div
@@ -70,16 +70,25 @@ const MantiqueiraHero = () => {
           transition={{ duration: 1, delay: 0.8 }}
           className="font-body text-base md:text-lg text-primary-foreground/90 leading-relaxed max-w-3xl mx-auto mb-6"
         >
-          Hospede-se em Sapucaí-Mirim, perto de Campos do Jordão, Santo Antônio do Pinhal e São Bento do Sapucaí, com conforto, privacidade e o clima perfeito para desacelerar.
+          Entre a rotina, o trabalho e os compromissos, às vezes tudo o que um casal precisa é de uma pausa. Um lugar tranquilo, uma lareira acesa, uma banheira relaxante, um café sem pressa e tempo de qualidade para viver o momento a dois.
         </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="font-display italic text-lg md:text-xl text-primary-foreground/85 max-w-2xl mx-auto mb-12"
+          transition={{ duration: 1, delay: 0.95 }}
+          className="font-body text-base md:text-lg text-primary-foreground/85 leading-relaxed max-w-3xl mx-auto mb-8"
         >
-          Uma experiência para descansar, explorar a região e voltar para um lugar mais reservado, acolhedor e especial.
+          No Recanto Pitangal, cada detalhe foi pensado para quem deseja desacelerar e transformar alguns dias em uma lembrança especial. Aqui, vocês encontram conforto, privacidade, natureza e um ambiente perfeito para descansar, conversar, brindar, rir e simplesmente aproveitar a companhia um do outro.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1.1 }}
+          className="font-display italic text-lg md:text-xl text-gold/95 max-w-2xl mx-auto mb-12"
+        >
+          Reserve agora e viva esse momento com quem faz sentido estar ao seu lado.
         </motion.p>
 
         {/* CTAs */}
