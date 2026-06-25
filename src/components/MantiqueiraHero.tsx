@@ -46,7 +46,7 @@ const MantiqueiraHero = () => {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 1.3 }}
           whileHover={{ scale: 1.03 }}
-          className="absolute top-4 right-4 md:top-6 md:right-6 z-20 flex items-start gap-2.5 max-w-[200px] md:max-w-[260px] px-3.5 py-2.5 md:px-4 md:py-3 rounded-xl bg-background/90 backdrop-blur-md border border-gold/40 shadow-xl text-left hover:border-gold transition-colors"
+          className="absolute top-20 right-4 md:top-24 md:right-6 z-30 flex items-start gap-2.5 max-w-[220px] md:max-w-[280px] px-3.5 py-2.5 md:px-4 md:py-3 rounded-xl bg-background/95 backdrop-blur-md border border-gold/50 shadow-2xl text-left hover:border-gold transition-colors"
           aria-label="Pousada pet friendly — saiba mais"
         >
           <div className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full bg-gold/15 flex items-center justify-center">
