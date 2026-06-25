@@ -51,7 +51,8 @@ const faqs = [
   },
   {
     question: "Aceita animais de estimação?",
-    answer: "Sim! Animais são bem-vindos! 🐶🐱",
+    answer:
+      "Sim! Os pets são muito bem-vindos por aqui. Pensamos também no conforto e na segurança dos animaizinhos durante a estadia.\n\nPor isso, criamos uma área externa cercada com alambrado ao redor do chalé, onde os tutores podem deixar seus pets mais livres durante o dia ou em alguns momentos da noite, sempre com mais tranquilidade e segurança.\n\nAssim, eles também aproveitam a experiência junto com a família, com espaço para circular, brincar e descansar em contato com a natureza. 🐶🐱",
   },
   {
     question: "Tem café da manhã incluso?",
