@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { PawPrint, Shield, Trees, Sparkles } from "lucide-react";
-import { buildWhatsAppUrl } from "@/components/WhatsAppButton";
+import { PawPrint, Shield, Trees } from "lucide-react";
+import { Link } from "react-router-dom";
 import petImage from "@/assets/pet-friendly-chale.jpg";
 
 const highlights = [
@@ -33,7 +33,7 @@ const PetFriendlySection = () => {
           className="text-center mb-12 lg:mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/30 mb-5">
-            <Sparkles className="w-4 h-4 text-gold" />
+            <PawPrint className="w-4 h-4 text-gold" />
             <p className="font-body text-gold text-sm lg:text-base uppercase tracking-[0.25em]">
               Novidade
             </p>
@@ -114,18 +114,13 @@ const PetFriendlySection = () => {
               ))}
             </ul>
 
-            <a
-              href={buildWhatsAppUrl(
-                "Disponibilidade Pet Friendly",
-                "Olá! Gostaria de verificar disponibilidade para uma estadia com meu pet na Pousada Recanto Pitangal."
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/reserva#calendario"
               className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-gold text-primary-foreground font-body font-semibold text-base lg:text-lg shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all"
             >
               <PawPrint className="w-5 h-5" />
               Ver disponibilidade para minha estadia com pet
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>
