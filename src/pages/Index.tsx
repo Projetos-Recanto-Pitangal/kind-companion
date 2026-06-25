@@ -7,6 +7,7 @@ import AmenitiesSection from "@/components/AmenitiesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import PricingSection from "@/components/PricingSection";
 import LocationSection from "@/components/LocationSection";
+import PetFriendlySection from "@/components/PetFriendlySection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import AmbientAudioPlayer from "@/components/AmbientAudioPlayer";
@@ -24,6 +25,7 @@ const Index = () => {
       <TestimonialsSection />
       <PricingSection />
       <LocationSection />
+      <PetFriendlySection />
       <FAQSection />
       <Footer />
     </div>
