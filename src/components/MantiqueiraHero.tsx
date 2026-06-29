@@ -29,21 +29,21 @@ const MantiqueiraHero = () => {
         />
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to bottom, hsla(0, 0%, 0%, 0.65), hsla(0, 0%, 0%, 0.55), hsla(0, 0%, 0%, 0.92))' }}
+          style={{ background: 'linear-gradient(to bottom, hsla(0, 0%, 0%, 0.25), hsla(0, 0%, 0%, 0.2), hsla(0, 0%, 0%, 0.65))' }}
         />
         <div
           className="absolute inset-0 hidden md:block"
-          style={{ background: 'linear-gradient(to left, hsla(0, 0%, 0%, 0.85) 0%, hsla(0, 0%, 0%, 0.7) 35%, hsla(0, 0%, 0%, 0.25) 65%, transparent 100%)' }}
+          style={{ background: 'linear-gradient(to left, hsla(0, 0%, 0%, 0.55) 0%, hsla(0, 0%, 0%, 0.35) 40%, hsla(0, 0%, 0%, 0.1) 70%, transparent 100%)' }}
         />
         <div
           className="absolute inset-0 md:hidden"
-          style={{ background: 'hsla(0, 0%, 0%, 0.55)' }}
+          style={{ background: 'hsla(0, 0%, 0%, 0.35)' }}
         />
       </div>
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-32">
-        <div className="md:ml-auto md:w-[58%] lg:w-[52%] text-center md:text-left">
+        <div className="md:ml-auto md:w-[58%] lg:w-[52%] text-center md:text-left md:bg-black/35 md:backdrop-blur-md md:rounded-2xl md:border md:border-white/10 md:shadow-2xl md:p-8 lg:p-10">
         {/* Pet Friendly Sticker */}
         <motion.a
           href="#pet-friendly"
