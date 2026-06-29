@@ -51,17 +51,17 @@ const MantiqueiraHero = () => {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 1.3 }}
           whileHover={{ scale: 1.03 }}
-          className="absolute top-20 left-1/2 -translate-x-1/2 md:top-24 md:left-6 md:translate-x-0 z-30 flex items-start gap-2.5 max-w-[260px] md:max-w-[280px] px-3.5 py-2.5 md:px-4 md:py-3 rounded-xl bg-background/95 backdrop-blur-md border border-gold/50 shadow-2xl text-center md:text-left hover:border-gold transition-colors"
+          className="absolute top-[68px] md:top-[76px] left-1/2 -translate-x-1/2 z-30 flex items-center gap-3 max-w-[300px] md:max-w-[360px] px-4 py-2.5 md:px-5 md:py-3 rounded-full bg-background/95 backdrop-blur-md border border-gold/50 shadow-2xl text-left hover:border-gold transition-colors"
           aria-label="Pousada pet friendly — saiba mais"
         >
-          <div className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full bg-gold/15 flex items-center justify-center">
-            <PawPrint className="w-3.5 h-3.5 md:w-4 md:h-4 text-gold" />
+          <div className="flex-shrink-0 w-8 h-8 md:w-9 md:h-9 rounded-full bg-gold/15 flex items-center justify-center">
+            <PawPrint className="w-4 h-4 md:w-[18px] md:h-[18px] text-gold" />
           </div>
           <div className="leading-tight">
-            <p className="font-display text-[11px] md:text-sm font-semibold text-foreground">
+            <p className="font-display text-[12px] md:text-[15px] font-semibold text-foreground">
               Seu pet é bem-vindo por aqui!
             </p>
-            <p className="hidden md:block font-body text-[11px] text-muted-foreground mt-0.5 leading-snug">
+            <p className="hidden md:block font-body text-[12px] text-muted-foreground mt-0.5 leading-snug">
               Área externa cercada, com conforto e segurança.
             </p>
           </div>
@@ -71,7 +71,7 @@ const MantiqueiraHero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 0.4 }}
-          className="font-display text-[1.7rem] sm:text-4xl md:text-5xl lg:text-6xl font-medium text-primary-foreground leading-[1.2] md:leading-[1.15] mt-20 md:mt-8 mb-5 md:mb-6"
+          className="font-display text-[1.7rem] sm:text-4xl md:text-5xl lg:text-6xl font-medium text-primary-foreground leading-[1.2] md:leading-[1.15] mt-16 md:mt-10 mb-5 md:mb-6"
         >
           Talvez esse seja o final de semana que vocês estavam precisando
         </motion.h1>
