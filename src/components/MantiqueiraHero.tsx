@@ -43,7 +43,7 @@ const MantiqueiraHero = () => {
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-32">
-        <div className="md:ml-auto md:w-[58%] lg:w-[52%] text-center md:text-left md:bg-black/35 md:backdrop-blur-md md:rounded-2xl md:border md:border-white/10 md:shadow-2xl md:p-8 lg:p-10">
+        <div className="md:ml-auto md:w-[58%] lg:w-[52%] text-center md:text-left bg-black/45 md:bg-black/35 backdrop-blur-md rounded-2xl border border-white/10 shadow-2xl p-5 sm:p-6 md:p-8 lg:p-10">
         {/* Pet Friendly Sticker */}
         <motion.a
           href="#pet-friendly"
@@ -51,7 +51,7 @@ const MantiqueiraHero = () => {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 1.3 }}
           whileHover={{ scale: 1.03 }}
-          className="absolute top-20 right-4 md:top-24 md:right-6 z-30 flex items-start gap-2.5 max-w-[220px] md:max-w-[280px] px-3.5 py-2.5 md:px-4 md:py-3 rounded-xl bg-background/95 backdrop-blur-md border border-gold/50 shadow-2xl text-left hover:border-gold transition-colors"
+          className="absolute top-20 left-1/2 -translate-x-1/2 md:top-24 md:left-6 md:translate-x-0 z-30 flex items-start gap-2.5 max-w-[260px] md:max-w-[280px] px-3.5 py-2.5 md:px-4 md:py-3 rounded-xl bg-background/95 backdrop-blur-md border border-gold/50 shadow-2xl text-center md:text-left hover:border-gold transition-colors"
           aria-label="Pousada pet friendly — saiba mais"
         >
           <div className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full bg-gold/15 flex items-center justify-center">
@@ -71,7 +71,7 @@ const MantiqueiraHero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 0.4 }}
-          className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-primary-foreground leading-[1.15] mt-16 md:mt-8 mb-6"
+          className="font-display text-[1.7rem] sm:text-4xl md:text-5xl lg:text-6xl font-medium text-primary-foreground leading-[1.2] md:leading-[1.15] mt-20 md:mt-8 mb-5 md:mb-6"
         >
           Talvez esse seja o final de semana que vocês estavam precisando
         </motion.h1>
