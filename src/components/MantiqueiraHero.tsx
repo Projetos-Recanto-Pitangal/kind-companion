@@ -21,7 +21,7 @@ const MantiqueiraHero = () => {
       <div className="absolute inset-0">
         <img
           src={heroBanner}
-          alt="Vista da Serra da Mantiqueira ao amanhecer"
+          alt="Casal em momento romântico à beira da lareira no chalé do Recanto Pitangal"
           className="w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
@@ -29,16 +29,21 @@ const MantiqueiraHero = () => {
         />
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to bottom, hsla(0, 0%, 0%, 0.75), hsla(0, 0%, 0%, 0.55), hsla(0, 0%, 0%, 0.9))' }}
+          style={{ background: 'linear-gradient(to bottom, hsla(0, 0%, 0%, 0.65), hsla(0, 0%, 0%, 0.55), hsla(0, 0%, 0%, 0.92))' }}
         />
         <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(to right, hsla(0, 0%, 0%, 0.45), transparent, hsla(0, 0%, 0%, 0.45))' }}
+          className="absolute inset-0 hidden md:block"
+          style={{ background: 'linear-gradient(to left, hsla(0, 0%, 0%, 0.85) 0%, hsla(0, 0%, 0%, 0.7) 35%, hsla(0, 0%, 0%, 0.25) 65%, transparent 100%)' }}
+        />
+        <div
+          className="absolute inset-0 md:hidden"
+          style={{ background: 'hsla(0, 0%, 0%, 0.55)' }}
         />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-8 py-24 md:py-32 text-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-32">
+        <div className="md:ml-auto md:w-[58%] lg:w-[52%] text-center md:text-left">
         {/* Pet Friendly Sticker */}
         <motion.a
           href="#pet-friendly"
@@ -66,7 +71,7 @@ const MantiqueiraHero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 0.4 }}
-          className="font-display text-4xl md:text-6xl lg:text-7xl font-medium text-primary-foreground leading-[1.1] mt-16 md:mt-24 mb-8 max-w-4xl mx-auto"
+          className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-primary-foreground leading-[1.15] mt-16 md:mt-8 mb-6"
         >
           Talvez esse seja o final de semana que vocês estavam precisando
         </motion.h1>
@@ -75,14 +80,14 @@ const MantiqueiraHero = () => {
           initial={{ opacity: 0, scaleX: 0 }}
           animate={{ opacity: 1, scaleX: 1 }}
           transition={{ duration: 1, delay: 0.7 }}
-          className="w-16 h-px bg-gold mx-auto mb-8"
+          className="w-16 h-px bg-gold mx-auto md:mx-0 mb-8"
         />
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="font-body text-base md:text-lg text-primary-foreground/90 leading-relaxed max-w-3xl mx-auto mb-6"
+          className="font-body text-base md:text-lg text-primary-foreground/95 leading-relaxed mb-5"
         >
           Entre a rotina, o trabalho e os compromissos, às vezes tudo o que um casal precisa é de uma pausa. Um lugar tranquilo, uma lareira acesa, uma banheira relaxante, um café sem pressa e tempo de qualidade para viver o momento a dois.
         </motion.p>
@@ -91,7 +96,7 @@ const MantiqueiraHero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.95 }}
-          className="font-body text-base md:text-lg text-primary-foreground/85 leading-relaxed max-w-3xl mx-auto mb-8"
+          className="font-body text-base md:text-lg text-primary-foreground/90 leading-relaxed mb-8"
         >
           No Recanto Pitangal, cada detalhe foi pensado para quem deseja desacelerar e transformar alguns dias em uma lembrança especial. Aqui, vocês encontram conforto, privacidade, natureza e um ambiente perfeito para descansar, conversar, brindar, rir e simplesmente aproveitar a companhia um do outro.
         </motion.p>
@@ -100,7 +105,7 @@ const MantiqueiraHero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.1 }}
-          className="font-display italic text-lg md:text-xl text-gold/95 max-w-2xl mx-auto mb-12"
+          className="font-display italic text-lg md:text-xl text-gold mb-10"
         >
           Reserve agora e viva esse momento com quem faz sentido estar ao seu lado.
         </motion.p>
@@ -110,7 +115,7 @@ const MantiqueiraHero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
+          className="flex flex-col sm:flex-row items-center md:justify-start justify-center gap-4 mb-6"
         >
           <motion.div
             animate={{
@@ -149,7 +154,7 @@ const MantiqueiraHero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.4 }}
-          className="font-body text-xs md:text-sm text-primary-foreground/70 italic mb-14 max-w-xl mx-auto"
+          className="font-body text-xs md:text-sm text-primary-foreground/75 italic mb-12"
         >
           Conforto, natureza e localização estratégica para viver a serra de um jeito mais tranquilo.
         </motion.p>
@@ -159,18 +164,19 @@ const MantiqueiraHero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.6 }}
-          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 md:gap-x-8 max-w-4xl mx-auto"
+          className="flex flex-wrap items-center md:justify-start justify-center gap-x-5 gap-y-3 md:gap-x-6"
         >
           {seals.map(({ icon: Icon, label }) => (
             <div
               key={label}
-              className="flex items-center gap-2 text-primary-foreground/85"
+              className="flex items-center gap-2 text-primary-foreground/90"
             >
               <Icon className="w-4 h-4 text-gold" strokeWidth={1.5} />
               <span className="font-body text-xs md:text-sm tracking-wide">{label}</span>
             </div>
           ))}
         </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
