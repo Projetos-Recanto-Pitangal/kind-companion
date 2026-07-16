@@ -137,7 +137,7 @@ const MantiqueiraHero = () => {
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 pt-40 md:pt-44 pb-24 md:pb-32">
-        <div className="md:ml-auto md:w-[58%] lg:w-[52%] text-center md:text-left bg-black/45 md:bg-black/35 backdrop-blur-md rounded-2xl border border-white/10 shadow-2xl p-5 sm:p-6 md:p-8 lg:p-10">
+        <div className="md:ml-auto md:w-[64%] lg:w-[60%] text-center md:text-left bg-black/45 md:bg-black/35 backdrop-blur-md rounded-2xl border border-white/10 shadow-2xl p-5 sm:p-6 md:p-8 lg:p-10">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -163,44 +163,78 @@ const MantiqueiraHero = () => {
           Entre a rotina, o trabalho e os compromissos, às vezes tudo o que um casal precisa é de uma pausa. Um lugar tranquilo, uma lareira acesa, uma banheira relaxante, um café sem pressa e tempo de qualidade para viver o momento a dois.
         </motion.p>
 
-        {/* CTAs */}
+        {/* Inline Reservation Calendar */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="flex flex-col sm:flex-row items-center md:justify-start justify-center gap-4 mb-6"
+          transition={{ duration: 0.8, delay: 1.1 }}
+          className="mb-6"
         >
-          <motion.div
-            animate={{
-              scale: [1, 1.05, 1],
-              boxShadow: [
-                "0 0 0 0 rgba(191, 155, 48, 0)",
-                "0 0 0 8px rgba(191, 155, 48, 0.3)",
-                "0 0 0 0 rgba(191, 155, 48, 0)",
-              ],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            whileHover={{ scale: 1.08 }}
-            whileTap={{ scale: 0.97 }}
-            className="rounded-md"
-          >
-            <Link
-              to="/reserva"
-              className="inline-block font-body font-medium bg-gold hover:bg-gold-light text-accent-foreground px-8 py-3.5 rounded-md transition-colors duration-300 text-base uppercase tracking-wider"
+          <div className="rounded-2xl overflow-hidden shadow-2xl">
+            {loadingCal ? (
+              <div className="bg-card flex flex-col items-center justify-center py-12 gap-3 rounded-2xl">
+                <Loader2 className="h-6 w-6 animate-spin text-primary" />
+                <p className="text-sm text-muted-foreground">Carregando calendário…</p>
+              </div>
+            ) : (
+              <ReservationCalendar
+                blockedDates={blockedDates}
+                checkIn={checkIn}
+                checkOut={checkOut}
+                onSelectDate={handleSelectDate}
+              />
+            )}
+          </div>
+
+          {(checkIn || checkOut) && !loadingCal && (
+            <div className="mt-4 bg-card rounded-2xl border shadow-lg p-4 sm:p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <CalendarCheck className="h-5 w-5 text-primary" />
+                <h2 className="font-semibold text-foreground text-sm">Sua estadia</h2>
+              </div>
+              <div className="grid grid-cols-2 gap-3 text-sm mb-4">
+                <div>
+                  <span className="text-muted-foreground text-xs">Check-in</span>
+                  <p className="font-medium text-foreground">{checkIn ? format(checkIn, "dd/MM/yyyy") : "—"}</p>
+                </div>
+                <div>
+                  <span className="text-muted-foreground text-xs">Check-out</span>
+                  <p className="font-medium text-foreground">{checkOut ? format(checkOut, "dd/MM/yyyy") : "—"}</p>
+                </div>
+              </div>
+              {nights > 0 && !rangeConflict && (
+                <p className="text-sm text-muted-foreground mb-3">
+                  Total: <span className="font-semibold text-foreground">{nights} noite{nights > 1 ? "s" : ""}</span>
+                </p>
+              )}
+              <motion.button
+                type="button"
+                onClick={handleContinue}
+                disabled={!canContinue}
+                animate={canContinue ? {
+                  boxShadow: [
+                    "0 0 0 0 rgba(191, 155, 48, 0)",
+                    "0 0 0 8px rgba(191, 155, 48, 0.3)",
+                    "0 0 0 0 rgba(191, 155, 48, 0)",
+                  ],
+                } : {}}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="w-full inline-flex items-center justify-center gap-2 font-body font-medium bg-gold hover:bg-gold-light disabled:opacity-50 disabled:cursor-not-allowed text-accent-foreground px-6 py-3.5 rounded-md transition-colors text-base uppercase tracking-wider"
+              >
+                Continuar reserva
+                <ArrowRight className="h-4 w-4" />
+              </motion.button>
+            </div>
+          )}
+
+          <div className="flex justify-center md:justify-start mt-4">
+            <a
+              href="#gallery"
+              className="font-body font-medium border border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/70 px-7 py-3 rounded-md transition-colors duration-300 text-sm uppercase tracking-wider"
             >
-              Consultar datas disponíveis
-            </Link>
-          </motion.div>
-          <a
-            href="#gallery"
-            className="font-body font-medium border border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/70 px-9 py-4 rounded-md transition-colors duration-300 text-sm md:text-base uppercase tracking-wider"
-          >
-            Conheça o Recanto Pitangal
-          </a>
+              Conheça o Recanto Pitangal
+            </a>
+          </div>
         </motion.div>
 
         <motion.p
