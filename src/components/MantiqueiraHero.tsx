@@ -42,22 +42,24 @@ const MantiqueiraHero = () => {
       </div>
 
       {/* Pet Friendly Sticker */}
-      <motion.a
-        href="#pet-friendly"
-        initial={{ opacity: 0, y: -10, scale: 0.95 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.8, delay: 1.3 }}
-        whileHover={{ scale: 1.03 }}
-        className="absolute top-20 md:top-28 lg:top-32 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2.5 px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-background/95 backdrop-blur-md border border-gold/50 shadow-2xl hover:border-gold transition-colors whitespace-nowrap"
-        aria-label="Pousada pet friendly — saiba mais"
-      >
-        <div className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full bg-gold/15 flex items-center justify-center">
-          <PawPrint className="w-4 h-4 md:w-[18px] md:h-[18px] text-gold" />
-        </div>
-        <p className="font-display text-[13px] md:text-[15px] font-semibold text-foreground">
-          Seu pet é bem-vindo por aqui
-        </p>
-      </motion.a>
+      <div className="absolute top-20 md:top-28 lg:top-32 inset-x-0 z-30 flex justify-center px-4 pointer-events-none">
+        <motion.a
+          href="#pet-friendly"
+          initial={{ opacity: 0, y: -10, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 1.3 }}
+          whileHover={{ scale: 1.03 }}
+          className="pointer-events-auto flex items-center gap-2.5 px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-background/95 backdrop-blur-md border border-gold/50 shadow-2xl hover:border-gold transition-colors whitespace-nowrap"
+          aria-label="Pousada pet friendly — saiba mais"
+        >
+          <div className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 rounded-full bg-gold/15 flex items-center justify-center">
+            <PawPrint className="w-4 h-4 md:w-[18px] md:h-[18px] text-gold" />
+          </div>
+          <p className="font-display text-[13px] md:text-[15px] font-semibold text-foreground">
+            Seu pet é bem-vindo por aqui
+          </p>
+        </motion.a>
+      </div>
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 pt-40 md:pt-44 pb-24 md:pb-32">
