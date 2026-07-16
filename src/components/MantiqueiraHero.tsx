@@ -1,7 +1,12 @@
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Sparkles, Mountain, Heart, Compass, ChevronDown, PawPrint } from "lucide-react";
-import { Link } from "react-router-dom";
+import { MapPin, Sparkles, Mountain, Heart, Compass, ChevronDown, PawPrint, ArrowRight, Loader2, CalendarCheck } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { format, differenceInCalendarDays, eachDayOfInterval } from "date-fns";
+import { toast } from "sonner";
 import heroBanner from "@/assets/hero-banner-mantiqueira.png";
+import ReservationCalendar from "@/components/ReservationCalendar";
+import { fetchAvailability } from "@/lib/pousada-api";
 
 const seals = [
   { icon: MapPin, label: "Localização estratégica" },
@@ -12,6 +17,75 @@ const seals = [
 ];
 
 const MantiqueiraHero = () => {
+  const navigate = useNavigate();
+  const [blockedDates, setBlockedDates] = useState<Date[]>([]);
+  const [loadingCal, setLoadingCal] = useState(true);
+  const [checkIn, setCheckIn] = useState<Date | null>(null);
+  const [checkOut, setCheckOut] = useState<Date | null>(null);
+  const [rangeConflict, setRangeConflict] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const now = new Date();
+        const currentMonth = format(now, "yyyy-MM");
+        const data = await fetchAvailability(currentMonth);
+        const blocked: Date[] = [];
+        for (const [, days] of Object.entries(data.calendar)) {
+          for (const [dateStr, info] of Object.entries(days)) {
+            if ((info as any).blocked) blocked.push(new Date(dateStr + "T12:00:00"));
+          }
+        }
+        setBlockedDates(blocked);
+      } catch (e) {
+        console.error(e);
+      } finally {
+        setLoadingCal(false);
+      }
+    })();
+  }, []);
+
+  const blockedSet = useMemo(() => {
+    const s = new Set<string>();
+    blockedDates.forEach((d) => s.add(format(d, "yyyy-MM-dd")));
+    return s;
+  }, [blockedDates]);
+
+  useEffect(() => {
+    if (!checkIn || !checkOut) {
+      setRangeConflict(false);
+      return;
+    }
+    const days = eachDayOfInterval({ start: checkIn, end: checkOut });
+    const conflict = days.some((d) => blockedSet.has(format(d, "yyyy-MM-dd")));
+    setRangeConflict(conflict);
+    if (conflict) toast.error("Há datas indisponíveis neste período. Escolha outro intervalo.");
+  }, [checkIn, checkOut, blockedSet]);
+
+  const handleSelectDate = (date: Date) => {
+    if (!checkIn || (checkIn && checkOut)) {
+      setCheckIn(date);
+      setCheckOut(null);
+      return;
+    }
+    if (date <= checkIn) {
+      setCheckIn(date);
+      setCheckOut(null);
+      return;
+    }
+    setCheckOut(date);
+  };
+
+  const nights = checkIn && checkOut ? differenceInCalendarDays(checkOut, checkIn) : 0;
+  const canContinue = !!(checkIn && checkOut && !rangeConflict && nights > 0);
+
+  const handleContinue = () => {
+    if (!canContinue || !checkIn || !checkOut) return;
+    const ci = format(checkIn, "yyyy-MM-dd");
+    const co = format(checkOut, "yyyy-MM-dd");
+    navigate(`/reserva?checkin=${ci}&checkout=${co}`);
+  };
+
   return (
     <section
       id="mantiqueira-hero"
