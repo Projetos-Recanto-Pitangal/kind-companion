@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
-import { format, differenceInCalendarDays, eachDayOfInterval, addMonths } from "date-fns";
+import { useSearchParams } from "react-router-dom";
+import { format, differenceInCalendarDays, eachDayOfInterval, addMonths, parseISO, isValid } from "date-fns";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ReservationCalendar from "@/components/ReservationCalendar";
@@ -12,11 +13,22 @@ import { fetchAvailability, checkPeriod, type CheckResponse } from "@/lib/pousad
 type Step = "calendar" | "form";
 
 export default function Reserva() {
+  const [searchParams] = useSearchParams();
   const [blockedDates, setBlockedDates] = useState<Date[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [checkIn, setCheckIn] = useState<Date | null>(null);
-  const [checkOut, setCheckOut] = useState<Date | null>(null);
+  const [checkIn, setCheckIn] = useState<Date | null>(() => {
+    const v = searchParams.get("checkin");
+    if (!v) return null;
+    const d = parseISO(v);
+    return isValid(d) ? d : null;
+  });
+  const [checkOut, setCheckOut] = useState<Date | null>(() => {
+    const v = searchParams.get("checkout");
+    if (!v) return null;
+    const d = parseISO(v);
+    return isValid(d) ? d : null;
+  });
   const [rangeConflict, setRangeConflict] = useState(false);
   const [step, setStep] = useState<Step>("calendar");
   const [priceInfo, setPriceInfo] = useState<CheckResponse | null>(null);
