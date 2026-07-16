@@ -87,24 +87,6 @@ const MantiqueiraHero = () => {
           Entre a rotina, o trabalho e os compromissos, às vezes tudo o que um casal precisa é de uma pausa. Um lugar tranquilo, uma lareira acesa, uma banheira relaxante, um café sem pressa e tempo de qualidade para viver o momento a dois.
         </motion.p>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.95 }}
-          className="font-body text-base md:text-lg text-primary-foreground/90 leading-relaxed mb-8"
-        >
-          No Recanto Pitangal, cada detalhe foi pensado para quem deseja desacelerar e transformar alguns dias em uma lembrança especial. Aqui, vocês encontram conforto, privacidade, natureza e um ambiente perfeito para descansar, conversar, brindar, rir e simplesmente aproveitar a companhia um do outro.
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.1 }}
-          className="font-display italic text-lg md:text-xl text-gold mb-10"
-        >
-          Reserve agora e viva esse momento com quem faz sentido estar ao seu lado.
-        </motion.p>
-
         {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
