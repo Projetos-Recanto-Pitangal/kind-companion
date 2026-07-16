@@ -14,6 +14,7 @@ type Step = "calendar" | "form";
 
 export default function Reserva() {
   const [searchParams] = useSearchParams();
+  const autoAdvance = searchParams.get("checkin") && searchParams.get("checkout");
   const [blockedDates, setBlockedDates] = useState<Date[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -33,6 +34,19 @@ export default function Reserva() {
   const [step, setStep] = useState<Step>("calendar");
   const [priceInfo, setPriceInfo] = useState<CheckResponse | null>(null);
   const [checkingPrice, setCheckingPrice] = useState(false);
+  const [autoAdvanced, setAutoAdvanced] = useState(false);
+
+  // Auto-advance to form when dates come pre-filled via query params
+  useEffect(() => {
+    if (!autoAdvance || autoAdvanced) return;
+    if (loading) return;
+    if (!checkIn || !checkOut) return;
+    if (rangeConflict) return;
+    if (checkingPrice) return;
+    if (!priceInfo?.available) return;
+    setStep("form");
+    setAutoAdvanced(true);
+  }, [autoAdvance, autoAdvanced, loading, checkIn, checkOut, rangeConflict, checkingPrice, priceInfo]);
 
   // Fetch blocked dates from external API
   useEffect(() => {
