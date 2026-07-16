@@ -170,6 +170,9 @@ const MantiqueiraHero = () => {
           transition={{ duration: 0.8, delay: 1.1 }}
           className="mb-6"
         >
+          <h2 className="font-display text-lg md:text-xl font-medium text-primary-foreground text-center md:text-left mb-3">
+            Selecione as datas da sua reserva
+          </h2>
           <div className="rounded-2xl overflow-hidden shadow-2xl">
             {loadingCal ? (
               <div className="bg-card flex flex-col items-center justify-center py-12 gap-3 rounded-2xl">
@@ -226,15 +229,6 @@ const MantiqueiraHero = () => {
               </motion.button>
             </div>
           )}
-
-          <div className="flex justify-center md:justify-start mt-4">
-            <a
-              href="#gallery"
-              className="font-body font-medium border border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/70 px-7 py-3 rounded-md transition-colors duration-300 text-sm uppercase tracking-wider"
-            >
-              Conheça o Recanto Pitangal
-            </a>
-          </div>
         </motion.div>
 
         <motion.p
