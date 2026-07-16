@@ -170,7 +170,7 @@ const MantiqueiraHero = () => {
           transition={{ duration: 0.8, delay: 1.1 }}
           className="mb-6"
         >
-          <h2 className="font-display text-lg md:text-xl font-medium text-primary-foreground text-center md:text-left mb-3">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-white text-center md:text-left mb-5 drop-shadow-lg tracking-tight">
             Selecione as datas da sua reserva
           </h2>
           <div className="rounded-2xl overflow-hidden shadow-2xl">
