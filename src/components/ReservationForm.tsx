@@ -122,12 +122,23 @@ export default function ReservationForm({ checkIn, checkOut, onBack }: Reservati
             )}
           </div>
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
-            <Button type="button" variant="outline" className="gap-2" onClick={() => setShowReview(false)} disabled={submitting}>
+            <Button
+              type="button"
+              variant="outline"
+              className="gap-2 h-14 px-6 text-base rounded-xl sm:w-auto w-full"
+              onClick={() => setShowReview(false)}
+              disabled={submitting}
+            >
               <ArrowLeft className="h-4 w-4" />
               Editar dados
             </Button>
-            <Button type="button" size="lg" className="flex-1 text-base gap-2" onClick={handleConfirm} disabled={submitting}>
-              {submitting ? (<><Loader2 className="h-4 w-4 animate-spin" />Enviando…</>) : "Confirmar solicitação"}
+            <Button
+              type="button"
+              className="flex-1 h-14 px-8 text-base font-semibold gap-2 rounded-xl shadow-lg hover:shadow-xl transition-shadow uppercase tracking-wide"
+              onClick={handleConfirm}
+              disabled={submitting}
+            >
+              {submitting ? (<><Loader2 className="h-5 w-5 animate-spin" />Enviando…</>) : "Confirmar solicitação"}
             </Button>
           </div>
         </div>
@@ -189,7 +200,7 @@ export default function ReservationForm({ checkIn, checkOut, onBack }: Reservati
           <Button
             type="button"
             variant="outline"
-            className="gap-2"
+            className="gap-2 h-14 px-6 text-base rounded-xl sm:w-auto w-full"
             onClick={onBack}
           >
             <ArrowLeft className="h-4 w-4" />
@@ -197,8 +208,7 @@ export default function ReservationForm({ checkIn, checkOut, onBack }: Reservati
           </Button>
           <Button
             type="submit"
-            size="lg"
-            className="flex-1 text-base gap-2"
+            className="flex-1 h-14 px-8 text-base font-semibold gap-2 rounded-xl shadow-lg hover:shadow-xl transition-shadow uppercase tracking-wide"
             disabled={!canSubmit}
           >
             Revisar dados
