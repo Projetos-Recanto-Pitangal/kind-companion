@@ -10,12 +10,10 @@ import LocationSection from "@/components/LocationSection";
 import PetFriendlySection from "@/components/PetFriendlySection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
-import AmbientAudioPlayer from "@/components/AmbientAudioPlayer";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <AmbientAudioPlayer />
       <Navbar />
       <MantiqueiraHero />
       <PetFriendlySection />
