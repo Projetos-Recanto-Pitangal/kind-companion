@@ -197,7 +197,7 @@ export default function ReservationCalendar({
       {/* Mobile: single month. Desktop: two months side by side */}
       <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 lg:gap-16">
         {renderMonth(baseMonth)}
-        <div className="hidden sm:block flex-1 min-w-0 sm:min-w-[280px]">
+        <div className="hidden sm:contents">
           {renderMonth(addMonths(baseMonth, 1))}
         </div>
       </div>
