@@ -178,7 +178,7 @@ const MantiqueiraHero = () => {
               </h2>
             </div>
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-2xl">
+          <div className="rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10">
             {loadingCal ? (
               <div className="bg-card flex flex-col items-center justify-center py-12 gap-3 rounded-2xl">
                 <Loader2 className="h-6 w-6 animate-spin text-primary" />
